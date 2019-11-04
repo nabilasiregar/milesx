@@ -1,0 +1,2 @@
+class MilesProfile < ApplicationRecord
+end
