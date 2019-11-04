@@ -10,10 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_04_084900) do
+ActiveRecord::Schema.define(version: 2019_11_04_105527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "miles_profile_id"
+    t.string "departure"
+    t.string "arrival"
+    t.date "departure_date"
+    t.date "return_date"
+    t.integer "price"
+    t.string "status"
+    t.boolean "ticket_received"
+    t.integer "amount_of_miles"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "miles_profiles", force: :cascade do |t|
+    t.string "type"
+    t.integer "amount"
+    t.integer "price"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "passenger_bookings", force: :cascade do |t|
+    t.integer "booking_id"
+    t.integer "passengers_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "passengers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer "request_id"
+    t.boolean "released"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.boolean "confirmed"
+    t.string "photo"
+    t.integer "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +77,8 @@ ActiveRecord::Schema.define(version: 2019_11_04_084900) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birth_date"
+    t.integer "success_rate"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
