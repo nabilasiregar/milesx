@@ -8,10 +8,13 @@
 
 require "faker"
 
+user = User.create(email: "dev@email.com", password: "password", birth_date: Faker::Date.birthday(min_age: 18, max_age: 65), phone: Faker::PhoneNumber.phone_number_with_country_code, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, success_rate: rand(78..100))
+
+
 10.times do
-  user = User.create(email: Faker::Internet.email, birth_date: Faker::Date.birthday(min_age: 18, max_age: 65), phone: Faker::PhoneNumber.phone_number_with_country_code, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, success_rate: rand(78..100))
+  user = User.create(email: Faker::Internet.email, password: "password", birth_date: Faker::Date.birthday(min_age: 18, max_age: 65), phone: Faker::PhoneNumber.phone_number_with_country_code, first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, success_rate: rand(78..100))
   puts "Profile has been created"
-  end
+end
 
 10.times do
   MilesProfile.create(user: User.all.sample, programme: "Skyrewards", amount: rand(10001..20000), price: 5)
