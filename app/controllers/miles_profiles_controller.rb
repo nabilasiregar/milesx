@@ -10,20 +10,20 @@ class MilesProfilesController < ApplicationController
     @miles_profile = Miles_Profile.new
   end
 
-  def new
-    @miles_profile = Miles_profile.new
-    authorize @miles_profile
-    if user_signed_in?
-      if current_user.present?
-      else
-        redirect_to new_user_registration_path
-        flash[:alert] = 'Please sign up to view your miles summary'
-      end
-    else
-      redirect_to user_session_path
-      flash[:alert] = 'Please log in to view your miles summary'
-    end
-  end
+  # def new
+  #   @miles_profile = Miles_profile.new
+  #   authorize @miles_profile
+  #   if user_signed_in?
+  #     if current_user.present?
+  #     else
+  #       redirect_to new_user_registration_path
+  #       flash[:alert] = 'Please sign up to view your miles summary'
+  #     end
+  #   else
+  #     redirect_to user_session_path
+  #     flash[:alert] = 'Please log in to view your miles summary'
+  #   end
+  # end
 
   def create
     @miles_profile = Miles_profile.new(miles_profile_params)
