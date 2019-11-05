@@ -10,20 +10,21 @@ class MilesProfilesController < ApplicationController
     @miles_profile = Miles_profile.find(params[:id])
   end
 
-  def new
-    @miles_profile = Miles_profile.new
-
+  # def new
+  #   @miles_profile = Miles_profile.new
+  #   authorize @miles_profile
   #   if user_signed_in?
   #     if current_user.present?
   #     else
-  #       # redirect_to new_user_registration_path ????
+  #       redirect_to new_user_registration_path
   #       flash[:alert] = 'Please sign up to view your miles summary'
   #     end
   #   else
-  #     # redirect_to user_session_path?????
+  #     redirect_to user_session_path
   #     flash[:alert] = 'Please log in to view your miles summary'
   #   end
-  end
+  # end
+
 
   def create
     @miles_profile = Miles_profile.new(miles_profile_params)
