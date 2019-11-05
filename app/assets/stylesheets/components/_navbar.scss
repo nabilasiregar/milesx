@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background: #141314;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -21,22 +21,23 @@
   text-decoration: none;
 }
 
-.nav-link-messages {
+.nav-link-miles {
   color: white;
-  margin: 15px;
+  margin: 13px;
 }
 
-.nav-link-home {
+.nav-link-booking {
   color: white;
+  margin: 20px;
 }
 
-.nav-link-messages:hover {
+.nav-link-miles:hover {
   color: white;
   font-weight: bold;
   text-decoration: none;
 }
 
-.nav-link-home:hover {
+.nav-link-booking:hover {
   color: white;
   font-weight: bold;
   text-decoration: none;
