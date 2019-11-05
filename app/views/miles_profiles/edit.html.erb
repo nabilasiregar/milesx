@@ -1,2 +1,17 @@
 <h1>MilesProfiles#edit</h1>
 <p>Find me in app/views/miles_profiles/edit.html.erb</p>
+
+<div class="container_login banner-flat" style="background-image: url('#');">
+  <div class="form_card">
+    <h1>Edit Listing</h1>
+    <h2>What changes do you want to make?</h2>
+    <%= simple_form_for (@miles_profile) do |f| %>
+      <div class="col-xs-12 col-sm-4-offset-3">
+      <%= f.input :Programme %>
+      <%= f.input :Amount %>
+      <%= f.input :Price %>
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
