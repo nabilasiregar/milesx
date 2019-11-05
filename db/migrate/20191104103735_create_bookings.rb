@@ -1,8 +1,6 @@
 class CreateBookings < ActiveRecord::Migration[5.2]
   def change
     create_table :bookings do |t|
-      t.integer :user_id
-      t.integer :miles_profile_id
       t.string :departure
       t.string :arrival
       t.date :departure_date
@@ -11,6 +9,8 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.string :status
       t.boolean :ticket_received
       t.integer :amount_of_miles
+      t.references :user, foreign_key: true
+      t.references :miles_profile, foreign_key: true
 
       t.timestamps
     end

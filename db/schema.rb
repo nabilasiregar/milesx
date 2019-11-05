@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 2019_11_05_022604) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "miles_profile_id"
     t.string "departure"
     t.string "arrival"
     t.date "departure_date"
@@ -26,52 +24,55 @@ ActiveRecord::Schema.define(version: 2019_11_05_022604) do
     t.string "status"
     t.boolean "ticket_received"
     t.integer "amount_of_miles"
+    t.bigint "user_id"
+    t.bigint "miles_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["miles_profile_id"], name: "index_bookings_on_miles_profile_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "miles_profiles", force: :cascade do |t|
     t.string "type"
     t.integer "amount"
     t.integer "price"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "passenger_bookings", force: :cascade do |t|
-    t.integer "booking_id"
-    t.integer "passengers_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_miles_profiles_on_user_id"
   end
 
   create_table "passengers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.date "birth_date"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_passengers_on_booking_id"
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer "request_id"
     t.boolean "released"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean "confirmed"
+    t.string "confirmed"
     t.string "photo"
-    t.integer "booking_id"
+    t.bigint "booking_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_requests_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "photo"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -86,4 +87,10 @@ ActiveRecord::Schema.define(version: 2019_11_05_022604) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "miles_profiles"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "miles_profiles", "users"
+  add_foreign_key "passengers", "bookings"
+  add_foreign_key "payments", "bookings"
+  add_foreign_key "requests", "bookings"
 end
