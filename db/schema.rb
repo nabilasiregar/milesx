@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_022604) do
     t.integer "success_rate"
     t.string "first_name"
     t.string "last_name"
-    t.integer "phone"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
