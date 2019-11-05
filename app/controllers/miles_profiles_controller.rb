@@ -3,11 +3,11 @@ class MilesProfilesController < ApplicationController
   before_action :set_miles_profile, only: [:show, :edit, :update, :destroy]
 
   def index
-    @miles_profile = Miles_Profile.all
+    @miles_profile = MilesProfile.all
   end
 
   def show
-    @miles_profile = Miles_profile.find(params[:id])
+    @miles_profile = MilesProfile.find(params[:id])
   end
 
   # def new
@@ -25,9 +25,8 @@ class MilesProfilesController < ApplicationController
   #   end
   # end
 
-
   def create
-    @miles_profile = Miles_profile.new(miles_profile_params)
+    @miles_profile = MilesProfile.new(miles_profile_params)
     authorize @miles_profile
     @miles_profile.user = current_user
     if @miles_profile.save
@@ -59,7 +58,7 @@ class MilesProfilesController < ApplicationController
   private
 
   def set_miles_profile
-    @miles_profile = Miles_profile.find(params[:id])
+    @miles_profile = MilesProfile.find(params[:id])
   end
 
   def miles_profile_params
