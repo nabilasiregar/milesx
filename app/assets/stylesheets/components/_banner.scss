@@ -1,7 +1,6 @@
 .banner {
   height: 100vh;
   background-size: cover;
-  font-family: 'Montserrat', sans-serif;
   margin-top: 20px;
 
 }
@@ -10,8 +9,10 @@
   color: white;
   padding-top: 80px;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
   font-size: 100px;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .container-home > p {
@@ -19,6 +20,8 @@
   text-align: center;
   margin: 7px;
   font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .sub-button {

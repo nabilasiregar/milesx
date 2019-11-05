@@ -17,3 +17,55 @@ body {
 .text-center {
   background-color: #E6E4E6;
 }
+.card-text {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card-title {
+  font-family: 'Raleway', sans-serif;
+}
+
+.container-content {
+ height: 75vh;
+}
+.card-group {
+  height: 50vh;
+  margin-top: 110px;
+}
+
+.home-header {
+  text-align: center;
+  padding-top: 30px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.card-body {
+   margin-top: 75px;
+   color: white;
+}
+
+.text-center {
+  background-color: #141314
+}
+.card-body i {
+  font-size: 40px;
+}
+.small-home {
+  text-align: center;
+}
+
+.small-home a {
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+}
+
+.small-home a:hover {
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
