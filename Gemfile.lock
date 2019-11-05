@@ -80,6 +80,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
+    ipaddr (1.2.2)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     listen (3.0.8)
@@ -105,6 +106,8 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    openssl (2.1.2)
+      ipaddr
     orm_adapter (0.5.0)
     pg (0.21.0)
     pry (0.12.2)
@@ -218,6 +221,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  openssl
   pg (~> 0.21)
   pry-byebug
   pry-rails
