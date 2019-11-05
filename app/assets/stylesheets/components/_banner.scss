@@ -1,0 +1,32 @@
+.banner {
+  height: 100vh;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -50px;
+
+}
+
+.container-home > h1 {
+  color: white;
+  padding-top: 80px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+}
+
+.container-home > p {
+  color: white;
+  text-align: center;
+  margin: 7px;
+  font-size: 20px;
+}
+
+.sub-button {
+  color: white;
+}
+.sub-button:hover {
+  color: white;
+  text-decoration: none;
+}
+
+

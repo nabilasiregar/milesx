@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: black;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +10,36 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-link-login {
+  color: white;
+}
+
+.nav-link-login:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link-messages {
+  color: white;
+  margin: 15px;
+}
+
+.nav-link-home {
+  color: white;
+}
+
+.nav-link-messages:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-link-home:hover {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
