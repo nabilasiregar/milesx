@@ -1,0 +1,2 @@
+class MilesProfilesController < ApplicationController
+end
