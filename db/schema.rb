@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_022604) do
   end
 
   create_table "miles_profiles", force: :cascade do |t|
-    t.string "type"
+    t.string "programme"
     t.integer "amount"
     t.integer "price"
     t.integer "user_id"
