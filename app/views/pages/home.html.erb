@@ -1,17 +1,19 @@
-<%= video_tag 'plane.mp4', class:"home-video", autoplay:true, muted:true, loop:true %>
+
+  <%= video_tag 'plane.mp4', class:"home-video", autoplay:true, muted:true, loop:true %>
 <div class="container-home">
     <h1>MilesX</h1>
     <p>Make better use of your airmiles</p>
     <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto" action="/miles">
       <div class="d-flex justify-content-center">
         <div class="form-group w-50 mr-5">
-          <label for="departure" style="color: white;">Departure Port</label>
-          <input type="text" readonly="readonly" name="start_date" class="form-control" id="depart">
+          <label for="departure" style="color: white;">From</label>
+          <input type="text" name="departure" class="form-control" id="depart">
         </div>
         <div class="form-group w-50">
-          <label for="arrival" style="color: white;">Arrival Port</label>
-          <input type="text" readonly="readonly" name="end_date" class="form-control" id="arrival">
-       </div>
+          <label for="arrival" style="color: white;">To</label>
+          <input type="text" name="arrival" class="form-control" id="arrival">
+        </div>
+
       </div>
       <button type="submit" id="submit-button" class="btn btn-dark d-flex justify-content-center mx-auto" style="border-radius: 5px; background-color: transparent; color: black;">Search Flights</button>
     </form>
@@ -41,3 +43,4 @@
     </div>
     </div>
 
+<input type="text" id="airport-input">
