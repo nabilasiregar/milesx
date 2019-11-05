@@ -1,5 +1,19 @@
 // Specific CSS for your home-page
 body {
-  background-color: #90908D; // will be changed to black, just easier on eyes for now
+  background-color: #141314; // will be changed to black, just easier on eyes for now
+}
 
+.home-video {
+ width: 100vw;
+ height: 100vh;
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ object-fit: cover;
+ top: 0;
+ z-index: -2;
+}
+
+.text-center {
+  background-color: #E6E4E6;
 }
