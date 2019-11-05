@@ -1,2 +1,0 @@
-class PassengerBooking < ApplicationRecord
-end
