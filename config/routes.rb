@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'miles_profiles/index'
+  get 'miles_profiles/show'
+  get 'miles_profiles/new'
+  get 'miles_profiles/create'
+  get 'miles_profiles/edit'
+  get 'miles_profiles/update'
+  get 'miles_profiles/destroy'
   devise_for :users
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard", as: :dashboard

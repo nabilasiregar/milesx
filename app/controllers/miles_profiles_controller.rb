@@ -1,13 +1,13 @@
 class MilesProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_miles_profile, only: [:show, :edit, :update, :destroy]
 
   def index
     @miles_profile = Miles_Profile.all
   end
 
   def show
-    set_miles_profile
-    @miles_profile = Miles_Profile.new
+    @miles_profile = Miles_profile.find(params[:id])
   end
 
   # def new
@@ -25,24 +25,23 @@ class MilesProfilesController < ApplicationController
   #   end
   # end
 
+
   def create
     @miles_profile = Miles_profile.new(miles_profile_params)
     authorize @miles_profile
     @miles_profile.user = current_user
     if @miles_profile.save
-      redirect_to miles_profile_path(@miles_profile), notice: "Your plane has been listed!"
+      redirect_to miles_profile_path(@miles_profile), notice: "Miles Profile Created!!"
     else
       render :new
     end
   end
 
   def edit
-    set_miles_profile
     authorize @miles_profile
   end
 
   def update
-    set_miles_profile
     authorize @miles_profile
     if @miles_profile.update(miles_profile_params)
       redirect_to miles_profile_path(@miles_profile)
@@ -52,7 +51,6 @@ class MilesProfilesController < ApplicationController
   end
 
   def destroy
-    set_miles_profile
     authorize @miles_profile
     @miles_profile.destroy
     redirect_to profile_path
@@ -65,8 +63,6 @@ class MilesProfilesController < ApplicationController
   end
 
   def miles_profile_params
-    params.require(:miles_profile).permit(:airplane_id, :description, :airport, :price_per_day, :title, :photo)
+    params.require(:miles_profile).permit(:user_id, :programme, :amount, :price)
   end
-end
-
 end
