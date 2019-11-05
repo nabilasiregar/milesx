@@ -1,0 +1,21 @@
+<h1>
+  dashboard
+</h1>
+
+<h2>buys</h2>
+<p>
+  <% @user.bookings.each do |booking| %>
+  <%= booking.price %>
+  <%= booking.status %>
+  <%= booking.amount_of_miles %>
+  <% end %>
+</p>
+
+<h2>sells</h2>
+<p>
+  <% @user.bookings.filter { |booking| booking.miles_profile.user == @user }.each do |booking| %>
+  <%= booking.price %>
+  <%= booking.status %>
+  <%= booking.amount_of_miles %>
+ <% end %>
+</p>
