@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 body {
-  background-color: #141314; // will be changed to black, just easier on eyes for now
+ background-color: #141314;
 }
 
 .home-video {
@@ -68,4 +68,6 @@ body {
   font-weight: bold;
 }
 
-
+.form-group label {
+  text-shadow: 2px 2px 4px #000000;
+}
