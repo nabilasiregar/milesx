@@ -17,11 +17,6 @@ class MilesProfilesController < ApplicationController
       data_serialized = RestClient::Request.execute(method: :get, url: url, verify_ssl: false)
       json_data = JSON.parse(data_serialized)
       @results = json_data['data']
-
-      @price_economy =  json_data['data'][0]['rates'][0]['rate']
-      @price_business = json_data['data'][0]['rates'][1]['rate']
-      @price_first = json_data['data'][0]['rates'][2]['rate']
-
       @departure = json_data['origin']
       @arrival = json_data['destination']
     end
