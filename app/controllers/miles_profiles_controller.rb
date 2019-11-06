@@ -12,16 +12,11 @@ class MilesProfilesController < ApplicationController
       departure = params[:departure][0..2]
       arrival = params[:arrival][0..2]
       digest = OpenSSL::Digest.new('sha256')
-      key = OpenSSL::HMAC.hexdigest(digest, 'lewagon', "f=#{departure}&t=#{arrival}&ffp=8|16&langid=1")
-      url = "https://milez.biz/api/list_rates.php?pid=162&key=#{key}&f=#{departure}&t=#{arrival}&ffp=8|16&langid=1"
+      key = OpenSSL::HMAC.hexdigest(digest, 'lewagon', "f=#{departure}&t=#{arrival}&ffp=8|1|16&langid=1")
+      url = "https://milez.biz/api/list_rates.php?pid=162&key=#{key}&f=#{departure}&t=#{arrival}&ffp=8|1|16&langid=1"
       data_serialized = RestClient::Request.execute(method: :get, url: url, verify_ssl: false)
       json_data = JSON.parse(data_serialized)
       @results = json_data['data']
-
-      @price_economy =  json_data['data'][0]['rates'][0]['rate']
-      @price_business = json_data['data'][0]['rates'][1]['rate']
-      @price_first = json_data['data'][0]['rates'][2]['rate']
-
       @departure = json_data['origin']
       @arrival = json_data['destination']
     end
