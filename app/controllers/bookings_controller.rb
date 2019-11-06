@@ -19,11 +19,9 @@ class BookingsController < ApplicationController
       redirect_to booking_path(@booking)
       flash[:notice] = 'Your flight booking has been requested!'
     else
-      raise
       render 'miles_profiles/show'
     end
   end
-
 
   def new
     @booking = Booking.new
