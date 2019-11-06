@@ -5,18 +5,22 @@ class BookingsController < ApplicationController
   #   @bookings = Booking.all
   # end
 
-  # def show
-  #   @booking = Booking.find(params[:id])
-  #   @past_bookings = Booking.where("end_date < ?", Date.today)
-  # end
+  def show
+    @booking = Booking.find(params[:id])
+    # @past_bookings = Booking.where("end_date < ?", Date.today)
+  end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(bookings_params)
+    @booking.user = current_user
+        @booking.miles_profile = current_user.miles_profile
+
     if @booking.save
-      direct_to booking_path(@booking)
-      flash[:notice] = 'Your flight has been booked!'
+      redirect_to booking_path(@booking)
+      flash[:notice] = 'Your flight booking has been requested!'
     else
-      render 'miles_profile/show'
+      raise
+      render 'miles_profiles/show'
     end
   end
 
@@ -32,5 +36,11 @@ class BookingsController < ApplicationController
       redirect_to user_session_path
       flash[:alert] = 'Please log in to book this flight.'
     end
+  end
+
+  private
+
+  def bookings_params
+    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date)
   end
 end
