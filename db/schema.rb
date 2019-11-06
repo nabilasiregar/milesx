@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_080638) do
     t.date "return_date"
     t.integer "price"
     t.string "status"
-    t.boolean "ticket_received"
+    t.boolean "ticket_received", default: false
     t.integer "amount_of_miles"
     t.bigint "user_id"
     t.bigint "miles_profile_id"
