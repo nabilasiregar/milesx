@@ -7,4 +7,24 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
   end
+
+  def accept_booking
+    request = Request.find(params[:id])
+    request.confirmed = "confirmed"
+    request.save
+    booking = request.booking
+    booking.status = "confirmed"
+    booking.save
+    redirect_to dashboard_path
+  end
+
+  def decline_booking
+    request = Request.find(params[:id])
+    request.confirmed = "declined"
+    request.save
+    booking = request.booking
+    booking.status = "declined"
+    booking.save
+    redirect_to dashboard_path
+  end
 end

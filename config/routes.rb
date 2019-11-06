@@ -1,19 +1,6 @@
 Rails.application.routes.draw do
-  get 'requests/show'
-  get 'requests/create'
-  get 'passengers/show'
-  get 'passengers/create'
-  get 'passengers/show'
-  get 'bookings/index'
-  get 'bookings/create'
-  get 'bookings/new'
-  get 'miles_profiles/index'
-  get 'miles_profiles/show'
-  get 'miles_profiles/new'
-  get 'miles_profiles/create'
-  get 'miles_profiles/edit'
-  get 'miles_profiles/update'
-  get 'miles_profiles/destroy'
+  post "accept_booking/:id", to: "pages#accept_booking", as: :accept_booking
+  post "decline_booking/:id", to: "pages#decline_booking", as: :decline_booking
   devise_for :users
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard", as: :dashboard
