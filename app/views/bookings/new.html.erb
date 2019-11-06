@@ -8,10 +8,12 @@
     <h1 id="listing-title">Book you flight.</h1>
     <%= simple_form_for(@booking) do |f|%>
     <div class="row-listing-form">
+      <%= f.input :flight_number %>
       <%= f.input :departure %>
       <%= f.input :arrival %>
       <%= f.input :departure_date %>
       <%= f.input :return_date %>
+
       <div class="listing-submit-row">
       <%= f.button :submit, "Book you flight.", class: "btn-listing" %>
       </div>

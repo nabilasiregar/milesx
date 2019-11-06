@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'bookings/index'
-  get 'bookings/show'
   get 'bookings/create'
   get 'bookings/new'
   get 'miles_profiles/index'
@@ -21,5 +20,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:new, :create] do
     resources :passengers, only: [:create]
   end
+
+  get 'bookings/:id', to: "bookings#show", as: :booking
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
