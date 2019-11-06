@@ -7,7 +7,9 @@ def create
   if @passenger.save
      redirect_to booking_path(@passenger.booking)
   else
+
   render 'bookings/show'
+
     end
   end
 
