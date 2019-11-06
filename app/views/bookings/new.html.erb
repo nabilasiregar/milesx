@@ -11,6 +11,15 @@
       <%= f.input :departure_date %>
       <%= f.input :return_date %>
 
+      <div class="d-flex justify-content-center">
+        <div class="form-group w-50 mr-5">
+          <label for="departure" style="color: white;">Departure Date</label>
+          <input type="text" readonly="readonly" name="start_date" class="form-control" id="depart-date">
+        </div>
+        <div class="form-group w-50">
+          <label for="arrival" style="color: white;">Arrival Date</label>
+          <input type="text" readonly="readonly" name="end_date" class="form-control" id="return-date">
+
       <div class="listing-submit-row">
       <%= f.button :submit, "Book you flight.", class: "btn-listing" %>
       </div>
