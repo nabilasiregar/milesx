@@ -1,0 +1,22 @@
+<h1>Bookings#create</h1>
+<p>Find me in app/views/bookings/create.html.erb</p>
+
+
+<div class="listing-container">
+  <div class="col-md-6 offset-md-3">
+    <div class="listing-row">
+    <h1 id="listing-title">Book you flight.</h1>
+    <%= simple_form_for(@booking) do |f|%>
+    <div class="row-listing-form">
+      <%= f.input :departure %>
+      <%= f.input :arrival %>
+      <%= f.input :departure_date %>
+      <%= f.input :return_date %>
+      <div class="listing-submit-row">
+      <%= f.button :submit, "Book you flight.", class: "btn-listing" %>
+      </div>
+   </div>
+  <% end %>
+    </div>
+  </div>
+</div>

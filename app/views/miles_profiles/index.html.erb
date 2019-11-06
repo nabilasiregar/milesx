@@ -1,5 +1,15 @@
 <h1>MilesProfiles#index</h1>
 <p>Find me in app/views/miles_profiles/index.html.erb</p>
+
+
+<% @results.each do |result| %>
+  <p><%= result["prog_name"] %></p>
+  <% result['rates'].each do |rate| %>
+      <p><%= rate['label'] %></p>
+      <p><%= rate['rate'] %></p>
+      <p><%= rate['connection'] %></p>
+  <% end %>
+<% end %>
 <%= @programme %>
 <%= @price_economy %>
 <%= @price_business %>
