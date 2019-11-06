@@ -1,0 +1,30 @@
+h1 {
+  color: white;
+}
+
+.card-profile {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 50px;
+  margin: 15px;
+  width: 700px;
+}
+.card-profile-user {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.dash-booking {
+  color: white;
+  display: flex;
+  margin-right: 190px;
+}
+
+#buyer {
+  display: flex;
+  justify-content: space-between;
+}
+

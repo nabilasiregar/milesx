@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :miles_profiles
+  belongs_to :miles_profile
   has_many :payments
   has_many :passengers
   has_many :requests
