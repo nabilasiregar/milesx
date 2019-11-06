@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
     end
   end
 
+
   def new
     @booking = Booking.new
     if user_signed_in?
