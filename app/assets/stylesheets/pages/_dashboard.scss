@@ -1,0 +1,116 @@
+h1 {
+  color: white;
+}
+
+// Buyers tab
+
+.card-profile {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 50px;
+  margin: 15px;
+  width: 700px;
+}
+.card-profile-user {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.dash-booking {
+  color: white;
+  display: flex;
+  margin-right: 190px;
+  flex-direction: column;
+}
+
+.buyer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+th {
+  padding: 25px;
+}
+table, th, td {
+  border: 1px solid white;
+  background-color: #9B979B;
+  color: black;
+}
+
+
+// Sellers tab
+.seller-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.miles-profile-card {
+  color: white;
+  display: flex;
+  border: 1px solid white;
+  padding: 50px;
+  margin: 15px;
+  width: 500px;
+  height: 300px;
+  flex-direction: column;
+}
+
+.miles-profile-card a {
+  border: 1px solid white;
+  width: 60px;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.miles-profile-card a:hover {
+ text-decoration: none;
+ color: red;
+}
+
+.buyer-requests {
+  margin-right: 230px;
+  border: 1px solid white;
+  width: 500px;
+  margin-top: 15px;
+  padding: 40px;
+  height: 300px;
+}
+
+.buyer-requests h4 {
+  color: white;
+}
+
+.buyer-requests p {
+  color: white;
+}
+
+.btn-accept {
+  border: 1px solid black;
+  background-color: green;
+  color: black;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.btn-accept:hover {
+  text-decoration: none;
+  background-color: #2B5E15;
+  color: black;
+}
+.btn-decline {
+  color: black;
+  background-color: red;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.btn-decline:hover {
+  color: black;
+  background-color: #B8060E;
+  text-decoration: none;
+}
