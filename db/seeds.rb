@@ -110,4 +110,12 @@ end
   booking = Booking.create!(user: User.all.sample, departure: "Shanghai",
   arrival: "London", ticket_received: false, departure_date: Date.today + rand(10..20), return_date: Date.today + rand(21..30), miles_profile_id: MilesProfile.all.sample.id)
 end
+
+10.times do
+  Request.create!(
+  confirmed: "pending",
+  booking: Booking.all.sample
+)
+end
+
 puts "Booking created"

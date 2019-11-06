@@ -12,40 +12,58 @@
 
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="buyer" role="tabpanel" aria-labelledby="buyer-tab">
-    <div class="card-profile">
-      <h4>Your profile:</h4>
-      <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-      <%= @user.email %>
-      <%= @user.first_name %>
-      <%= @user.last_name %>
-      <%= @user.phone %>
+    <div class="buyer-container">
+      <div class="card-profile">
+        <h4>Your profile:</h4>
+        <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+        <%= @user.email %><br>
+        <%= @user.first_name %>
+        <%= @user.last_name %><br>
+        <%= @user.phone %>
+      </div>
+      <div class="dash-booking">
+        <h4>Your Bookings:</h4>
+      <table>
+        <tr>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Departure date</th>
+          <th>Return date</th>
+          <th>Amt. of miles</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+          <% @user.bookings.each do |booking| %>
+        <tr>
+          <td><%= booking.departure %></td>
+          <td><%= booking.arrival %></td>
+          <td><%= booking.departure_date %></td>
+          <td><%= booking.return_date %></td>
+          <td><%= booking.amount_of_miles %></td>
+          <td><%= booking.price %>$</td>
+          <td><%= booking.status %><br></td>
+        </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
-    <div class="dash-booking">
-      <h4>Bookings</h4>
-      <% @user.bookings.each do |booking| %>
-      <%= booking.departure %>
-      <%= booking.arrival %>
-      <%= booking.departure_date %>
-      <%= booking.return_date %>
-      <%= booking.amount_of_miles %>
-      <%= booking.price %>
-      <%= booking.status %>
-      <% end %>
-    </div>
-
   </div>
 
+  <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
+    <div class="seller-container">
+      <div class="miles-profile-card">
+        <h4>Miles Profile:</h4>
+        <a href="#">New +</a>
+      </div>
+      <div class="buyer-requests">
+        <h4>Requests:</h4>
+        <% @user.requests.each do |request| %>
+          <p><%= request.confirmed %> <a class="btn-accept" href="#">Accept</a><a class="btn-decline" href="#">Decline</a></p>
+          <% end %>
 
-
-
-
-
-  <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">...</div>
-
-
-
-
-
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -54,9 +72,9 @@
 
 
 
-  <% @user.bookings.filter { |booking| booking.miles_profile.user == @user }.each do |booking| %>
-  <%= booking.price %>
-  <%= booking.status %>
-  <%= booking.amount_of_miles %>
- <% end %>
+ <!--  <#% @user.bookings.filter { |booking| booking.miles_profile.user == @user }.each do |booking| %>
+  <#%= booking.price %>
+  <#%= booking.status %>
+  <#%= booking.amount_of_miles %>
+ <#% end %> -->
 
