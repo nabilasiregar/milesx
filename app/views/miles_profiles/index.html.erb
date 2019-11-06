@@ -1,12 +1,17 @@
-<h1>MilesProfiles#index</h1>
-<p>Find me in app/views/miles_profiles/index.html.erb</p>
+<div class="container">
+  <div class="card"></div>
+<h1>Flights from <%= @departure %> to <%= @arrival %></h1>
 
-
-<% @results.each do |result| %>
-  <p><%= result["prog_name"] %></p>
-  <% result['rates'].each do |rate| %>
-      <p><%= rate['label'] %></p>
-      <p><%= rate['rate'] %></p>
-      <p><%= rate['connection'] %></p>
+<div class="row">
+  <% @results.each do |result| %>
+    <div class="col-4">
+      <div class="flight_options">
+        <p class="text-underline"><%= result["prog_name"] %></p>
+        <% result['rates'].each do |rate| %>
+            <p><%= rate['label'] %>: <%= rate['rate'] %></p>
+            <p><%= rate['connection'] %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
