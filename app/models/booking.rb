@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :miles_profiles
   has_many :payments
   has_many :passengers
-  has_many :requests
+  has_one :request
 
   validates :departure_date, :return_date, presence: true
   validates :departure, presence: true

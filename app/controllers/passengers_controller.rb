@@ -1,9 +1,5 @@
 class PassengersController < ApplicationController
 
-  # def show
-  # end
-  # do we need a show?
-
 def create
   @passenger = passenger.new(passenger_params)
   @booking = Booking.find(params[:booking_id])
@@ -11,7 +7,9 @@ def create
   if @passenger.save
      redirect_to booking_path(@passenger.booking)
   else
-      # render :new ???
+
+  render 'bookings/show'
+
     end
   end
 
