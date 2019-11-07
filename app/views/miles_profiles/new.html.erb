@@ -1,2 +1,20 @@
-<h1>MilesProfiles#new</h1>
-<p>Find me in app/views/miles_profiles/new.html.erb</p>
+<div class="listing-container">
+  <div class="col-md-6 offset-md-3">
+    <div class="listing-row">
+    <h1 id="listing-title">Let's start earning money from extra miles!</h1>
+    <%= simple_form_for(@miles_profile) do |m|%>
+    <div class="row-listing-form">
+      <p>FQ Programme</p>
+      <%= m.input :programme, placeholder: "e.g. KrisFlyer" %>
+      <p>How many miles do you want to list?</p>
+      <%= m.input :amount, placeholder: "e.g. 100000 miles" %>
+      <p>You are responsible for choosing the miles price.</p>
+      <%= m.input :price, placeholder: "price is per 1000 miles" %>
+      <div class="listing-submit-row">
+      <%= m.button :submit, class: "btn-listing" %>
+      </div>
+   </div>
+  <% end %>
+    </div>
+  </div>
+</div>

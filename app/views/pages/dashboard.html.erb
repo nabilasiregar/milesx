@@ -52,8 +52,12 @@
   <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
     <div class="seller-container">
       <div class="miles-profile-card">
+       <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
         <h4>Miles Profile:</h4>
-        <a href="#">New +</a>
+        <p style="color: black;"><%= @miles_profile.programme %></p>
+        <p style="color: black;"><%= @miles_profile.amount %> Miles</p>
+        <p style="color: black;">$<%= @miles_profile.price %> /1000 miles</p>
+        <button><%= link_to "Edit your Miles", edit_miles_profile_path(@miles_profile.id), class:"submit-btn" %></button>
       </div>
       <div class="buyer-requests">
         <h4>Requests:</h4>

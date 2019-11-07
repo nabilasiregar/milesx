@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @miles_profile = current_user.miles_profile
   end
 
   def accept_booking
