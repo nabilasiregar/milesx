@@ -1,8 +1,10 @@
 
 <!-- <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://source.unsplash.com/GVV669GVYjo" uk-img>
 </div> -->
+
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
   <div>
+    <% @results.each do |result| %>
     <div class="container-search">
       <div class="uk-flex uk-flex-center">
       <div class="uk-card uk-card-default uk-width-1-2@m">
@@ -21,33 +23,36 @@
               <div id="search-result-card">
                   <div class="destination-container">
                     <div class="dest-dep">
-                      <p>From: <%= @departure %></p>
+
                     </div>
                     <div class="dest-arrow">
                     </div>
                     <div class="dest-arr">
-                      <p>To: <%= @arrival %></p>
+
                     </div>
                   </div>
 
                   <div class="fqp">
-                  <p>FQ Programme: <%= @programme %></p>
+                    <p><%= result["prog_name"] %></p>
                   </div>
       <!--       <this is where price card start> -->
+                  <% result['rates'].each do |rate| %>
                   <div class="price-cards">
                     <div class="price-cards eco">
-                      <p>Economy</p>
-                      <p><%= @price_economy %> miles</p>
+                      <p><%= rate['label'] %></p>
+                      <p><%= rate['rate'] %></p>
+                      <p><%= rate['connection'] %></p>
                     </div>
                     <div class="price-cards bus">
                       <p>Business</p>
-                      <p><%= @price_business %> miles</p>
+                      <p> miles</p>
                     </div>
                     <div class="price-cards fst">
                       <p>First Class</p>
-                      <p><%= @price_first %> miles</p>
+                      <p> miles</p>
                     </div>
                   </div>
+                  <% end %>
           <!-- this is where price card ends -->
               </div>
           <div class="uk-card-footer">
@@ -56,15 +61,8 @@
         </div>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
 
-<% @results.each do |result| %>
-  <p><%= result["prog_name"] %></p>
-  <% result['rates'].each do |rate| %>
-      <p><%= rate['label'] %></p>
-      <p><%= rate['rate'] %></p>
-      <p><%= rate['connection'] %></p>
-  <% end %>
-<% end %>
 
