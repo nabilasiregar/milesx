@@ -13,3 +13,6 @@
 @import "pages/index";
 @import 'flatpickr/dist/themes/dark';
 
+.content {
+  min-height: calc(100vh - 100px);
+}
