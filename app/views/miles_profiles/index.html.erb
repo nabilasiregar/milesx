@@ -1,67 +1,55 @@
-
-<!-- <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://source.unsplash.com/GVV669GVYjo" uk-img>
-</div> -->
-
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
   <div>
-    <% @results.each do |result| %>
-    <div class="container-search">
-      <div class="uk-flex uk-flex-center">
-      <div class="uk-card uk-card-default uk-width-1-2@m">
-          <div class="uk-card-header">
-              <div class="uk-grid-small uk-flex-middle" uk-grid>
-                  <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="https://source.unsplash.com/ZHvM3XIOHoE">
-                  </div>
-                  <div class="uk-width-expand">
-                      <h3 class="uk-card-title uk-margin-remove-bottom">Paul</h3>
-                      <p class="uk-text-meta uk-margin-remove-top">KrisFlyer 200,000 miles</p>
+    <div class="uk-grid-column-small uk-grid-row-large" uk-grid>
+      <% @results.each do |result| %>
+      <div class="uk-card uk-card-default" style="margin: 50px; width: 35%;">
+        <div class="uk-animation-toggle" tabindex="0">
+          <div class="uk-animation-fade">
+              <div class="uk-card-header">
+                  <div class="uk-grid-small uk-flex-middle" uk-grid>
+                      <div class="uk-width-auto">
+                          <img class="uk-border-circle" width="40" height="40" src="https://source.unsplash.com/ZHvM3XIOHoE">
+                      </div>
+                      <div class="uk-width-expand">
+                          <h3 class="uk-card-title uk-margin-remove-bottom">$1500</h3>
+                          <p class="uk-text-meta uk-margin-remove-top">Paul</p>
+                      </div>
                   </div>
               </div>
-          </div>
-          <div class="uk-card-body">
-              <div id="search-result-card">
-                  <div class="destination-container">
-                    <div class="dest-dep">
-
-                    </div>
-                    <div class="dest-arrow">
-                    </div>
-                    <div class="dest-arr">
-
-                    </div>
-                  </div>
-
+              <div class="uk-card-body">
+                <div class="miles-container">
                   <div class="fqp">
-                    <p><%= result["prog_name"] %></p>
+                    <%= result["prog_name"] %>
                   </div>
-      <!--       <this is where price card start> -->
-                  <% result['rates'].each do |rate| %>
                   <div class="price-cards">
                     <div class="price-cards eco">
-                      <p><%= rate['label'] %></p>
-                      <p><%= rate['rate'] %></p>
-                      <p><%= rate['connection'] %></p>
+                      <p><%= result['rates'][0]['label'].strip %></p>
+                      <p id="miles-pad"><%= result['rates'][0]['rate'].strip %> Miles</p>
                     </div>
                     <div class="price-cards bus">
-                      <p>Business</p>
-                      <p> miles</p>
+                      <p><%= result['rates'][1]['label'].strip %></p>
+                      <p id="miles-pad"><%= result['rates'][1]['rate'].strip %> Miles</p>
                     </div>
+                    <% if result['rates'][2] == nil %>
                     <div class="price-cards fst">
-                      <p>First Class</p>
-                      <p> miles</p>
+                      <p>First class not available</p>
                     </div>
+                    <% else %>
+                    <div class="price-cards fst">
+                      <p><%= result['rates'][2]['label'].strip %></p>
+                      <p id="miles-pad"><%= result['rates'][2]['rate'].strip %> Miles</p>
+                    </div>
+                    <% end %>
                   </div>
-                  <% end %>
-          <!-- this is where price card ends -->
-              </div>
+                </div>
+            </div>
           <div class="uk-card-footer">
             <%= link_to "Select", new_booking_path, class: "uk-button uk-button-text" %>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 

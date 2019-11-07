@@ -1,38 +1,42 @@
-
-
-#search-result-card {
-  display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 2;
+.miles-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
 }
 
 .fqp {
-  grid-column: col 3 / span 2;
-  grid-row: 1;
+  padding: 0px 0px 20px 10px;
 }
 
 .price-cards {
-  grid-column: col 1 ;
-  grid-row: row 2;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  p {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
 
-.price-cards.eco {
-  grid-column: 1;
-  grid-row: 1;
+.price-cards.fst {
+  display: flex;
+  p {
+    padding: 10px 0px 10px 10px;
+  }
+}
+.price-cards.eco, .price-cards.bus {
+  display: flex;
+  padding: 10px 0px 10px 10px;
 }
 
-.price-cards.bus {
-  grid-column: 2;
-  grid-row: 1;
+p#miles-pad {
+  padding-left: 10px;
 }
 
-.price-cards.fst{
-  grid-column: 3;
-  grid-row: 1;
-}
 
 .container-search {
   background-image: url(https://source.unsplash.com/BUa1LDeT8PI/1600x900);
