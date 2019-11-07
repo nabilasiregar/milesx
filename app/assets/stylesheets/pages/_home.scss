@@ -1,8 +1,4 @@
 // Specific CSS for your home-page
-body {
- background-color: #141314;
-}
-
 .home-video {
  width: 100vw;
  height: 100vh;
@@ -14,26 +10,102 @@ body {
  z-index: -2;
 }
 
-.text-center {
-  background-color: #E6E4E6;
-}
-.card-text {
-  font-family: 'Open Sans', sans-serif;
+body {
+  background-color: transparent;
 }
 
-.card-title {
-  font-family: 'Raleway', sans-serif;
+.flight-search-form {
+  display: flex;
+  flex-direction: column;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+    button {
+      border-radius: 5px;
+    }
+}
+
+button.black-btn.home-btn {
+  margin-top: 23px;
+  padding: 20px;
+  width: 230px;
+
+}
+
+.trip-type-selection button {
+  background: none;
+  border: none;
+  color: $light-gray;
+  padding: 0;
+  font-family: Quicksand;
+  font-weight: 600;
+  width: 85px;
+    &:active {
+      color: white;
+    }
+}
+
+.trip-row {
+  display: flex;
+  flex-grow: 1;
+}
+
+.container-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.input-label {
+  margin-bottom: 0;
+}
+
+.form-control {
+  padding: 30px;
+  width: 200px;
+}
+
+label {
+  height: 20px;
+}
+
+.container-home {
+  padding: 50px;
+}
+
+// .text-center {
+//   background-color: #E6E4E6;
+// }
+.card-text {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+.container-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h4.card-title {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 25px;
+  color: $mint;
 }
 
 .container-content {
- height: 75vh;
+ padding-top: 200px;
 }
 .card-group {
   height: 50vh;
   margin-top: 110px;
 }
 
-.home-header {
+.home-scroll {
   text-align: center;
   padding-top: 30px;
   text-shadow: 2px 2px 4px #000000;
@@ -45,29 +117,25 @@ body {
 }
 
 .text-center {
-  background-color: #141314
+  background-color: #141314;
 }
 .card-body i {
   font-size: 40px;
-}
-.small-home {
-  text-align: center;
-}
-
-.small-home a {
-  border: 1px solid white;
-  color: white;
-  padding: 10px;
-}
-
-.small-home a:hover {
-  border-radius: 5px;
   color: black;
-  background-color: white;
-  text-decoration: none;
-  font-weight: bold;
 }
+
 
 .form-group label {
-  text-shadow: 2px 2px 4px #000000;
+  color: white;
+  font-family: Quicksand;
+  font-weight: 600;
+}
+
+.home-card {
+  background-color: transparent;
+}
+
+.card.text-center.home-card {
+  border-radius: 20px;
+  margin: 20px;
 }

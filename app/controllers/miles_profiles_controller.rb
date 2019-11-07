@@ -20,7 +20,7 @@ class MilesProfilesController < ApplicationController
       @programme = json_data['data'][0]['prog_name']
       @price_economy =  json_data['data'][0]['rates'][0]['rate']
       @price_business = json_data['data'][0]['rates'][1]['rate']
-      @price_first = json_data['data'][0]['rates'][2]['rate']
+      # @price_first = json_data['data'][0]['rates'][2]['rate']
 
       @departure = json_data['origin']
       @arrival = json_data['destination']

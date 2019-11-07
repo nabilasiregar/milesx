@@ -1,8 +1,60 @@
-<h1>MilesProfiles#index</h1>
-<p>Find me in app/views/miles_profiles/index.html.erb</p>
-<%= @programme %>
-<%= @price_economy %>
-<%= @price_business %>
-<%= @price_first %>
-<%= @departure %>
-<%= @arrival %>
+<!-- <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://source.unsplash.com/GVV669GVYjo" uk-img>
+</div> -->
+<div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
+  <div>
+    <div class="container-search">
+      <div class="uk-flex uk-flex-center">
+      <div class="uk-card uk-card-default uk-width-1-2@m">
+          <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                  <div class="uk-width-auto">
+                      <img class="uk-border-circle" width="40" height="40" src="https://source.unsplash.com/ZHvM3XIOHoE">
+                  </div>
+                  <div class="uk-width-expand">
+                      <h3 class="uk-card-title uk-margin-remove-bottom">Paul</h3>
+                      <p class="uk-text-meta uk-margin-remove-top">KrisFlyer 200,000 miles</p>
+                  </div>
+              </div>
+          </div>
+          <div class="uk-card-body">
+              <div id="search-result-card">
+                  <div class="destination-container">
+                    <div class="dest-dep">
+                      <p>From: <%= @departure %></p>
+                    </div>
+                    <div class="dest-arrow">
+                    </div>
+                    <div class="dest-arr">
+                      <p>To: <%= @arrival %></p>
+                    </div>
+                  </div>
+
+                  <div class="fqp">
+                  <p>FQ Programme: <%= @programme %></p>
+                  </div>
+      <!--       <this is where price card start> -->
+                  <div class="price-cards">
+                    <div class="price-cards eco">
+                      <p>Economy</p>
+                      <p><%= @price_economy %> miles</p>
+                    </div>
+                    <div class="price-cards bus">
+                      <p>Business</p>
+                      <p><%= @price_business %> miles</p>
+                    </div>
+                    <div class="price-cards fst">
+                      <p>First Class</p>
+                      <p><%= @price_first %> miles</p>
+                    </div>
+                  </div>
+          <!-- this is where price card ends -->
+              </div>
+          <div class="uk-card-footer">
+              <a href="#" class="uk-button uk-button-text">Select</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

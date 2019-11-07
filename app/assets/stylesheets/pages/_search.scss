@@ -1,0 +1,39 @@
+
+
+#search-result-card {
+  display: grid;
+  grid-template-columns: 3;
+  grid-template-rows: 2;
+}
+
+.fqp {
+  grid-column: col 3 / span 2;
+  grid-row: 1;
+}
+
+.price-cards {
+  grid-column: col 1 ;
+  grid-row: row 2;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.price-cards.eco {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.price-cards.bus {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.price-cards.fst{
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.container-search {
+  background-image: url(https://source.unsplash.com/BUa1LDeT8PI/1600x900);
+}

@@ -1,59 +1,62 @@
+<%= video_tag 'homepage.mp4', class:"home-video", autoplay:true, muted:true, loop:true %>
+<div class="container-page">
+    <div class="container-home">
+      <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto" action="/miles_profiles">
+          <div class="d-flex justify-content-center">
+            <div class="flight-search-form ui-front">
+              <div class="trip-type-selection">
+                <button type="button" class="trip-type active-trip">Round Trip</button>
+                <button type="button" class="trip-type">One Way</button>
+              </div>
+              <div class="form-row form-group w-30">
+                <div class="trip-row">
+                  <label for="departure" class="input-label location-input">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" placeholder="From" class="form-control" id="depart">
+                  </label>
+                  <label for="arrival" class="input-label location-input">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" placeholder="To"  class="form-control" id="arrival">
+                  </label>
+                  <label class="input-label travellers-input-label">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" placeholder="Travellers" class="form-control" id="travellers">
+                  </label>
+                  <button type="submit" class="black-btn home-btn">Search Flights</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
 
-<%= video_tag 'plane.mp4', class:"home-video", autoplay:true, muted:true, loop:true %>
-<div class="container-home">
-    <h1>MilesX</h1>
-    <p>Make better use of your airmiles</p>
-    <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto" action="/miles_profiles">
-      <div class="d-flex justify-content-center">
-        <div class="form-group w-50 mr-5">
-          <label for="departure" style="color: white;">From</label>
-          <input type="text" name="departure" class="form-control" id="depart">
+  <div class="container-content">
+    <div class="home-section home-section-2">
+      <h2 class="home-scroll"><a  href="#my-id" uk-scroll><i class="fas fa-angle-double-up" style="color: white; font-size: 40px; opacity: 0.5;"></i></a></h2>
+        <div class="card-group">
+        <div class="card text-center home-card">
+          <div class="card-body">
+            <h4 class="card-title">List the miles you have Available</h4>
+            <p class="card-text">List any unused airline miles you want to make some extra cash on!</p>
+            <i class="fas fa-list-ol orange"></i>
+          </div>
         </div>
-        <div class="form-group w-50">
-          <label for="arrival" style="color: white;">To</label>
-          <input type="text" name="arrival" class="form-control" id="arrival">
+        <div class="card text-center home-card">
+          <div class="card-body">
+            <h4 class="card-title">Wait for a flight request</h4>
+            <p class="card-text">Buyers will send you a request for the specifc flight that they are looking to purchase</p>
+            <i class="fas fa-clock orange"></i>
+          </div>
         </div>
-
-      </div>
-      <button type="submit" id="submit-button" class="btn btn-dark d-flex justify-content-center mx-auto">Search Flights</button>
-    </form>
-  </div>
-<br>
-<br>
-<br>
-<div class="container-content">
-  <div class="home-section home-section-2">
-    <h2 class="home-header">How it works<br><i class="fas fa-arrow-down orange"></i></h2>
-      <div class="card-group">
-      <div class="card text-center home-card">
-        <div class="card-body">
-          <h4 class="card-title">List the miles you have Availible</h4>
-          <p class="card-text">List any unused airline miles you want to make some extra cash on!</p>
-          <i class="fas fa-list-ol orange"></i>
+        <div class="card text-center home-card">
+          <div class="card-body">
+            <h4 class="card-title">Buy the requested ticket and get paid!</h4>
+            <p class="card-text">When the ticket holder reaches there destination, you get paid!</p>
+            <i class="fas fa-dollar-sign orange"></i>
+          </div>
         </div>
-      </div>
-      <div class="card text-center home-card">
-        <div class="card-body">
-          <h4 class="card-title">Wait for a flight request</h4>
-          <p class="card-text">Buyers will send you a request for the specifc flight that they are looking to purchase</p>
-          <i class="fas fa-clock orange"></i>
-        </div>
-      </div>
-      <div class="card text-center home-card">
-        <div class="card-body">
-          <h4 class="card-title">Buy the requested ticket and get paid!</h4>
-          <p class="card-text">When the ticket holder reaches there destination, you get paid!</p>
-          <i class="fas fa-dollar-sign orange"></i>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-<br>
-<br>
-<br>
-<div class="small-home">
-  <a href="#">Sign up now!</a>
 </div>
-
 
