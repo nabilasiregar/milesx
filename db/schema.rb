@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_080638) do
+ActiveRecord::Schema.define(version: 2019_11_07_074859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_080638) do
     t.date "return_date"
     t.integer "price"
     t.string "status"
-    t.boolean "ticket_received"
+    t.boolean "ticket_received", default: false
     t.integer "amount_of_miles"
     t.bigint "user_id"
     t.bigint "miles_profile_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_080638) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["user_id"], name: "index_miles_profiles_on_user_id"
   end
 
@@ -83,7 +84,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_080638) do
     t.integer "success_rate"
     t.string "first_name"
     t.string "last_name"
-    t.integer "phone"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
