@@ -61,19 +61,22 @@
       </div>
       <div class="buyer-requests">
         <h4>Requests:</h4>
-        <% @user.requests.each do |request| %>
-          <%= request.confirmed %>
-            <%= request.booking.price %>
-            <%= request.booking.amount_of_miles %>
-            <%= request.booking.departure %>
-            <%= request.booking.arrival %>
-            <%= request.booking.departure_date %>
-            <%= request.booking.return_date %>
-            <% if request.confirmed == "pending" %>
-              <%= link_to "Accept", accept_booking_path(request), method: :post  %>
-                <% link_to "Decline", decline_booking_path(request), method: :post %>
-            <% elsif request.confirmed == "confirmed" %>
-            <%= link_to "see full booking", booking_path(request.booking)  %>
+
+        <% if @user.requests.any? %>
+          <% @user.requests.each do |request| %>
+            <%= request.confirmed %>
+              <%= request.booking.price %>
+              <%= request.booking.amount_of_miles %>
+              <%= request.booking.departure %>
+              <%= request.booking.arrival %>
+              <%= request.booking.departure_date %>
+              <%= request.booking.return_date %>
+              <% if request.confirmed == "pending" %>
+                <%= link_to "Accept", accept_booking_path(request), method: :post  %>
+                  <% link_to "Decline", decline_booking_path(request), method: :post %>
+              <% elsif request.confirmed == "confirmed" %>
+              <%= link_to "see full booking", booking_path(request.booking)  %>
+              <% end %>
             <% end %>
           <% end %>
 
