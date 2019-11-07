@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/create'
-  get 'bookings/new'
-  get 'miles_profiles/index'
-  get 'miles_profiles/show'
-  get 'miles_profiles/new'
-  get 'miles_profiles/create'
-  get 'miles_profiles/edit'
-  get 'miles_profiles/update'
-  get 'miles_profiles/destroy'
+  post "accept_booking/:id", to: "pages#accept_booking", as: :accept_booking
+  post "decline_booking/:id", to: "pages#decline_booking", as: :decline_booking
   devise_for :users
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard", as: :dashboard
@@ -21,5 +12,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [:new, :create] do
     resources :passengers, only: [:create]
   end
+
+  get 'bookings/:id', to: "bookings#show", as: :booking
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

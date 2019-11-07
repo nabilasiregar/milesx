@@ -1,3 +1,4 @@
+
 <!-- <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://source.unsplash.com/GVV669GVYjo" uk-img>
 </div> -->
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
@@ -57,4 +58,13 @@
     </div>
   </div>
 </div>
+
+<% @results.each do |result| %>
+  <p><%= result["prog_name"] %></p>
+  <% result['rates'].each do |rate| %>
+      <p><%= rate['label'] %></p>
+      <p><%= rate['rate'] %></p>
+      <p><%= rate['connection'] %></p>
+  <% end %>
+<% end %>
 

@@ -7,7 +7,7 @@ class CreateBookings < ActiveRecord::Migration[5.2]
       t.date :return_date
       t.integer :price
       t.string :status
-      t.boolean :ticket_received
+      t.boolean :ticket_received, default: false
       t.integer :amount_of_miles
       t.references :user, foreign_key: true
       t.references :miles_profile, foreign_key: true
