@@ -1,6 +1,11 @@
+
 <div class="uk-position-relative">
     <div class="uk-position-top">
+        <% if root_path == '/' %>
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <% else %>
+          <nav class="uk-navbar-container" uk-navbar>
+        <% end %>
             <div class="uk-navbar-left">
               <a class="uk-navbar-item uk-logo"><%= link_to "MilesX", root_path %></a>
             </div>
