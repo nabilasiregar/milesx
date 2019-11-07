@@ -1,11 +1,6 @@
-
 <div class="uk-position-relative">
     <div class="uk-position-top">
-        <% if root_path == '/' %>
         <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-        <% else %>
-          <nav class="uk-navbar-container" uk-navbar>
-        <% end %>
             <div class="uk-navbar-left">
               <a class="uk-navbar-item uk-logo"><%= link_to "MilesX", root_path %></a>
             </div>
@@ -28,14 +23,15 @@
                 </ul>
             </div>
             <% else %>
-            <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav">
-                <li><%= link_to "Log In", new_user_session_path %></li>
-                <li><%= link_to "Sign Up", new_user_registration_path %></li>
-              </ul>
-            </div>
-            <% end %>
-        </nav>
+              <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                  <li><%= link_to "Log In", new_user_session_path %></li>
+                  <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                </ul>
+              </div>
+              <% end %>
+          </nav>
     </div>
 </div>
+
 
