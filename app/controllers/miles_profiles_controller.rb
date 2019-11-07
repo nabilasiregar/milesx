@@ -27,7 +27,7 @@ class MilesProfilesController < ApplicationController
   end
 
   def new
-    @miles_profile = Miles_profile.new
+    @miles_profile = MilesProfile.new
     if user_signed_in?
       if current_user.present?
       else

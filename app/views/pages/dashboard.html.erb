@@ -58,6 +58,7 @@
       <div class="buyer-requests">
         <h4>Requests:</h4>
         <% @user.requests.each do |request| %>
+        <% if request %>
           <%= request.confirmed %>
             <%= request.booking.price %>
             <%= request.booking.amount_of_miles %>
@@ -72,7 +73,7 @@
             <%= link_to "see full booking", booking_path(request.booking)  %>
             <% end %>
           <% end %>
-
+        <% end %>
       </div>
     </div>
   </div>
