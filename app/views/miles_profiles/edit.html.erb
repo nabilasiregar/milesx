@@ -7,9 +7,12 @@
     <h2>What changes do you want to make?</h2>
     <%= simple_form_for (@miles_profile) do |f| %>
       <div class="col-xs-12 col-sm-4-offset-3">
-      <%= f.input :Programme %>
-      <%= f.input :Amount %>
-      <%= f.input :Price %>
+      <p>FQ Programme</p>
+      <%= f.input :programme, placeholder: "Enter program name here" %>
+      <p>How many miles do you want to list?</p>
+      <%= f.input :amount, placeholder:"ex: 10000"%>
+      <p>You are responsible for choosing the miles price.</p>
+      <%= f.input :price, placeholder: "Price is per 1000 miles" %>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
       </div>
     <% end %>
