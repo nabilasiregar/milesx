@@ -136,6 +136,7 @@
 }
 
 .footer-contact__address {
+  margin: 2.3em 0 0;
   font-style:normal;
   -webkit-flex-basis:auto;
   -ms-flex-preferred-size:auto;
@@ -143,7 +144,9 @@
   font-weight:300;
   color:white;
   font-size:14px;
-  line-height:22px}
+  line-height:22px;
+
+}
 
   .footer-social {display:-webkit-box;
     display:-webkit-flex;
