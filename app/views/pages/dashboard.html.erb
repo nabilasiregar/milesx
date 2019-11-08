@@ -16,91 +16,97 @@
       <div class="card-profile">
         <h4>Your profile:</h4>
         <% if current_user.photo.blank? %>
-          <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
+        <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
         <% else %>
-          <%= cl_image_tag @user.photo, class: "card-profile-user" %>
+        <%= cl_image_tag @user.photo, class: "card-profile-user" %>
         <% end %>
         <%= @user.email %><br>
         <%= @user.first_name %>
         <%= @user.last_name %><br>
         <%= @user.phone %>
-        <%= link_to "Edit profile", edit_user_registration_path %>
+        <%= link_to "Edit profile", edit_user_registration_path, class: 'edit-profile' %>
       </div>
       <div class="dash-booking">
         <h4>Your Bookings:</h4>
-      <table>
-        <tr>
-          <th>Departure</th>
-          <th>Arrival</th>
-          <th>Departure date</th>
-          <th>Return date</th>
-          <th>Amt. of miles</th>
-          <th>Price</th>
-          <th>Status</th>
-        </tr>
+        <table>
+          <tr>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Departure date</th>
+            <th>Return date</th>
+            <th>Amt. of miles</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
           <% @user.bookings.each do |booking| %>
-        <tr>
-          <td><%= booking.departure %></td>
-          <td><%= booking.arrival %></td>
-          <td><%= booking.departure_date %></td>
-          <td><%= booking.return_date %></td>
-          <td><%= booking.amount_of_miles %></td>
-          <td><%= booking.price %>$</td>
-          <td><%= booking.status %><br></td>
-        </tr>
+          <tr>
+            <td><%= booking.departure %></td>
+            <td><%= booking.arrival %></td>
+            <td><%= booking.departure_date %></td>
+            <td><%= booking.return_date %></td>
+            <td><%= booking.amount_of_miles %></td>
+            <td><%= booking.price %>$</td>
+            <td><%= booking.status %><br></td>
+          </tr>
           <% end %>
         </table>
       </div>
     </div>
   </div>
 
-<% if @miles_profile %>
+  <% if @miles_profile %>
   <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
     <div class="seller-container">
       <div class="miles-profile-card">
        <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-        <h4>Miles Profile:</h4>
+       <h4>Miles Profile:</h4>
+       <div class="miles-profile-info">
         <p style="color: black;"><%= @miles_profile.programme %></p>
         <p style="color: black;"><%= @miles_profile.amount %> Miles</p>
         <p style="color: black;">$<%= @miles_profile.price %> /1000 miles</p>
-        <button><%= link_to "Edit your Miles", edit_miles_profile_path(@miles_profile.id), class:"submit-btn" %></button>
-      </div>
-      <div class="buyer-requests">
-        <h4>Requests:</h4>
-
-        <% if @user.requests.any? %>
-          <% @user.requests.each do |request| %>
-            <%= request.confirmed %>
-              <%= request.booking.price %>
-              <%= request.booking.amount_of_miles %>
-              <%= request.booking.departure %>
-              <%= request.booking.arrival %>
-              <%= request.booking.departure_date %>
-              <%= request.booking.return_date %>
-              <% if request.confirmed == "pending" %>
-                <%= link_to "Accept", accept_booking_path(request), method: :post  %>
-                  <% link_to "Decline", decline_booking_path(request), method: :post %>
-              <% elsif request.confirmed == "confirmed" %>
-              <%= link_to "see full booking", booking_path(request.booking)  %>
-              <% end %>
-            <% end %>
-          <% end %>
-
+        <%= link_to "Edit Miles", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
       </div>
     </div>
-  </div>
-  <% end %>
-</div>
+    <div class="buyer-requests">
+      <h4>Requests:</h4>
+      <table class="req-table">
+        <tr>
+          <th>Dep. City</th>
+          <th>Arr. City</th>
+          <th>Departure date</th>
+          <th>Return date</th>
+          <th>Amt. of miles</th>
+          <th>Price</th>
+          <th>Confirmation</th>
+          <th>See booking</th>
+        </tr>
+
+        <% if @user.requests.any? %>
+        <% @user.requests.each do |request| %>
+        <tr>
+          <td><%= request.booking.departure %></td>
+          <td><%= request.booking.arrival %></td>
+          <td><%= request.booking.departure_date %></td>
+          <td><%= request.booking.return_date %></td>
+          <td><%= request.booking.amount_of_miles %></td>
+          <td><%= request.booking.price %></td>
+          <td><%= request.confirmed %>
+            <% if request.confirmed == "pending" %>
+            <%= link_to "Accept", accept_booking_path(request), method: :post  %>
+            <% link_to "Decline", decline_booking_path(request), method: :post %>
+            <% elsif request.confirmed == "confirmed" %></td>
+            <td><%= link_to "see full booking", booking_path(request.booking), class: 'btn-see-booking'  %></td>
+            <tr>
+              <% end %>
+              <% end %>
+              <% end %>
+            </table>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
 
-
-
-
-
-
- <!--  <#% @user.bookings.filter { |booking| booking.miles_profile.user == @user }.each do |booking| %>
-  <#%= booking.price %>
-  <#%= booking.status %>
-  <#%= booking.amount_of_miles %>
- <#% end %> -->
 
