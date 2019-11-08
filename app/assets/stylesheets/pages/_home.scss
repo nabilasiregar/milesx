@@ -67,7 +67,7 @@ button.black-btn.home-btn {
   width: 85px;
   color: white;
     &:active {
-      color: white;
+      color: black;
 
     }
 }
@@ -124,8 +124,8 @@ h4.card-title {
   color: white;
 }
 
-.container-content {
- // padding-top: 200px;
+.content {
+  padding: 0 !important;
 }
 .card-group {
   margin: 5% 0px;
