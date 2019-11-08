@@ -1,12 +1,14 @@
 
 
-
-<p>flight number: <%= @booking.flight_number %></p>
-<p>departure: <%= @booking.departure %></p>
-<p>arrival: <%= @booking.arrival %></p>
-<p>departure_date: <%= @booking.departure_date %></p>
-<p>return_date: <%= @booking.return_date %></p>
-<p>price: <%= @booking.price %></p>
-<p>status: <%= @booking.status %> </p>
-<p>ticket_received: <%= @booking.ticket_received %></p>
-<p>amount_of_miles: <%= @booking.amount_of_miles %></p>
+<div class="container-booking-show">
+  <h2>User booking information:</h2>
+  <p><strong>Flight number:</strong> <%= @booking.flight_number %></p>
+  <p><strong>Departure:</strong> <%= @booking.departure %></p>
+  <p><strong>Arrival:</strong> <%= @booking.arrival %></p>
+  <p><strong>Departure Date:</strong> <%= @booking.departure_date %></p>
+  <p><strong>Return Date:</strong> <%= @booking.return_date %></p>
+  <p><strong>Price:</strong> <%= @booking.price %> $</p>
+  <p><strong>Status:</strong> <%= @booking.status %> </p>
+  <p><strong>Ticket Received:</strong> <%= @booking.ticket_received %></p>
+  <p><strong>Amount of miles:</strong> <%= @booking.amount_of_miles %> miles required</p>
+</div>
