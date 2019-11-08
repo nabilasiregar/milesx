@@ -1,9 +1,9 @@
-.nav-css {
+.nav-css, .nav2-css {
   font-family: Quicksand;
   font-weight: 600;
 }
 
-a.nav-css, .uk-navbar-nav>li>a {
+a.nav-css {
   color: white !important;
   text-transform: none !important;
     &:hover {
@@ -15,3 +15,10 @@ a.nav-css, .uk-navbar-nav>li>a {
   font-family: Montserrat !important;
 }
 
+a.nav2-css {
+  color: black !important;
+  text-transform: none !important;
+    &:hover {
+      color: white !important;
+    }
+}
