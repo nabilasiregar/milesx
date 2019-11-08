@@ -1,35 +1,32 @@
-<div class="uk-position-relative">
-    <div class="uk-position-top">
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-navbar-left">
-              <a class="uk-navbar-item uk-logo"><%= link_to "MilesX", root_path %></a>
-            </div>
-            <% if user_signed_in? %>
-            <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav">
-                    <li><%= link_to "Sell Miles", new_miles_profile_path, class:"nav2-css" %></li>
-                    <li><a class="nav2-css">Explore</a></li>
-                    <li>
-                        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><%= link_to "Dashboard", dashboard_path %></li>
-                                <li><%= link_to "My Booking", dashboard_path %></li>
-                                <li class="uk-nav-divider"></li>
-                                <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <% else %>
-              <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                  <li><%= link_to "Log In", new_user_session_path %></li>
-                  <li><%= link_to "Sign Up", new_user_registration_path %></li>
-                </ul>
-              </div>
-              <% end %>
-          </nav>
+<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+    <div class="uk-navbar-left">
+      <a class="uk-navbar-item uk-logo"><%= link_to "MilesX", root_path %></a>
     </div>
-</div>
+    <% if user_signed_in? %>
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
+            <li><%= link_to "Sell Miles", new_miles_profile_path, class:"nav2-css" %></li>
+            <li><a class="nav2-css">Explore</a></li>
+            <li>
+                <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><%= link_to "Dashboard", dashboard_path %></li>
+                        <li><%= link_to "My Booking", dashboard_path %></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <% else %>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        </ul>
+      </div>
+      <% end %>
+  </nav>
+
