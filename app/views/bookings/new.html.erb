@@ -1,47 +1,47 @@
-<div style="background-color: gray">
+<div style="background-color: white">
   <div class="listing-container" style="color: black">
     <div class="col-md-6 offset-md-3">
       <div class="listing-row">
-        <h1 id="listing-title">Flight Details</h1>
+        <h1 id="listing-title">Flight Information</h1>
         <div class="row-listing-form">
         <%= simple_form_for(@booking) do |f|%>
           <div class="d-flex justify-content-center">
             <div class="form-group w-50 mr-5">
               <label for="departure" style="color: black;">Departure Date</label>
-              <input type="text" readonly="readonly" name="departure_date" class="form-control" id="depart-date">
+              <input type="text" readonly="readonly" name="departure_date" class="form-control booking-form" id="depart-date">
             </div>
             <div class="form-group w-50">
               <label for="arrival" style="color: black;">Arrival Date</label>
-              <input type="text" readonly="readonly" name="return_date" class="form-control" id="return-date">
+              <input type="text" readonly="readonly" name="return_date" class="form-control booking-form" id="return-date">
             </div>
           </div>
-          <%= f.input :flight_number %>
-          <%= f.input :class %>
-          <%= f.input :departure %>
-          <%= f.input :arrival %>
+          <%= f.input :flight_number, input_html: { value: "SQ352", class: 'booking-form' } %>
+          <%= f.input :class, collection: ["First", "Business"], input_html: {value: nil, class: 'booking-form'}  %>
+          <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
+          <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
 
-          <input class="form-control" type="text" placeholder="Read only for flight number, arrival and departure" readonly>
 
           <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
-            <%= o.input :first_name %>
-            <%= o.input :last_name %>
-            <%= o.input :birth_date %>
-            <div class="d-flex justify-content-center">
-            <div class="form-group w-50 mr-5">
-              <label for="departure" style="color: black;">Date of Birth</label>
-              <input type="text" readonly="readonly" name="birth_date" class="form-control" id="birth-date">
-            </div>
+            <label for="passenger_first_name">First / Given name (as in passport)</label>
+            <%= o.input :first_name, label: false, input_html: { class: 'booking-form'} %>
+            <%= o.input :last_name, input_html: { class: 'booking-form'} %>
+            <%= o.input :birth_date, as: :date, html5: true, input_html: {id: 'birth-date', class: 'booking-form'} %>
           <% end %>
           <!-- <input type="text" name="passenger_name">
           <input type="text" name="passenger_name2">
           <input type="text" name="passenger_name3"> -->
-          <div class="listing-submit-row">
-          <%= f.button :submit, "Make Booking Request", class: "btn-listing" %>
+          <div class="d-flex justify-content-end">
+          <%= f.button :submit, "Make Booking Request", class: "btn btn-outline-primary" %>
           </div>
        </div>
     <% end %>
       </div>
     </div>
   </div>
+</div>
+
+
+<div>
+  <div></div>
 </div>

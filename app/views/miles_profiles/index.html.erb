@@ -26,7 +26,7 @@
                   </div>
                   <div class="price-cards">
                     <div class="price-cards eco">
-                      <p><%= result['rates'][0]['label'].strip %></p>
+                      <a class="btn btn-primary"><%= result['rates'][0]['label'].strip %></a>
                       <p id="miles-pad"><%= result['rates'][0]['rate'].strip %> Miles</p>
                     </div>
                     <div class="price-cards bus">
@@ -45,17 +45,14 @@
                     <% end %>
                   </div>
                 </div>
-              </div>
-<!--             this is the end of card content -->
-              <div class="uk-card-footer">
-                <%= link_to "Select", new_booking_path, class: "uk-button uk-button-text" %>
-             </div>
+            </div>
+          <div class="uk-card-footer">
+            <%= link_to "Select", new_booking_path(:departure => @departure, :arrival => @arrival), class: "uk-button uk-button-text" %>
           </div>
         </div>
 <!--       this is the end of animation -->
       </div>
     </div>
-<!--     this is the end of card -->
     <% end %>
   </div>
 </div>
