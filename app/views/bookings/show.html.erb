@@ -12,3 +12,5 @@
   <p><strong>Ticket Received:</strong> <%= @booking.ticket_received %></p>
   <p><strong>Amount of miles:</strong> <%= @booking.amount_of_miles %> miles required</p>
 </div>
+
+<%= link_to "Back to dashboard", dashboard_path(request), class: 'btn-back-to'  %>
