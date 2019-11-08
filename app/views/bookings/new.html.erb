@@ -19,6 +19,9 @@
           <%= f.input :class %>
           <%= f.input :departure %>
           <%= f.input :arrival %>
+
+          <input class="form-control" type="text" placeholder="Read only for flight number, arrival and departure" readonly>
+
           <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
             <%= o.input :first_name %>
