@@ -1,14 +1,14 @@
 <div class="container-page">
     <div class="container-home d-flex justify-content-center align-items-center">
       <%= video_tag 'homepage.mp4', class:"home-video", autoplay:true, muted:true, loop:true %>
-      <form class="d-flex justify-content-center mt-5 flex-column w-50 mx-auto" action="/miles_profiles">
+      <form class="d-flex justify-content-center mt-5 flex-column mx-auto" action="/miles_profiles">
           <div class="d-flex justify-content-center">
             <div class="flight-search-form ui-front">
               <div class="trip-type-selection">
                 <button type="button" class="trip-type active-trip">Round Trip</button>
                 <button type="button" class="trip-type">One Way</button>
               </div>
-              <div class="form-row form-group w-30">
+              <div class="form-row form-group w-100 home-input">
                 <div class="trip-row">
                   <label for="departure" class="input-label location-input">
                     <span class="input-label-text"><br></span>
