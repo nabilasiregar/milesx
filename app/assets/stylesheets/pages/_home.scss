@@ -12,10 +12,12 @@
  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)) !important;
 }
 
+.content {
+  padding: 0 !important;
+}
 .container-content {
   background-image: url('sky.jpg');
   height: 100vh;
-
 }
 
 .container-content:before {
