@@ -13,8 +13,8 @@
                           <img class="uk-border-circle" width="40" height="40" src="https://source.unsplash.com/ZHvM3XIOHoE">
                       </div>
                       <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">$1500</h3>
-                          <p class="uk-text-meta uk-margin-remove-top">Paul</p>
+                          <h3 class="uk-card-title uk-margin-remove-bottom">Kim Jong Trump</h3>
+                          <p class="uk-text-meta uk-margin-remove-top">Verified Seller</p>
                       </div>
                   </div>
               </div>
@@ -24,24 +24,39 @@
                   <div class="fqp">
                     <%= result["prog_name"] %>
                   </div>
-                  <div class="price-cards">
-                    <div class="price-cards eco">
-                      <a class="btn btn-primary"><%= result['rates'][0]['label'].strip %></a>
-                      <p id="miles-pad"><%= result['rates'][0]['rate'].strip %> Miles</p>
-                    </div>
-                    <div class="price-cards bus">
-                      <p><%= result['rates'][1]['label'].strip %></p>
-                      <p id="miles-pad"><%= result['rates'][1]['rate'].strip %> Miles</p>
-                    </div>
                     <% if result['rates'][2] == nil %>
                     <div class="price-cards fst">
                       <p>First class not available</p>
                     </div>
                     <% else %>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                    <div class="price-cards">
+                    <div class="price-cards eco">
+                      <a class="price"><%= result['rates'][0]['label'].strip %></a>
+                      <p id="miles-pad"><%= result['rates'][0]['rate'].strip %> Miles</p>
+                        </div>
+                        </label>
+                          </div>
+                            <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                    <div class="price-cards bus">
+                      <p><%= result['rates'][1]['label'].strip %></p>
+                      <p id="miles-pad"><%= result['rates'][1]['rate'].strip %> Miles</p>
+                    </div>
+                    </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+                      <label class="form-check-label" for="exampleRadios3">
                     <div class="price-cards fst">
                       <p><%= result['rates'][2]['label'].strip %></p>
                       <p id="miles-pad"><%= result['rates'][2]['rate'].strip %> Miles</p>
-                    </div>
+                      </label>
+                      </div>
                     <% end %>
                   </div>
                 </div>
