@@ -2,16 +2,16 @@
   <div class="listing-container" style="color: black">
     <div class="col-md-6 offset-md-3">
       <div class="listing-row">
-        <h1 id="listing-title">Book your flight</h1>
+        <h1 id="listing-title">Flight Details</h1>
         <div class="row-listing-form">
         <%= simple_form_for(@booking) do |f|%>
           <div class="d-flex justify-content-center">
             <div class="form-group w-50 mr-5">
-              <label for="departure" style="color: white;">Departure Date</label>
+              <label for="departure" style="color: black;">Departure Date</label>
               <input type="text" readonly="readonly" name="departure_date" class="form-control" id="depart-date">
             </div>
             <div class="form-group w-50">
-              <label for="arrival" style="color: white;">Arrival Date</label>
+              <label for="arrival" style="color: black;">Arrival Date</label>
               <input type="text" readonly="readonly" name="return_date" class="form-control" id="return-date">
             </div>
           </div>
@@ -19,16 +19,25 @@
           <%= f.input :class %>
           <%= f.input :departure %>
           <%= f.input :arrival %>
+
+          <input class="form-control" type="text" placeholder="Read only for flight number, arrival and departure" readonly>
+
+          <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
             <%= o.input :first_name %>
             <%= o.input :last_name %>
             <%= o.input :birth_date %>
+            <div class="d-flex justify-content-center">
+            <div class="form-group w-50 mr-5">
+              <label for="departure" style="color: black;">Date of Birth</label>
+              <input type="text" readonly="readonly" name="birth_date" class="form-control" id="birth-date">
+            </div>
           <% end %>
           <!-- <input type="text" name="passenger_name">
           <input type="text" name="passenger_name2">
           <input type="text" name="passenger_name3"> -->
           <div class="listing-submit-row">
-          <%= f.button :submit, "Passenger Information.", class: "btn-listing" %>
+          <%= f.button :submit, "Make Booking Request", class: "btn-listing" %>
           </div>
        </div>
     <% end %>
