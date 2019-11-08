@@ -9,6 +9,25 @@
  object-fit: cover;
  top: 0;
  z-index: -2;
+ background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+}
+
+.container-content {
+  background-image: url('sky.jpg');
+}
+
+.container-content:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: -15px;
+  height: 15px;
+  background-image: url(../images/sort-up.png);
+  background-size: 12px 6px;
+  background-repeat: repeat-x;
+
 }
 
 body {
@@ -38,13 +57,13 @@ button.black-btn.home-btn {
 .trip-type-selection button {
   background: none;
   border: none;
-  color: $light-gray;
   padding: 0;
   font-family: Quicksand;
   font-weight: 600;
   width: 85px;
     &:active {
       color: white;
+
     }
 }
 
@@ -83,8 +102,8 @@ label {
 // }
 .card-text {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
-  color: black;
+  font-weight: 600;
+  color: white;
 }
 
 .container-page {
@@ -97,7 +116,7 @@ h4.card-title {
   font-family: 'Montserrat';
   font-weight: 700;
   font-size: 25px;
-  color: $mint;
+  color: white;
 }
 
 .container-content {
@@ -130,7 +149,7 @@ h4.card-title {
 }
 .card-body i {
   font-size: 40px;
-  color: black;
+  color: white;
 }
 
 
@@ -147,4 +166,9 @@ h4.card-title {
 .card.text-center.home-card {
   border-radius: 20px;
   margin: 20px;
+}
+
+.booking-form {
+  padding: 4px 8px;
+  border-radius: 5px;
 }
