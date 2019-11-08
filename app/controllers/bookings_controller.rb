@@ -33,6 +33,8 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @departure = params[:departure]
+    @arrival = params[:arrival]
     @booking = Booking.new
     if user_signed_in?
       if current_user.present?

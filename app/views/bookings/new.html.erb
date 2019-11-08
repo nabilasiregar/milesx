@@ -2,7 +2,7 @@
   <div class="listing-container" style="color: black">
     <div class="col-md-6 offset-md-3">
       <div class="listing-row">
-        <h1 id="listing-title">Flight Details</h1>
+        <h1 id="listing-title">Flight Information</h1>
         <div class="row-listing-form">
         <%= simple_form_for(@booking) do |f|%>
           <div class="d-flex justify-content-center">
@@ -16,11 +16,11 @@
             </div>
           </div>
           <%= f.input :flight_number %>
-          <%= f.input :class %>
-          <%= f.input :departure %>
-          <%= f.input :arrival %>
+          <%= f.input :class, collection: ["First", "Business"], input_html: {value: nil}  %>
+          <%= f.input :departure, input_html: {value: @departure, readonly: true } %>
+          <%= f.input :arrival, input_html: {value: @arrival, readonly: true } %>
 
-          <input class="form-control" type="text" placeholder="Read only for flight number, arrival and departure" readonly>
+          <input class="form-control" type="text" placeholder="SQ352" readonly>
 
           <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
@@ -44,4 +44,9 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div>
+  <div></div>
 </div>

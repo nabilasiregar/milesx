@@ -38,13 +38,13 @@ button.black-btn.home-btn {
 .trip-type-selection button {
   background: none;
   border: none;
-  color: $light-gray;
   padding: 0;
   font-family: Quicksand;
   font-weight: 600;
   width: 85px;
     &:active {
       color: white;
+
     }
 }
 
