@@ -66,6 +66,7 @@ button.black-btn.home-btn {
 
 .form-control {
   padding: 30px;
+  width: 100%;
 }
 
 label {
@@ -106,6 +107,11 @@ h4.card-title {
   margin: 5% 0px;
   // height: 50vh;
   // margin-top: 110px;
+}
+
+.home-input input {
+  padding-right: 40px !important;
+  padding-left: 40px !important;
 }
 
 .home-scroll {

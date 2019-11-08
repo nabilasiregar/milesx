@@ -1,8 +1,10 @@
 <div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
   <div>
-    <div class="uk-grid-column-small uk-grid-row-large" uk-grid>
-      <% @results.each do |result| %>
+    <% @results.each do |result| %>
+    <div class="uk-grid-column-small uk-grid-row-small uk-flex-wrap-stretch" uk-grid>
+<!--       this is the start of card -->
       <div class="uk-card uk-card-default" style="margin: 50px; width: 35%;">
+<!--         this is the start of card animation -->
         <div class="uk-animation-toggle" tabindex="0">
           <div class="uk-animation-fade">
               <div class="uk-card-header">
@@ -16,6 +18,7 @@
                       </div>
                   </div>
               </div>
+  <!--             this is the start of card content -->
               <div class="uk-card-body">
                 <div class="miles-container">
                   <div class="fqp">
@@ -47,9 +50,9 @@
             <%= link_to "Select", new_booking_path(:departure => @departure, :arrival => @arrival), class: "uk-button uk-button-text" %>
           </div>
         </div>
+<!--       this is the end of animation -->
       </div>
     </div>
     <% end %>
   </div>
 </div>
-
