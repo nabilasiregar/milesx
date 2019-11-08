@@ -19,10 +19,16 @@
           <%= f.input :class %>
           <%= f.input :departure %>
           <%= f.input :arrival %>
+          <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
             <%= o.input :first_name %>
             <%= o.input :last_name %>
             <%= o.input :birth_date %>
+            <div class="d-flex justify-content-center">
+            <div class="form-group w-50 mr-5">
+              <label for="departure" style="color: black;">Date of Birth</label>
+              <input type="text" readonly="readonly" name="birth_date" class="form-control" id="birth-date">
+            </div>
           <% end %>
           <!-- <input type="text" name="passenger_name">
           <input type="text" name="passenger_name2">
