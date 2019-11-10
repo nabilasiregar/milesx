@@ -2,7 +2,7 @@
   <div class="listing-container pb-3" style="color: black">
     <div class="col-md-8 offset-md-2">
       <div class="listing-row">
-        <h1 id="listing-title">Flight Information</h1>
+        <h2 id="listing-title" style="color: blue">Flight Information</h2>
         <div class="row-listing-form">
         <%= simple_form_for(@booking) do |f|%>
           <div class="d-flex justify-content-center">
@@ -19,7 +19,7 @@
           <%= f.input :booking_class, input_html: { value: "Business", class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
-          <h1 id="listing-title">Passenger Information</h1>
+          <h2 id="listing-title" style="color: blue">Passenger Information</h2>
           <%= simple_fields_for :passenger do |o| %>
            <div class="form-group w-100">
             <label for="passenger_first_name">First / Given name (as in passport)</label>
@@ -31,7 +31,8 @@
           <!-- <input type="text" name="passenger_name">
           <input type="text" name="passenger_name2">
           <input type="text" name="passenger_name3"> -->
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-between">
+          <%= f.button :submit, "Back to Flight Search", class: "btn btn-outline-primary" %>
           <%= f.button :submit, "Make Booking Request", class: "btn btn-outline-primary" %>
           </div>
        </div>
