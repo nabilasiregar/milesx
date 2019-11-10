@@ -19,6 +19,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'openssl'
+gem 'money-rails'
+gem 'stripe'
+
 
 gem 'webpacker'
 gem 'rest-client'
