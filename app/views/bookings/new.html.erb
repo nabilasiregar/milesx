@@ -16,13 +16,14 @@
             </div>
           </div>
           <%= f.input :flight_number, input_html: { value: "SQ352", class: 'booking-form' } %>
-          <%= f.input :class, input_html: { value: "Business", class: 'booking-form' } %>
+          <%= f.input :booking_class, input_html: { value: "Business", class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
 
 
           <h1 id="listing-title">Passenger Information</h1>
           <%= simple_fields_for :passenger do |o| %>
+           <div class="form-group w-100">
             <label for="passenger_first_name">First / Given name (as in passport)</label>
             <%= o.input :first_name, label: false, input_html: { class: 'booking-form'} %>
             <label for="passenger_last_name">Last name (as in passport)</label>
