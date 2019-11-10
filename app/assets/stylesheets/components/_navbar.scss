@@ -16,15 +16,16 @@ a.nav-css {
 }
 
 a.nav2-css {
-  color: black !important;
+  color: white !important;
   text-transform: none !important;
     &:hover {
-      color: white !important;
+      color: #d7d1c9 !important;
     }
 }
 
 .uk-navbar-container2 {
   background-color: #182940;
+  border-bottom: 5px #c9d1d3;
 }
 
 .our-logo {
@@ -34,6 +35,6 @@ a.nav2-css {
 }
 
 .our-logo:hover {
-  color: white;
+  color: #d7d1c9;
   text-decoration: none;
 }
