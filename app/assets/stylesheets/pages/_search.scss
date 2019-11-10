@@ -1,43 +1,88 @@
-.miles-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-between;
+.card-body {
+  margin-top: 0px;
 }
 
-.fqp {
-  padding: 0px 0px 20px 10px;
-}
-
-.price-cards {
+.form-check-label {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+
+#radio-black {
+  color: black;
+}
+
+label.form-check-label {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.card.text-right {
+  border-style: none;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.card-header {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
-
-  p {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
 }
 
-.price-cards.fst {
+.trip-container {
   display: flex;
-  p {
-    padding: 10px 0px 10px 10px;
-  }
-}
-.price-cards.eco, .price-cards.bus {
-  display: flex;
-  padding: 10px 0px 10px 10px;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-p#miles-pad {
-  padding-left: 10px;
+.filter-box {
+  padding: 30px 40px 30px 40px;
+  border: 1px dashed black;
+  margin: 2em;
 }
+// .miles-container {
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   align-content: space-between;
+// }
+
+// .fqp {
+//   padding: 0px 0px 20px 10px;
+// }
+
+// .price-cards {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+
+//   p {
+//     margin-bottom: 0;
+//     margin-top: 0;
+//   }
+// }
+
+// .price-cards.fst {
+//   display: flex;
+//   p {
+//     padding: 10px 0px 10px 10px;
+//   }
+// }
+// .price-cards.eco, .price-cards.bus {
+//   display: flex;
+//   padding: 10px 0px 10px 10px;
+// }
+
+// p#miles-pad {
+//   padding-left: 10px;
+// }
 
 
-.container-search {
-  background-image: url(https://source.unsplash.com/BUa1LDeT8PI/1600x900);
-}
+// .container-search {
+//   background-image: url(https://source.unsplash.com/BUa1LDeT8PI/1600x900);
+// }

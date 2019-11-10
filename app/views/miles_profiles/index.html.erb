@@ -1,73 +1,62 @@
-<div uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 500">
-  <div>
-    <% @results.each do |result| %>
-    <div class="uk-grid-column-small uk-grid-row-small uk-flex-wrap-stretch" uk-grid>
-<!--       this is the start of card -->
-      <div class="uk-card uk-card-default" style="margin: 50px; width: 35%;">
-<!--         this is the start of card animation -->
-        <div class="uk-animation-toggle" tabindex="0">
-          <div class="uk-animation-fade">
-              <div class="uk-card-header">
-                  <div class="uk-grid-small uk-flex-middle" uk-grid>
-                      <div class="uk-width-auto">
-                          <img class="uk-border-circle" width="40" height="40" src="https://source.unsplash.com/ZHvM3XIOHoE">
-                      </div>
-                      <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">Kim Jong Trump</h3>
-                          <p class="uk-text-meta uk-margin-remove-top">Verified Seller</p>
-                      </div>
-                  </div>
-              </div>
-  <!--             this is the start of card content -->
-              <div class="uk-card-body">
-                <div class="miles-container">
-                  <div class="fqp">
-                    <%= result["prog_name"] %>
-                  </div>
-                    <% if result['rates'][2] == nil %>
-                    <div class="price-cards fst">
-                      <p>First class not available</p>
-                    </div>
-                    <% else %>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                    <div class="price-cards">
-                    <div class="price-cards eco">
-                      <a class="price"><%= result['rates'][0]['label'].strip %></a>
-                      <p id="miles-pad"><%= result['rates'][0]['rate'].strip %> Miles</p>
-                        </div>
-                        </label>
-                          </div>
-                            <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                    <div class="price-cards bus">
-                      <p><%= result['rates'][1]['label'].strip %></p>
-                      <p id="miles-pad"><%= result['rates'][1]['rate'].strip %> Miles</p>
-                    </div>
-                    </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-                      <label class="form-check-label" for="exampleRadios3">
-                    <div class="price-cards fst">
-                      <p><%= result['rates'][2]['label'].strip %></p>
-                      <p id="miles-pad"><%= result['rates'][2]['rate'].strip %> Miles</p>
-                      </label>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
+<div class="trip-container">
+<div class="filter-box">
+  <h2 style="width: max-content;">this is for filter bar</h2>
+</div>
+<!-- this is where card trip info start -->
+<div class="uk-flex uk-flex-column"></div>
+  <div class="uk-grid-small" uk-grid>
+        <% @results.each do |result| %>
+        <div class="card w-75" style="border-style: none;">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
             </div>
-          <div class="uk-card-footer">
-            <%= link_to "Select", new_booking_path(:departure => @departure, :arrival => @arrival), class: "uk-button uk-button-text" %>
+            <div class="card-body">
+    <!--      this is start of radio button 1       -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  <a id="radio-black"><%= result['rates'][0]['label'].strip %></a>
+                  <p id="radio-black"><%= result['rates'][0]['rate'].strip %> Miles | $1200</p>
+                </label>
+              </div>
+    <!--           this is the end of radio button 1 -->
+    <!--      this is start of radio button 2       -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+                <label class="form-check-label" for="exampleRadios2">
+                  <a id="radio-black"><%= result['rates'][1]['label'].strip %></a>
+                  <p id="radio-black"><%= result['rates'][1]['rate'].strip %> Miles | $3500</p>
+                </label>
+              </div>
+    <!--           this is the end of radio button 2 -->
+              <% if result['rates'][2] == nil %>
+              <p id="radio-black">First class not available</p>
+              <% else %>
+    <!--      this is start of radio button 3       -->
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked>
+                <label class="form-check-label" for="exampleRadios3">
+                  <a id="radio-black"><%= result['rates'][2]['label'].strip %></a>
+                  <p id="radio-black"><%= result['rates'][2]['rate'].strip %> Miles | $5000</p>
+                </label>
+              </div>
+    <!--           this is the end of radio button 2 -->
+              <% end %>
+    <!--           this is the end of if else -->
+              <div class="card text-right">
+                <div class="btn-right">
+                  <a href="#" class="btn btn-light">Book</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-<!--       this is the end of animation -->
-      </div>
-    </div>
-    <% end %>
+        <% end %>
   </div>
 </div>
+<!-- this is where card trip infos end -->
+</div>
+
+
