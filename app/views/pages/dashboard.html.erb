@@ -14,7 +14,7 @@
   <div class="tab-pane fade show active" id="buyer" role="tabpanel" aria-labelledby="buyer-tab">
     <div class="buyer-container">
       <div class="card-profile">
-        <h4>Your profile:</h4>
+        <h4>Your profile info:</h4>
         <% if current_user.photo.blank? %>
         <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
         <% else %>
@@ -27,7 +27,7 @@
         <%= link_to "Edit profile", edit_user_registration_path, class: 'edit-profile' %>
       </div>
       <div class="dash-booking">
-        <h4>Your Bookings:</h4>
+        <h4>Hello <%= @user.first_name %> here are your Bookings:</h4>
         <table>
           <tr>
             <th>Departure</th>
@@ -61,14 +61,14 @@
        <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
        <h4>Miles Profile:</h4>
        <div class="miles-profile-info">
-        <p style="color: black;"><%= @miles_profile.programme %></p>
-        <p style="color: black;"><%= @miles_profile.amount %> Miles</p>
-        <p style="color: black;">$<%= @miles_profile.price %> /1000 miles</p>
-        <%= link_to "Edit Miles", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
+        <p><%= @miles_profile.programme %></p>
+        <p><%= @miles_profile.amount %> Miles</p>
+        <p>$<%= @miles_profile.price %>/1000 miles</p>
+        <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
       </div>
     </div>
     <div class="buyer-requests">
-      <h4>Your Requests:</h4>
+      <h4><%= @user.first_name %>, here are your pending flight requests:</h4>
       <table class="req-table">
         <tr>
           <th>Dep. City</th>
@@ -78,33 +78,40 @@
           <th>Amt. of miles</th>
           <th>Price</th>
           <th>Confirmation</th>
-          <th>See booking</th>
+          <th>See request</th>
+          <th>Upload Ticket</th>
         </tr>
 
         <% if @user.requests.any? %>
         <% @user.requests.each do |request| %>
         <tr>
-          <td><%= request.booking.departure %></td>
-          <td><%= request.booking.arrival %></td>
-          <td><%= request.booking.departure_date %></td>
-          <td><%= request.booking.return_date %></td>
-          <td><%= request.booking.amount_of_miles %></td>
-          <td><%= request.booking.price %></td>
-          <td><%= request.confirmed %>
-            <% if request.confirmed == "pending" %>
-            <%= link_to "Accept", accept_booking_path(request), method: :post  %>
-            <% link_to "Decline", decline_booking_path(request), method: :post %>
-            <% elsif request.confirmed == "confirmed" %></td>
-            <td><%= link_to "see full booking", booking_path(request.booking), class: 'btn-see-booking'  %></td>
+          <td><%#= request.booking.departure %></td>
+          <td><%#= request.booking.arrival %></td>
+          <td><%#= request.booking.departure_date %></td>
+          <td><%#= request.booking.return_date %></td>
+          <td><%#= request.booking.amount_of_miles %></td>
+          <td><%#= request.booking.price %></td>
+          <td><%#= request.confirmed %>
+            <%# if request.confirmed == "pending" %>
+            <%#= link_to "Accept", accept_booking_path(request), method: :post  %>
+            <%# link_to "Decline", decline_booking_path(request), method: :post %>
+            <%# elsif request.confirmed == "confirmed" %></td>
+            <td><%#= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking'  %></td>
             <tr>
-              <% end %>
+              <%# end %>
               <% end %>
               <% end %>
             </table>
 
           </div>
         </div>
-      </div>
+          <div class="disclaimer">
+            <h6>Disclaimer:</h6>
+            <p>MilesX<em> relies on total seller cooperation to mke things run smooth. If you wish to be paid out in full, it is your
+            obligation as a seller to be trustworthy should you accept a request. Accepted requests that are not finalized may result in
+            the suspenion or termination of your seller account.</em></p>
+          </div>
+        </div>
       <% end %>
     </div>
 
