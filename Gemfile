@@ -21,7 +21,9 @@ gem 'uglifier'
 gem 'openssl'
 gem 'money-rails'
 gem 'stripe'
+gem 'jquery-rails'
 gem 'stripe_event'
+
 
 
 gem 'webpacker'
