@@ -20,6 +20,7 @@ class MilesProfilesController < ApplicationController
       @results = json_data['data']
       @departure = params[:departure][4..-1].split(" ")[0]
       @arrival = params[:arrival][4..-1].split(" ")[0]
+      session[:params] = params[:departure] + params[:arrival]
     end
   end
 

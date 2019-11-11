@@ -2,19 +2,24 @@
 <br>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="buyer-tab" data-toggle="tab" href="#buyer" role="tab" aria-controls="home" aria-selected="true">Buyer</a>
+    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="seller-tab" data-toggle="tab" href="#seller" role="tab" aria-controls="profile" aria-selected="false">Seller</a>
+    <a class="nav-link" id="booking-tab" data-toggle="tab" href="#booking" role="tab" aria-controls="profile" aria-selected="false">Booking</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="miles-tab" data-toggle="tab" href="#miles" role="tab" aria-controls="profile" aria-selected="false">Miles</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="profile" aria-selected="false">Requests</a>
   </li>
 </ul>
 
-
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="buyer" role="tabpanel" aria-labelledby="buyer-tab">
-    <div class="buyer-container">
+  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="profile-container">
       <div class="card-profile">
-        <h4>Your profile info:</h4>
+        <h2>Your profile info:</h2>
         <% if current_user.photo.blank? %>
         <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
         <% else %>
@@ -24,49 +29,84 @@
         <%= @user.first_name %>
         <%= @user.last_name %><br>
         <%= @user.phone %>
+        <%= @user.birth_date %><br>
         <%= link_to "Edit profile", edit_user_registration_path, class: 'edit-profile' %>
-      </div>
-      <div class="dash-booking">
-        <h4>Hello <%= @user.first_name %> here are your Bookings:</h4>
-        <table>
-          <tr>
-            <th>Departure</th>
-            <th>Arrival</th>
-            <th>Departure date</th>
-            <th>Return date</th>
-            <th>Amt. of miles</th>
-            <th>Price</th>
-            <th>Status</th>
-          </tr>
-          <% @user.bookings.each do |booking| %>
-          <tr>
-            <td><%= booking.departure %></td>
-            <td><%= booking.arrival %></td>
-            <td><%= booking.departure_date %></td>
-            <td><%= booking.return_date %></td>
-            <td><%= booking.amount_of_miles %></td>
-            <td><%= booking.price %>$</td>
-            <td><%= booking.status %><br></td>
-          </tr>
-          <% end %>
-        </table>
       </div>
     </div>
   </div>
 
-  <% if @miles_profile %>
-  <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
-    <div class="seller-container">
+
+
+  <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+    <div class="dash-booking">
+      <h4>Hello <%= @user.first_name %> here are your Bookings:</h4>
+      <div class="card" style="width: 18rem; color: black;">
+        <div class="card-header">
+          Your bookings:
+        </div>
+          <% @user.bookings.each do |booking| %>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">Departure: <%= booking.departure %></li>
+              <li class="list-group-item">Arrival: <%= booking.arrival %></li>
+              <li class="list-group-item">Departure date: <%= booking.departure_date %></li>
+              <li class="list-group-item">Return date: <%= booking.return_date %></li>
+              <li class="list-group-item">Amount of miles: <%= booking.amount_of_miles %> miles</li>
+              <li class="list-group-item">Price: $<%= booking.price %></li>
+              <li class="list-group-item">Status: <%= booking.status %></li>
+          </ul>
+        </div>
+
+ <!-- old table waiting to delete -->
+      <table>
+        <tr>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Departure date</th>
+          <th>Return date</th>
+          <th>Amt. of miles</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td><%= booking.departure %></td>
+          <td><%= booking.arrival %></td>
+          <td><%= booking.departure_date %></td>
+          <td><%= booking.return_date %></td>
+          <td><%= booking.amount_of_miles %></td>
+          <td><%= booking.price %>$</td>
+          <td><%= booking.status %><br></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
+    <div class="miles-container">
+      <% if @miles_profile %>
       <div class="miles-profile-card">
        <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-       <h4>Miles Profile:</h4>
+       <h2> <%=@user.first_name %>'s current miles:</h2>
        <div class="miles-profile-info">
-        <p><%= @miles_profile.programme %></p>
-        <p><%= @miles_profile.amount %> Miles</p>
-        <p>$<%= @miles_profile.price %>/1000 miles</p>
+        <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
+        <span><strong>Amount remaining:</strong> <%= @miles_profile.amount %> Miles</span>
+        <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
         <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
+        </div>
       </div>
     </div>
+  </div>
+
+
+
+
+
+  <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
     <div class="buyer-requests">
       <h4><%= @user.first_name %>, here are your pending flight requests:</h4>
       <table class="req-table">
@@ -99,18 +139,31 @@
             <td><%#= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking'  %></td>
             <tr>
               <%# end %>
-              <% end %>
-              <% end %>
-            </table>
-
-          </div>
-        </div>
-          <div class="disclaimer">
-            <h6>Disclaimer:</h6>
+          <% end %>
+        <% end %>
+      </table>
+        <div class="disclaimer">
+          <h6>Disclaimer:</h6>
             <p>MilesX<em> relies on total seller cooperation to mke things run smooth. If you wish to be paid out in full, it is your
             obligation as a seller to be trustworthy should you accept a request. Accepted requests that are not finalized may result in
             the suspenion or termination of your seller account.</em></p>
-          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       <% end %>
     </div>
