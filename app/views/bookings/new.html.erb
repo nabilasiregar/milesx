@@ -32,7 +32,7 @@
           <input type="text" name="passenger_name2">
           <input type="text" name="passenger_name3"> -->
           <div class="d-flex justify-content-between">
-          <%= f.button :submit, "Back to Flight Search", class: "btn btn-outline-primary" %>
+          <%= link_to "Back to Flight Search", miles_profiles_path(departure: @places[0], arrival: @places[1]), class: "btn btn-outline-primary" %>
           <%= f.button :submit, "Make Booking Request", class: "btn btn-outline-primary" %>
           <%#= link_to "Make a Booking Request", payment_path(payment), class: "btn btn-outline-primary"  %>
 

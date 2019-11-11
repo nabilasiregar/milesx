@@ -1,5 +1,5 @@
-.card-body {
-  margin-top: 0px;
+.card-profile-body {
+  margin: 5px 15px 5px 15px;
 }
 
 .form-check-label {
@@ -11,6 +11,11 @@
 
 #radio-black {
   color: black;
+}
+
+#radio-black-fst {
+  color: black;
+  margin: 0;
 }
 
 label.form-check-label {
@@ -44,46 +49,3 @@ label.form-check-label {
   border: 1px dashed black;
   margin: 2em;
 }
-// .miles-container {
-//   display: flex;
-//   flex-direction: column;
-//   flex-wrap: wrap;
-//   align-content: space-between;
-// }
-
-// .fqp {
-//   padding: 0px 0px 20px 10px;
-// }
-
-// .price-cards {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   flex-wrap: wrap;
-
-//   p {
-//     margin-bottom: 0;
-//     margin-top: 0;
-//   }
-// }
-
-// .price-cards.fst {
-//   display: flex;
-//   p {
-//     padding: 10px 0px 10px 10px;
-//   }
-// }
-// .price-cards.eco, .price-cards.bus {
-//   display: flex;
-//   padding: 10px 0px 10px 10px;
-// }
-
-// p#miles-pad {
-//   padding-left: 10px;
-// }
-
-
-// .container-search {
-//   background-image: url(https://source.unsplash.com/BUa1LDeT8PI/1600x900);
-// }
