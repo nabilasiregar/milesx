@@ -20,6 +20,7 @@ class MilesProfilesController < ApplicationController
       @results = json_data['data']
       @departure = json_data['origin']
       @arrival = json_data['destination']
+      session[:params] = params[:departure] + params[:arrival]
     end
   end
 
