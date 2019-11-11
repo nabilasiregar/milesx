@@ -22,11 +22,12 @@ h1 {
   padding: 50px;
   margin: 15px;
   width: 700px;
+  font-size: 25px;
 }
 .card-profile-user {
   border: 1px solid white;
   border-radius: 50%;
-  width: 50px;
+  width: 90px;
 }
 
 .dash-booking {
@@ -36,8 +37,8 @@ h1 {
   flex-direction: column;
 }
 
-.buyer-container {
-  padding: 4%;
+.profile-container {
+  // padding: 4%;
   display: flex;
   justify-content: space-between;
 }
@@ -57,21 +58,17 @@ table, th, td {
 
 
 // Sellers tab
-.seller-container {
+.miles-container {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .miles-profile-card {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  padding: 50px;
-  margin: 20px;
-  height: 475px;
-  font-size: 16px;
-
+  font-size: 25px;
+  padding: 30px;
+  margin: 25px;
+  // width: 700px;
 }
 
 .miles-profile-info {
@@ -79,10 +76,10 @@ table, th, td {
   flex-direction: column;
 }
 
-.miles-profile-info p {
-  padding: 3px;
-  margin: 10px;
-  width: 40px;
+.miles-profile-info span {
+   padding: 20px;
+  // margin: 10px;
+  // width: 40px;
   color: black;
 }
 
