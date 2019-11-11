@@ -15,6 +15,7 @@
                 <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
                 <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
               </div>
+
               <div class="card-body">
       <!--      this is start of radio button 1       -->
                 <div class="form-check">
@@ -51,7 +52,7 @@
                 <div class="card text-right">
                   <div class="btn-right">
                     <input type="submit" class="btn btn-light">
-                    <a><%#= link_to 'Book', new_booking_path, class: 'btn btn-light' %></a>
+                    <%= link_to 'Book', new_booking_path(departure: @departure, arrival: @arrival), class: 'btn btn-light' %>
                   </div>
                 </div>
               </div>

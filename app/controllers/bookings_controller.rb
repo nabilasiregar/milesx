@@ -67,6 +67,7 @@ class BookingsController < ApplicationController
       redirect_to user_session_path
       flash[:alert] = 'Please log in to book this flight.'
     end
+    # need to create new passenger here
   end
 
   private
