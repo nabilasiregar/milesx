@@ -5,7 +5,7 @@
     <%= simple_form_for(@miles_profile) do |m|%>
     <div class="row-listing-form">
       <p>FQ Programme</p>
-      <%= m.input :programme, placeholder: "e.g. KrisFlyer" %>
+      <%= m.input :programme, as: :select, collection: @program %>
       <p>How many miles do you want to list?</p>
       <%= m.input :amount, placeholder: "e.g. 100000 miles" %>
       <p>You are responsible for choosing the miles price.</p>
@@ -18,3 +18,5 @@
     </div>
   </div>
 </div>
+
+

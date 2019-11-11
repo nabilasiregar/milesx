@@ -2,7 +2,10 @@ require 'json'
 require 'open-uri'
 require 'rest-client'
 require 'digest'
+require 'csv'
 
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath    = 'beers.csv'
 
 class MilesProfilesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
@@ -34,6 +37,18 @@ class MilesProfilesController < ApplicationController
   end
 
   def new
+    digest = OpenSSL::Digest.new('sha256')
+    csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+    filepath = 'progs.csv'
+    @program = []
+    CSV.foreach(filepath, csv_options) do |row|
+      @program << "#{row['FFP Name']}"
+    end
+    key = OpenSSL::HMAC.hexdigest(digest, 'lewagon', "f=LAX&t=JFK&ffp=#{@program.join('|')}&langid=1")
+    # url = "https://milez.biz/api/list_rates.php?pid=162&key=#{key}&f=LAX&t=JFK&ffp=#{@program.join('|')}&langid=1"
+    # data_serialized = RestClient::Request.execute(method: :get, url: url, verify_ssl: false)
+    # json_data = JSON.parse(data_serialized)
+    # @results = json_data['data'].map { |result| result['prog_name'] }
     @miles_profile = MilesProfile.new
     if user_signed_in?
       if current_user.present?
