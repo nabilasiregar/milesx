@@ -92,7 +92,7 @@
           <strong>Requests:</strong>
         </div>
           <% if @user.requests.any? %>
-          <% @user.requests.each do |request| %>
+          <% @user.requests.compact.each do |request| %>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
               <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
