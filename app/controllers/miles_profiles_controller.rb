@@ -18,8 +18,13 @@ class MilesProfilesController < ApplicationController
       data_serialized = RestClient::Request.execute(method: :get, url: url, verify_ssl: false)
       json_data = JSON.parse(data_serialized)
       @results = json_data['data']
-      @departure = params[:departure][4..-1].split(" ")[0]
-      @arrival = params[:arrival][4..-1].split(" ")[0]
+      #if params[:departure][4..-1]
+        @departure = params[:departure]
+        @arrival = params[:arrival]
+      #else
+        # @departure = params[:departure]
+        # @arrival = params[:arrival]
+      #end
       session[:params] = [departure, arrival]
     end
   end
