@@ -16,14 +16,14 @@
 
               <div class="location-info">
                 <h3 class="mb-0"><%= "#{@departure[0..2].upcase}"%></h3>
-                <p><%= "#{@departure.upcase}"%></p>
+                <p><%= "#{@departure.upcase} 23:55"%> </p>
               </div>
 
               <div class=""><div style="width: 32px"><%= image_tag "https://image.flaticon.com/icons/svg/149/149444.svg" %></div></div>
 
               <div class="location-info">
                 <h3 class="mb-0"><%=  "#{@arrival[0..2].upcase}"%></h3>
-                <p><%= "#{@arrival.upcase}"%></p>
+                <p><%= "#{@arrival.upcase} 06:00"%></p>
               </div>
 
 
@@ -56,8 +56,8 @@
 
           <%= f.input :flight_number, input_html: { value: "SQ352", readonly: true, class: 'booking-form' } %>
           <%= f.input :booking_class, input_html: { value: "Business", readonly: true, class: 'booking-form' } %>
-          <%= f.input :arrival_time, input_html: { value: "07:40hrs", readonly: true, class: 'booking-form' } %>
-          <%= f.input :departure_time, input_html: { value: "17:40hrs", readonly: true, class: 'booking-form' } %>
+          <%= f.input :arrival_time, input_html: { value: "23:55", readonly: true, class: 'booking-form' } %>
+          <%= f.input :departure_time, input_html: { value: "06:00", readonly: true, class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
           <h2 id="listing-title" style="color: $blue">Passenger Information</h2>
@@ -95,7 +95,7 @@
 
 
           <div class="d-flex justify-content-between">
-          <%= link_to "Back to Flight Search", miles_profiles_path(departure: @places[0], arrival: @places[1]), class: "btn btn-outline-primary" %>
+          <%= link_to "Back to Flight Search", pages_path, class: "btn btn-outline-primary" %>
           <%= f.button :submit, "Confirmation and Payment", class: "btn btn-outline-primary" %>
           <%#= link_to "Make a Booking Request", payment_path(payment), class: "btn btn-outline-primary"  %>
           </div>
