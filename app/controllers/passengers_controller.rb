@@ -1,14 +1,14 @@
 class PassengersController < ApplicationController
 
-def create
-  @passenger = passenger.new(passenger_params)
-  @booking = Booking.find(params[:booking_id])
-  @passenger.booking = @booking
-  if @passenger.save
-     redirect_to booking_path(@passenger.booking)
-  else
+  def create
+    @passenger = passenger.new(passenger_params)
+    @booking = Booking.find(params[:booking_id])
+    @passenger.booking = @booking
+    if @passenger.save
+       redirect_to booking_path(@passenger.booking)
+    else
 
-  render 'bookings/show'
+    render 'bookings/show'
 
     end
   end
