@@ -1,3 +1,28 @@
 .auto-margined {
       margin: 40px auto;
 }
+
+
+.booking-card-body{
+  padding: 30px;
+    margin-top: 0px;
+    color: black;
+    box-shadow: none;
+}
+
+
+.location-info{
+  p{
+     margin: 0px
+
+  }
+}
+
+
+#listing-title{
+  color: $blue
+}
+
+.booking-card-subtitle{
+  color: $dark-blue
+}

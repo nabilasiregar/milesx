@@ -2,37 +2,43 @@
   <div class="listing-container pb-3" style="color: black">
     <div class="col-md-8 offset-md-2">
       <div class="listing-row">
-        <h2 id="listing-title" style="color: blue">Flight Information</h2>
+        <h2 id="listing-title" style="">Flight Information</h2>
         <div class="row-listing-form">
-          <div class="card auto-margined w-75" style="border-style: none;">
+          <div class="card auto-margined w-100" style="border-style: none;">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
-              <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"> hello</h6>
+              <h5 class="booking-card-subtitle" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <h5 class="booking-card-subtitle" style="margin-top: auto;"> Business</h5>
+
             </div>
+            <div class="booking-card-body">
             <div class="d-flex justify-content-between">
 
+              <div class="location-info">
+                <h3 class="mb-0"><%= "#{@departure[0..2].upcase}"%></h3>
+                <p><%= "#{@departure.upcase}"%></p>
+              </div>
+
+              <div class=""><div style="width: 32px"><%= image_tag "https://image.flaticon.com/icons/svg/149/149444.svg" %></div></div>
+
+              <div class="location-info">
+                <h3 class="mb-0"><%=  "#{@arrival[0..2].upcase}"%></h3>
+                <p><%= "#{@arrival.upcase}"%></p>
+              </div>
 
 
+            </div>
 
+            <div class="d-flex justify-content-between">
+            <div class=""></div>
+            <div class=""><p><%= %></p></div>
+            </div>
 
-            <div class="p-4"><p><%= "#{@departure[0..2].upcase}"%></p></div>
-            <div class="p-4"><div style="width: 32px"><%= image_tag "https://image.flaticon.com/icons/svg/149/149444.svg" %></div></div>
-            <div class="p-4"><p><%= "#{@arrival[0..2].upcase}"%></p></div>
+            <div class="d-flex justify-content-between">
+            <div class=""><span id="departure-date-value"></span></div>
+            <div class=""><span id="arrival-date-value"></span></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </div>
             </div>
           </div>
         </div>
@@ -54,7 +60,7 @@
           <%= f.input :departure_time, input_html: { value: "17:40hrs", readonly: true, class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
-          <h2 id="listing-title" style="color: blue">Passenger Information</h2>
+          <h2 id="listing-title" style="color: $blue">Passenger Information</h2>
           <%= simple_fields_for :passenger do |o| %>
            <div class="form-group w-100">
             <label for="passenger_first_name">First / Given name (as in passport)</label>
@@ -99,5 +105,24 @@
     </div>
   </div>
 </div>
+
+
+
+<script>
+  const departInput = document.querySelector("#depart-date")
+  const departDate = document.querySelector("#departure-date-value")
+  departInput.addEventListener("change", (e) => {
+    var utc= (new Date(e.target.value)).toUTCString()
+    departDate.innerText = utc.split(" ").slice(0,4).join(" ")
+  })
+  const arrivalInput = document.querySelector("#return-date")
+  const arrivalDate = document.querySelector("#arrival-date-value")
+  arrivalInput.addEventListener("change", (e) => {
+    var utc= (new Date(e.target.value)).toUTCString()
+    arrivalDate.innerText = utc.split(" ").slice(0,4).join(" ")
+  })
+
+</script>
+
 
 
