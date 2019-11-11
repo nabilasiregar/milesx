@@ -12,7 +12,7 @@
               <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
               <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
             </div>
-            <div class="card-body">
+            <div class="card-profile-body">
     <!--      this is start of radio button 1       -->
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
@@ -32,7 +32,7 @@
               </div>
     <!--           this is the end of radio button 2 -->
               <% if result['rates'][2] == nil %>
-              <p id="radio-black">First class not available</p>
+              <p id="radio-black-fst">First class not available</p>
               <% else %>
     <!--      this is start of radio button 3       -->
               <div class="form-check">
@@ -47,7 +47,7 @@
     <!--           this is the end of if else -->
               <div class="card text-right">
                 <div class="btn-right">
-                  <a href="#" class="btn btn-light">Book</a>
+                  <a><%= link_to "Book", new_booking_path, class: 'btn btn-light' %></a>
                 </div>
               </div>
             </div>
