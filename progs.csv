@@ -1,0 +1,200 @@
+Program ID,FFP Name
+1,Aeroplan (Air Canada) / Star Alliance,y
+2,Miles & More (Lufthansa)  / Star Alliance,y
+7,VIPorter,y
+8,Singapore Airlines KrisFlyer,y
+9,MilleMiglia (Alitalia) / SkyTeam,y
+11,Aeroflot Bonus,y
+12,Delta SkyMiles / SkyTeam,y
+13,Egyptair Plus / Star Alliance,y
+14,TAP Miles&Go,y
+16,"Flying Blue (Air France, KLM) / SkyTeam",y
+17,"AAdvantage / oneworld / Partners -- til March 21, 2016",api
+21,SAA Voyager,y
+22,SAA Voyager / Star Alliance,y
+24,JAL Mileage Bank [int'l],y
+25,United Mileage Plus / Star Alliance,y
+26,JAL Mileage Bank [dom],y
+27,[OLD] Qantas Frequent Flyer [Classic Awards],api
+28,Miles & Smiles (Turkish Airlines),y
+29,Asia Miles (Cathay Pacific),y
+30,Finnair Plus,y
+31,EuroBonus (SAS),y
+32,Emirates Skywards,y
+33,Royal Orchid Plus (Thai Airways),y
+34,Safar Flyer (Royal Air Maroc),y
+36,Flying Returns [int'l] (Air India),y
+37,Flying Returns [dom] (Air India),y
+38,Air CaraÃ¯bes PrÃ©fÃ©rence,y
+41,Dynasty Flyer (China Airlines),y
+42,Dynasty Flyer (China Airlines) / SkyTeam,y
+43,S7 Priority,y
+44,[OLD] ANA Mileage Club,api
+47,Korean Air Skypass,y
+48,King Club (Kingfisher Airlines),y
+51,ShebaMiles (Ethiopian),y
+52,Privilege Club (Qatar Airways),y
+53,Asiana Club,y
+56,Miles & Bonus (Aegean),y
+57,Miles & Bonus (Aegean) / Star Alliance,y
+60,Iberia Plus,y
+61,[OLD] Alaska Airlines Mileage Plan,api
+62,[OLD] Korean Air Skypass / SkyTeam,api
+63,[OLD] Etihad Guest,api
+64,Aeroflot Bonus / SkyTeam,y
+65,Club Premier (AeroMexico) / SkyTeam,y
+69,[OLD] Qantas Frequent Flyer [Partner Classic],api
+70,Hawaiian Miles,y
+71,Eastern Miles [dom] (China Eastern),y
+72,Eastern Miles [int'l] (China Eastern),y
+73,Sky Pearl Club [dom] (China Southern),y
+74,Sky Pearl Club [int'l] (China Southern),y
+75,Singapore Airlines KrisFlyer  / Star Alliance,y
+76,AerolÃ­neas Argentinas Plus,y
+77,Miles & Smiles (Turkish Airlines) / Star Alliance,y
+78,ShebaMiles (Ethiopian) / Star Alliance,y
+79,Virgin Atlantic Flying Club,y
+80,EuroBonus (SAS) / Star Alliance,y
+81,Tunisair Fidelys,y
+82,BalticMiles (AirBaltic),y
+83,Gulf Air Falconflyer,y
+84,PhoenixMiles [dom] (Air China),y
+85,PhoenixMiles [int'l] (Air China),y
+86,PhoenixMiles (Air China) / Star Alliance,y
+87,Alfursan (Saudia),y
+88,Alfursan (Saudia) / SkyTeam,y
+89,FlySmiles (SriLankan Airlines),y
+90,Jet Airways JetPrivilege [dom],y
+91,Jet Airways JetPrivilege [int'l],y
+92,MEA Cedar Miles,y
+93,MEA Cedar Miles / SkyTeam,y
+94,"LifeMiles (Avianca, TACA) / Star Alliance",y
+95,Mabuhay Miles (Philippine Airlines),y
+96,Vietnam Airlines Golden Lotus Plus,y
+97,Royal Orchid Plus (Thai Airways) / Star Alliance,y
+98,"topbonus (airberlin, NIKI) [Partners]",y
+99,"topbonus (airberlin, NIKI) / oneworld",y
+100,TAP Miles&Go / Star Alliance,y
+101,Asia Miles (Cathay Pacific) / oneworld,y
+102,Malaysia Airlines Enrich / oneworld,y
+103,Oman Air Sindbad Miles,y
+105,Air Mauritius Kestrelflyer,y
+106,Icelandair Saga Club,y
+107,Royal Brunei Royal Skies,y
+108,Iberia Plus / oneworld,y
+110,Air Tahiti Nui Club Tiare,y
+111,Kuwait Airways Oasis Club,y
+112,Caribbean Airlines Loyalty Clubs,y
+113,Finnair Plus / oneworld,y
+114,Hainan Airlines Fortune Wings Club [dom],y
+115,Hainan Airlines Fortune Wings Club [int'l],y
+117,LATAM Pass / oneworld,y
+118,Singapore Airlines KrisFlyer [Air India Partnership],y
+119,Singapore Airlines KrisFlyer [Virgin Atlantic Partnership],y
+120,Singapore Airlines KrisFlyer [Virgin Australia Partnership],y
+121,Emirates Skywards [TAP Partnership],y
+122,Emirates Skywards [Alaska Airlines Partnership],y
+123,Emirates Skywards [Korean Air Partnership],y
+124,Emirates Skywards [JAL Partnership],y
+125,Alaska Airlines Mileage Plan [Emirates Partnership],y
+126,Xiamen Airlines Egret Club [domestic],y
+127,Alaska Airlines Mileage Plan [Korean Air Partnership],y
+128,Alaska Airlines Mileage Plan [Cathay Pacific Partnership],y
+129,Alaska Airlines Mileage Plan [Icelandair Partnership],y
+130,Alaska Airlines Mileage Plan [LAN Chile Partnership],y
+131,Alaska Airlines Mileage Plan [Qantas Partnership],y
+132,Alaska Airlines Mileage Plan [British Airways Partnership],y
+134,Alaska Airlines Mileage Plan [AA Partnership],y
+137,Alaska Airlines Mileage Plan [Air Pacific Partnership],y
+138,Air AlgÃ©rie Plus,y
+140,Singapore Airlines KrisFlyer [Virgin America Partnership],y
+141,Xiamen Airlines Egret Club [int'l],y
+142,Xiamen Airlines Egret Club / SkyTeam,y
+144,Emirates Skywards [Qantas Partnership],y
+145,EVA Air Infinity MileageLands,y
+146,EVA Air Infinity MileageLands / Star Alliance,y
+147,United Mileage Plus,y
+149,Privilege Club (Qatar Airways) / oneworld,y
+155,Emirates Skywards [Virgin America Partnership],y
+161,Flying Blue [Transavia Partnership],y
+162,LATAM Fidelidade Multiplus / oneworld,y
+163,Korean Air Skypass [Emirates Partnership],y
+164,Korean Air Skypass [Alaska Airlines Partnership],y
+165,Korean Air Skypass [Hawaiian Partnership],y
+166,Asiana Club / Star Alliance,y
+167,ANA Mileage Club / Star Alliance,y
+168,UIA Panorama Club,y
+169,UIA Panorama Club [Partners],y
+171,Korean Air Skypass / SkyTeam,y
+172,Velocity Frequent Flyer (Virgin Australia) / Redemption Table 1,y
+173,Velocity Frequent Flyer (Virgin Australia) / Redemption Table 2,y
+174,Amigo (Avianca Brasil) / Star Alliance,y
+175,FlySmiles (SriLankan Airlines) / oneworld,y
+176,Emirates Skywards [Jet Airways Partnership],y
+177,Emirates Skywards [S7 Partnership],y
+178,"Emirates Skywards [jetBlue Partnership, domestic]",y
+179,"Emirates Skywards [jetBlue Partnership, international]",y
+180,JetStar Classic Flight Rewards [QFF],y
+181,Emirates Skywards [JetStar Partnership],y
+182,Iberia Plus [British Airways Partnership],y
+183,Virgin Atlantic Flying Club [ANA Partnership],y
+184,Virgin Atlantic Flying Club [Delta Air Lines Partnership],y
+185,Eastern Miles (China Eastern) / SkyTeam,y
+186,Sky Pearl Club (China Southern) / SkyTeam,y
+187,ANA Mileage Club,y
+188,American Airlines AAdvantage [AA only],y
+189,American Airlines AAdvantage [oneworld / Partners],y
+190,Qantas Classic Awards [QFF],y
+191,Qantas Partners Classic Awards [QFF],y
+192,"Qantas Classic Awards / oneworld [QFF] 	",y
+193,GarudaMiles,y
+194,GarudaMiles [Jet Airways Partnership],y
+195,OK Plus (Czech Airlines) / SkyTeam,y
+196,OK Plus (Czech Airlines) / ÄŒSA only,y
+197,Etihad Guest [Czech Airlines Partnership],y
+198,Etihad Guest [Air Seychelles Partnership],y
+199,Etihad Guest [Air Serbia Partnership],y
+200,Etihad Guest [Brussels Airlines Partnership],y
+201,Etihad Guest [Bangkok Airways Partnership],y
+202,Etihad Guest [Oman Air Partnership],y
+203,Etihad Guest [UIA Partnership],y
+204,Etihad Guest [Royal Air Maroc Partnership],y
+205,Etihad Guest [Virgin Australia Partnership],y
+206,Etihad Guest [GOL Partnership],y
+207,Etihad Guest [Etihad Regional Partnership],y
+208,Etihad Guest [Alitalia Partnership],y
+209,Etihad Guest [SriLankan Airlines Partnership],y
+210,Etihad Guest [Jet Airways Partnership -- International],y
+211,Etihad Guest [Jet Airways Partnership -- Domestic],y
+212,Etihad Guest [Malaysia Airlines Partnership],y
+213,Etihad Guest [Hainan Airlines Partnership],y
+214,Etihad Guest [airberlin Partnership],y
+215,Etihad Guest [Air New Zealand Partnership],y
+216,Etihad Guest [South African Airways Partnership],y
+217,Etihad Guest [Garuda Indonesia Partnership],y
+218,Etihad Guest [ANA Partnership],y
+219,Etihad Guest [Philippine Airlines Partnership],y
+220,Etihad Guest [Korean Air Partnership],y
+221,Etihad Guest [Asiana Airlines Partnership],y
+222,Etihad Guest [American Airlines Partnership],y
+223,MilleMiglia Alitalia,y
+224,Alaska Airlines Mileage Plan,y
+225,Aer Lingus AerClub,y
+226,Eurowings Boomerang Club,y
+227,Emirates Skywards [GOL Partnership],y
+228,Etihad Guest,y
+229,LATAM Pass,y
+230,Korean Air Skypass [Etihad Partnership],y
+231,Korean Air Skypass [Jet Airways Partnership],y
+232,Korean Air Skypass [GOL Partnership],y
+233,JAL Mileage Bank / oneworld,y
+234,LATAM Fidelidade Multiplus,y
+236,Meridiana Club,y
+237,Flying Returns (Air India) / Star Alliance,y
+238,Alaska Airlines Mileage Plan [Condor Partnership],y
+239,Alaska Airlines Mileage Plan [Hainan Partnership] ,y
+240,Alaska Airlines Mileage Plan [Finnair Partnership] ,y
+241,Alaska Airlines Mileage Plan [JAL Partnership] ,y
+242,British Airways Executive Club [oneworld and partner Airlines],y
+243,"British Airways Executive Club [British, Iberia, AerLingus, Vueling]",y
+244,Frontier Miles,y
