@@ -95,7 +95,7 @@
 
 
           <div class="d-flex justify-content-between">
-          <%= link_to "Back to Flight Search", pages_path, class: "btn btn-outline-primary" %>
+          <%= link_to "Back to Flight Search", miles_profiles_path(departure: @places[0], arrival: @places[1]), class: "btn btn-outline-primary" %>
           <%= f.button :submit, "Confirmation and Payment", class: "btn btn-outline-primary" %>
           <%#= link_to "Make a Booking Request", payment_path(payment), class: "btn btn-outline-primary"  %>
           </div>

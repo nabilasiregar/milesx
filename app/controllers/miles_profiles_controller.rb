@@ -21,7 +21,6 @@ class MilesProfilesController < ApplicationController
       @departure = params[:departure][4..-1].split(" ")[0]
       @arrival = params[:arrival][4..-1].split(" ")[0]
       session[:params] = [departure, arrival]
-
     end
   end
 
