@@ -1,14 +1,4 @@
-// h1 {
-//   color: white;
-//   text-align: center;
-//   padding-top: 1%;
-// }
 
-// // .content {
-// //   padding: 5% 0;
-// // }
-
-// // Buyers tab
 .nav-link {
   color: black;
 }
@@ -21,19 +11,22 @@
   border: 1px solid white;
   padding: 50px;
   margin: 15px;
-  width: 700px;
+  width: 900px;
   font-size: 25px;
+  text-align: center;
 }
 .card-profile-user {
   border: 1px solid white;
   border-radius: 50%;
   width: 90px;
+  margin-left: 350px;
 }
 
 .dash-booking {
   color: white;
   display: flex;
-  margin-right: 190px;
+  // margin-left: 50px;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -41,13 +34,17 @@
   // padding: 4%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-left: 250px;
 }
 
 // Sellers tab
 .miles-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-grow: 1;
+  margin-left: 450px;
 }
 
 .miles-profile-card {
@@ -79,10 +76,6 @@
   text-decoration: underline;
 }
 
-.miles-profile-card a:hover {
- text-decoration: none;
- color: black;
-}
 
 .btn-see-booking {
   color: black;
@@ -104,31 +97,10 @@
   color: black;
 }
 
-
-// .buyer-requests {
-//   margin-right: 230px;
-//   border: 1px solid white;
-//   margin-left: 10em;
-//   margin-top: 15px;
-//   padding: 2px;
-//   height: 475px;
-// }
-
-// .buyer-requests h4 {
-//   color: black;
-// }
-
-// .buyer-requests p {
-//   color: black;
-// }
-
 .disclaimer em {
   color: black;
   font-size: 14px;
 }
-
-// Not sure below buttons have classes, might beuseless but commented out and saved just incase
-
 
 .btn-accept {
   border: 1px solid black;
@@ -156,4 +128,34 @@
   background-color: #B8060E;
   text-decoration: none;
 }
+
+.booking-card{
+  width: 40rem;
+  color: black;
+  margin: 20px 0px;
+  overflow: hidden;
+}
+
+.request-card {
+  width: 40rem;
+  color: black;
+  margin: 20px 0px;
+  overflow: hidden;
+}
+
+.buyer-requests {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+// .buyer-requests h2 {
+
+// }
+// .miles-profile-card a:hover {
+//  text-decoration: none;
+//  color: black;
+// }
+
+
 
