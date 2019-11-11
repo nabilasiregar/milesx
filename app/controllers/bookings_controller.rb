@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.return_date = return_date
     @booking.user = current_user
     @booking.status = 'pending'
-    @booking.price = 500 #calculate price based on user selection
+    @booking.price = 1000 #calculate price based on user selection
     @booking.miles_profile = current_user.miles_profile
     if @booking.save!
       passenger = Passenger.new(passenger_params)
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
             payment_method_types: ['card'],
             line_items: [{
               name: "#{@booking.departure} to #{@booking.arrival}",
-              amount: @booking.price,
+              amount: @booking.price * 100,
               currency: 'usd',
               quantity: 1
             }],
