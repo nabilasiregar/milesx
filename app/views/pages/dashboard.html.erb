@@ -1,4 +1,4 @@
-<h1><strong>Dashboard</strong></h1>
+<h1><strong><%= @user.first_name %>'s Dashboard</strong></h1>
 <br>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -41,10 +41,12 @@
     <div class="dash-booking">
       <h2>Hello <%= @user.first_name %> here are your Bookings:</h2>
       <div class="card" style="width: 40rem; color: black;">
-        <div class="card-header">
+        <div class="card-header"style="color: white;">
           <strong>Your bookings:</strong>
         </div>
+      </div>
         <% @user.bookings.each do |booking| %>
+        <div class="booking-card card " style="width: 40rem; color: black;">
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Departure:</strong> <%= booking.departure %></li>
           <li class="list-group-item"><strong>Arrival:</strong> <%= booking.arrival %></li>
@@ -52,11 +54,12 @@
           <li class="list-group-item"><strong>Return date:</strong> <%= booking.return_date %></li>
           <li class="list-group-item"><strong>Amount of miles:</strong> <%= booking.amount_of_miles %> miles</li>
           <li class="list-group-item"><strong>Price:</strong> $<%= booking.price %></li>
-          <li class="list-group-item"><strong>Status:</strong> <%= booking.status %></li><br>
+          <li class="list-group-item"><strong>Status:</strong> <%= booking.status %></li>
         </ul>
+      </div>
       <% end %>
       </div>
-    </div>
+
   </div>
 
 
@@ -88,11 +91,13 @@
     <div class="buyer-requests">
       <h2><%= @user.first_name %>, here are your pending flight requests from other MilesX users:</h2>
       <div class="card" style="width: 40rem; color: black;">
-        <div class="card-header">
+        <div class="card-header"style="color: white;">
           <strong>Requests:</strong>
         </div>
+      </div>
           <% if @user.requests.any? %>
           <% @user.requests.each do |request| %>
+          <div class="request-card card" style="width: 40rem; color: black;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
               <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
@@ -110,10 +115,11 @@
                 </li><br>
             <% end %>
             </ul>
+          </div>
           <% end %>
         <% end %>
 
-      </div>
+
       <div class="disclaimer">
         <h6>Disclaimer:</h6>
           <p>MilesX<em> relies on total seller cooperation to mke things run smooth. If you wish to be paid out in full, it is your
