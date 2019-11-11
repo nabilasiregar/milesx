@@ -35,6 +35,10 @@ label.form-check-label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: $dark-blue;
+    &:first-child {
+  border-radius: calc(13px - 1px) calc(13px - 1px) 0 0;
+  }
 }
 
 .trip-container {
@@ -49,3 +53,8 @@ label.form-check-label {
   border: 1px dashed black;
   margin: 2em;
 }
+
+h5.card-title {
+  color: white;
+}
+

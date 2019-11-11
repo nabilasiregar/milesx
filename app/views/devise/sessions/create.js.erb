@@ -1,0 +1,26 @@
+const navLinks = document.querySelector('.uk-navbar-nav');
+$(document).ready(function() {
+  $('.modal').modal('hide');
+  const alert = document.createElement('div');
+  alert.className = 'alert alert-info alert-dismissible fade show m-1';
+  alert.innerHTML = `
+    Signed in succcessfully
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  `
+  navLinks.innerHTML = `
+    <li><%= link_to "Sell Miles", new_miles_profile_path, class:"nav-css" %></li>
+    <li><a class="nav-css">Explore</a></li>
+    <li>
+        <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+        <div class="uk-navbar-dropdown">
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li><%= link_to "Dashboard", dashboard_path %></li>
+                <li class="uk-nav-divider"></li>
+                <li><a rel="nofollow" data-method="delete" href="/users/sign_out">Sign out</a></li>
+            </ul>
+        </div>
+    </li>
+  `;
+})

@@ -54,9 +54,8 @@ class BookingsController < ApplicationController
   def new
     @departure = params[:departure]
     @arrival = params[:arrival]
-    @places = session[:params].split(' ').filter { |wo| wo.length == 3 }
-    @booking = Booking.new(departure: @departure, arrival: @arrival)
-
+    @places = session[:params]
+    @booking = Booking.new
     if user_signed_in?
       if current_user.present?
       else
