@@ -1,18 +1,18 @@
-h1 {
-  color: white;
-  text-align: center;
-  padding-top: 1%;
-}
-
-// .content {
-//   padding: 5% 0;
+// h1 {
+//   color: white;
+//   text-align: center;
+//   padding-top: 1%;
 // }
 
-// Buyers tab
+// // .content {
+// //   padding: 5% 0;
+// // }
 
-#buyer-tab, #seller-tab {
+// // Buyers tab
+.nav-link {
   color: black;
 }
+
 
 .card-profile {
   color: #000000;
@@ -22,11 +22,12 @@ h1 {
   padding: 50px;
   margin: 15px;
   width: 700px;
+  font-size: 25px;
 }
 .card-profile-user {
   border: 1px solid white;
   border-radius: 50%;
-  width: 50px;
+  width: 90px;
 }
 
 .dash-booking {
@@ -36,42 +37,24 @@ h1 {
   flex-direction: column;
 }
 
-.buyer-container {
-  padding: 4%;
+.profile-container {
+  // padding: 4%;
   display: flex;
   justify-content: space-between;
 }
-
-th, td {
-  padding: 25px;
-  text-align: center;
-}
-
-
-
-table, th, td {
-  border: 1px solid black;
-  background-color: white;
-  color: black;
-}
-
 
 // Sellers tab
-.seller-container {
+.miles-container {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .miles-profile-card {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  padding: 50px;
-  margin: 20px;
-  height: 475px;
-  font-size: 16px;
-
+  font-size: 25px;
+  padding: 30px;
+  margin: 25px;
+  // width: 700px;
 }
 
 .miles-profile-info {
@@ -79,10 +62,10 @@ table, th, td {
   flex-direction: column;
 }
 
-.miles-profile-info p {
-  padding: 3px;
-  margin: 10px;
-  width: 40px;
+.miles-profile-info span {
+   padding: 20px;
+  // margin: 10px;
+  // width: 40px;
   color: black;
 }
 
@@ -121,26 +104,23 @@ table, th, td {
   color: black;
 }
 
-.req-table {
-  text-align: center;
-}
 
-.buyer-requests {
-  margin-right: 230px;
-  border: 1px solid white;
-  margin-left: 10em;
-  margin-top: 15px;
-  padding: 2px;
-  height: 475px;
-}
+// .buyer-requests {
+//   margin-right: 230px;
+//   border: 1px solid white;
+//   margin-left: 10em;
+//   margin-top: 15px;
+//   padding: 2px;
+//   height: 475px;
+// }
 
-.buyer-requests h4 {
-  color: black;
-}
+// .buyer-requests h4 {
+//   color: black;
+// }
 
-.buyer-requests p {
-  color: black;
-}
+// .buyer-requests p {
+//   color: black;
+// }
 
 .disclaimer em {
   color: black;
@@ -150,30 +130,30 @@ table, th, td {
 // Not sure below buttons have classes, might beuseless but commented out and saved just incase
 
 
-// .btn-accept {
-//   border: 1px solid black;
-//   background-color: green;
-//   color: black;
-//   padding: 5px;
-//   border-radius: 3px;
-//   margin: 5px;
-// }
+.btn-accept {
+  border: 1px solid black;
+  background-color: green;
+  color: black;
+  padding: 3px;
+  border-radius: 3px;
+  margin: 5px;
+}
 
-// .btn-accept:hover {
-//   text-decoration: none;
-//   background-color: #2B5E15;
-//   color: black;
-// }
-// .btn-decline {
-//   color: black;
-//   background-color: red;
-//   padding: 5px;
-//   border: 1px solid black;
-//   border-radius: 3px;
-// }
-// .btn-decline:hover {
-//   color: black;
-//   background-color: #B8060E;
-//   text-decoration: none;
-// }
+.btn-accept:hover {
+  text-decoration: none;
+  background-color: #2B5E15;
+  color: black;
+}
+.btn-decline {
+  color: black;
+  background-color: red;
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+.btn-decline:hover {
+  color: black;
+  background-color: #B8060E;
+  text-decoration: none;
+}
 

@@ -7,51 +7,56 @@
   <div class="uk-grid-small" uk-grid>
         <% @results.each do |result| %>
         <div class="card w-75" style="border-style: none;">
-          <div class="card">
-            <div class="card-header">
-              <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
-              <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
-            </div>
-            <div class="card-profile-body">
-    <!--      this is start of radio button 1       -->
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                  <a id="radio-black"><%= result['rates'][0]['label'].strip %></a>
-                  <p id="radio-black"><%= result['rates'][0]['rate'].strip %> Miles | $1200</p>
-                </label>
+          <form action="/bookings/new">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+                <input type="hidden" name="departure" id="booking_departure" value="<%= @departure %>">
+                <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
+                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
               </div>
-    <!--           this is the end of radio button 1 -->
-    <!--      this is start of radio button 2       -->
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
-                <label class="form-check-label" for="exampleRadios2">
-                  <a id="radio-black"><%= result['rates'][1]['label'].strip %></a>
-                  <p id="radio-black"><%= result['rates'][1]['rate'].strip %> Miles | $3500</p>
-                </label>
-              </div>
-    <!--           this is the end of radio button 2 -->
-              <% if result['rates'][2] == nil %>
-              <p id="radio-black-fst">First class not available</p>
-              <% else %>
-    <!--      this is start of radio button 3       -->
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked>
-                <label class="form-check-label" for="exampleRadios3">
-                  <a id="radio-black"><%= result['rates'][2]['label'].strip %></a>
-                  <p id="radio-black"><%= result['rates'][2]['rate'].strip %> Miles | $5000</p>
-                </label>
-              </div>
-    <!--           this is the end of radio button 2 -->
-              <% end %>
-    <!--           this is the end of if else -->
-              <div class="card text-right">
-                <div class="btn-right">
-                  <a><%= link_to "Book", new_booking_path, class: 'btn btn-light' %></a>
+
+              <div class="card-body">
+      <!--      this is start of radio button 1       -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="booking_price_economy_1" value="1200">
+                  <label class="form-check-label" for="booking_price_economy_1">
+                    <a id="radio-black"><%= result['rates'][0]['label'].strip %></a>
+                    <p id="radio-black"><%= result['rates'][0]['rate'].strip %> Miles | $1200</p>
+                  </label>
+                </div>
+      <!--           this is the end of radio button 1 -->
+      <!--      this is start of radio button 2       -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="booking_price_economy_2" value="3500">
+                  <label class="form-check-label" for="booking_price_economy_2">
+                    <a id="radio-black"><%= result['rates'][1]['label'].strip %></a>
+                    <p id="radio-black"><%= result['rates'][1]['rate'].strip %> Miles | $3500</p>
+                  </label>
+                </div>
+      <!--           this is the end of radio button 2 -->
+                <% if result['rates'][2] == nil %>
+                <p id="radio-black">First class not available</p>
+                <% else %>
+      <!--      this is start of radio button 3       -->
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="price" id="booking_price_economy_3" value="5000">
+                  <label class="form-check-label" for="booking_price_economy_3">
+                    <a id="radio-black"><%= result['rates'][2]['label'].strip %></a>
+                    <p id="radio-black"><%= result['rates'][2]['rate'].strip %> Miles | $5000</p>
+                  </label>
+                </div>
+      <!--           this is the end of radio button 2 -->
+                <% end %>
+      <!--           this is the end of if else -->
+                <div class="card text-right">
+                  <div class="btn-right">
+                    <%= link_to 'Book', new_booking_path(departure: @departure, arrival: @arrival), class: 'btn btn-light' %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <% end %>
   </div>

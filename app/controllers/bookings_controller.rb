@@ -17,13 +17,32 @@ class BookingsController < ApplicationController
     @booking.departure_date = departure_date
     @booking.return_date = return_date
     @booking.user = current_user
+    @booking.status = 'pending'
+    @booking.price = 1000 #calculate price based on user selection
     @booking.miles_profile = current_user.miles_profile
     if @booking.save!
       passenger = Passenger.new(passenger_params)
       passenger.booking_id = @booking.id
+      @requests = Request.new
+      @requests.confirmed = 'pending'
+      @requests.booking = @booking
+      @requests.save!
       if passenger.save!
-        redirect_to dashboard_path
+        # redirect_to dashboard_path
+        session = Stripe::Checkout::Session.create(
+            payment_method_types: ['card'],
+            line_items: [{
+              name: "#{@booking.departure} to #{@booking.arrival}",
+              amount: @booking.price * 100,
+              currency: 'usd',
+              quantity: 1
+            }],
+            success_url: dashboard_url,
+            cancel_url: dashboard_url
+          )
         flash[:notice] = 'Your flight booking has been requested!'
+        @booking.update(checkout_session_id: session.id)
+        redirect_to new_booking_payment_path(@booking)
       else
         render "bookings/new"
       end
@@ -47,12 +66,13 @@ class BookingsController < ApplicationController
       redirect_to user_session_path
       flash[:alert] = 'Please log in to book this flight.'
     end
+    # need to create new passenger here
   end
 
   private
 
   def bookings_params
-    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date)
+    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date, :price)
   end
 
   def passenger_params

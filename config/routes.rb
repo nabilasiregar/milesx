@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :miles_profiles, except: [:show]
   resources :bookings, only: [:new, :create] do
     resources :passengers, only: [:create]
+    resources :payments, only: :new
   end
 
   get 'bookings/:id', to: "bookings#show", as: :booking
