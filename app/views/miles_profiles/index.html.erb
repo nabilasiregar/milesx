@@ -47,7 +47,7 @@
     <!--           this is the end of if else -->
               <div class="card text-right">
                 <div class="btn-right">
-                  <a href="#" class="btn btn-light">Book</a>
+                  <%= link_to "Book", new_booking_path(departure: @departure, arrival: @arrival), class: "btn btn-light"  %>
                 </div>
               </div>
             </div>
