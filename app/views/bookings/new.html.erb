@@ -4,11 +4,11 @@
       <div class="listing-row">
         <h2 id="listing-title" style="">Flight Information</h2>
         <div class="row-listing-form">
-          <div class="card auto-margined w-75" style="border-style: none;">
+          <div class="card auto-margined w-100" style="border-style: none;">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
-              <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"> Business</h6>
+              <h5 class="booking-card-subtitle" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <h5 class="booking-card-subtitle" style="margin-top: auto;"> Business</h5>
 
             </div>
             <div class="booking-card-body">
@@ -28,22 +28,17 @@
 
 
             </div>
-            <!-- end of first row of div -->
 
-            <!-- start of second row -->
             <div class="d-flex justify-content-between">
             <div class=""></div>
             <div class=""><p><%= %></p></div>
             </div>
-            <!-- end of second row -->
 
-            <!-- start of third row -->
             <div class="d-flex justify-content-between">
             <div class=""><span id="departure-date-value"></span></div>
             <div class=""><span id="arrival-date-value"></span></div>
 
             </div>
-            <!-- first row on div -->
             </div>
           </div>
         </div>
@@ -65,7 +60,7 @@
           <%= f.input :departure_time, input_html: { value: "17:40hrs", readonly: true, class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
-          <h2 id="listing-title" style="color: blue">Passenger Information</h2>
+          <h2 id="listing-title" style="color: $blue">Passenger Information</h2>
           <%= simple_fields_for :passenger do |o| %>
            <div class="form-group w-100">
             <label for="passenger_first_name">First / Given name (as in passport)</label>
@@ -128,4 +123,6 @@
   })
 
 </script>
+
+
 
