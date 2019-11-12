@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post "accept_booking/:id", to: "pages#accept_booking", as: :accept_booking
   post "decline_booking/:id", to: "pages#decline_booking", as: :decline_booking
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: "users/registrations" }
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard", as: :dashboard
 
