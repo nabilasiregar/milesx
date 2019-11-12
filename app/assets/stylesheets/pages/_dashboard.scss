@@ -1,3 +1,5 @@
+// RANDOM
+
 h1 {
   text-align: center;
 }
@@ -6,6 +8,7 @@ h1 {
   color: black;
 }
 
+// PROFILE TAB STYLE
 
 .card-profile {
   color: #000000;
@@ -24,6 +27,24 @@ h1 {
   width: 90px;
   margin-left: 350px;
 }
+.profile-container {
+  // padding: 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 250px;
+}
+.edit-profile {
+  color: black;
+  text-decoration: underline;
+}
+
+.edit-profile:hover {
+  font-weight: bold;
+  color: black;
+}
+
+// BOOKING TAB
 
 .dash-booking {
   color: white;
@@ -33,15 +54,15 @@ h1 {
   flex-direction: column;
 }
 
-.profile-container {
-  // padding: 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 250px;
+.booking-card{
+  width: 40rem;
+  color: black;
+  margin: 20px 0px;
+  overflow: hidden;
 }
 
-// Sellers tab
+// MILES TAB
+
 .miles-container {
   display: flex;
   justify-content: space-between;
@@ -80,6 +101,21 @@ h1 {
 }
 
 
+// REQUEST TAB
+
+.request-card {
+  width: 40rem;
+  color: black;
+  margin: 20px 0px;
+  overflow: hidden;
+}
+
+.buyer-requests {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .btn-see-booking {
   color: black;
   text-decoration: underline;
@@ -90,15 +126,6 @@ h1 {
   color: black;
 }
 
-.edit-profile {
-  color: black;
-  text-decoration: underline;
-}
-
-.edit-profile:hover {
-  font-weight: bold;
-  color: black;
-}
 
 .disclaimer em {
   color: black;
@@ -132,33 +159,7 @@ h1 {
   text-decoration: none;
 }
 
-.booking-card{
-  width: 40rem;
-  color: black;
-  margin: 20px 0px;
-  overflow: hidden;
-}
 
-.request-card {
-  width: 40rem;
-  color: black;
-  margin: 20px 0px;
-  overflow: hidden;
-}
-
-.buyer-requests {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-// .buyer-requests h2 {
-
-// }
-// .miles-profile-card a:hover {
-//  text-decoration: none;
-//  color: black;
-// }
 
 
 
