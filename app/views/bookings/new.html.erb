@@ -7,9 +7,8 @@
           <div class="card auto-margined w-100" style="border-style: none;">
           <div class="card">
             <div class="card-header">
-              <h5 class="booking-card-subtitle" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <h5 class="booking-card-subtitle" style="color: white margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
               <h5 class="booking-card-subtitle" style="margin-top: auto;"> Business</h5>
-
             </div>
             <div class="booking-card-body">
             <div class="d-flex justify-content-between">
@@ -54,10 +53,10 @@
             </div>
           </div>
 
-          <%= f.input :flight_number, input_html: { value: "SQ352", readonly: true, class: 'booking-form' } %>
+          <%= f.input :flight_number, input_html: { placeholder:"Enter your flight number here", readonly: false, class: 'booking-form' } %>
           <%= f.input :booking_class, input_html: { value: "Business", readonly: true, class: 'booking-form' } %>
-          <%= f.input :arrival_time, input_html: { value: "23:55", readonly: true, class: 'booking-form' } %>
-          <%= f.input :departure_time, input_html: { value: "06:00", readonly: true, class: 'booking-form' } %>
+          <%= f.input :departure_time, input_html: { value: "Placeholder for user to input departure time", readonly: true, class: 'booking-form' } %>
+          <%= f.input :arrival_time, input_html: { value: "Placeholder for user to input arrival time", readonly: true, class: 'booking-form' } %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
           <h2 id="listing-title" style="color: $blue">Passenger Information</h2>
@@ -123,6 +122,8 @@
   })
 
 </script>
+
+
 
 
 

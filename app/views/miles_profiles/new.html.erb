@@ -1,17 +1,17 @@
 <div class="listing-container">
   <div class="col-md-8 offset-md-2 pb-3">
     <div class="listing-row">
-    <h1 id="listing-title">Let's start earning money from extra miles!</h1>
+    <h2 id="listing-title" style="">Start listing your miles today</h2>
     <%= simple_form_for(@miles_profile) do |m|%>
     <div class="row-listing-form">
       <p>FQ Programme</p>
       <%= m.input :programme, as: :select, collection: @program %>
-      <p>How many miles do you want to list?</p>
+      <p>How many miles do you have for sale?</p>
       <%= m.input :amount, placeholder: "e.g. 100000 miles" %>
-      <p>You are responsible for choosing the miles price.</p>
-      <%= m.input :price, placeholder: "price is per 1000 miles" %>
+      <p>How much do you want to charge for your miles? </p>
+      <%= m.input :price, placeholder: "List your price in blocks of 1000 miles" %>
       <div class="listing-submit-row">
-      <%= m.button :submit, class: "btn-listing btn-sign-up" %>
+      <%= m.button :submit, class: "btn btn-outline-primary" %>
       </div>
    </div>
   <% end %>
