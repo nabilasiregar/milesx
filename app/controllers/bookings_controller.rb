@@ -17,9 +17,13 @@ class BookingsController < ApplicationController
     @booking.departure_date = departure_date
     @booking.return_date = return_date
     @booking.user = current_user
+    #insert that into the cards
+    #get the price per mile * amount of miles for booking.price
+    # need to change later
+    miles_profile = MilesProfile.where('amount > ?', @booking.amount_of_miles).sample
     @booking.status = 'pending'
-    @booking.price = 1000 #calculate price based on user selection
-    @booking.miles_profile = current_user.miles_profile
+    @booking.price = (@booking.amount_of_miles * miles_profile.price) / 1000 #calculate price based on user selection
+    @booking.miles_profile = miles_profile
     if @booking.save!
       passenger = Passenger.new(passenger_params)
       passenger.booking_id = @booking.id
@@ -72,7 +76,7 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date, :price)
+    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date, :price, :amount_of_miles)
   end
 
   def passenger_params
