@@ -44,7 +44,7 @@
           </div>
         </div>
         <%= simple_form_for(@booking) do |f|%>
-<!--           <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center">
             <div class="form-group w-50 mr-5">
               <label for="departure" style="color: black;">Departure Date</label>
               <input type="text" readonly="readonly" name="departure_date" class="form-control booking-form" id="depart-date">
@@ -54,12 +54,10 @@
               <input type="text" readonly="readonly" name="return_date" class="form-control booking-form" id="return-date">
             </div>
           </div>
- -->
+
           <%= f.input :flight_number, input_html: { placeholder:"Enter your flight number here", readonly: false, class: 'booking-form' } %>
           <%= f.input :amount_of_miles, as: :hidden, input_html: { value: params[:amount_of_miles] } %>
           <%= f.input :booking_class, input_html: { value: "Business", readonly: true, class: 'booking-form' } %>
-          <%= f.input :departure_date, placeholder: "Placeholder for user to input departure time", input_html: { readonly: true, class: 'booking-form' }, html5: true %>
-          <%= f.input :return_date, placeholder: "Placeholder for user to input arrival time", input_html: { readonly: true, class: 'booking-form' }, html5: true %>
           <%= f.input :departure, input_html: {value: @departure, readonly: true, class: 'booking-form' } %>
           <%= f.input :arrival, input_html: {value: @arrival, readonly: true, class: 'booking-form' } %>
           <h2 id="listing-title" style="color: $blue">Passenger Information</h2>
