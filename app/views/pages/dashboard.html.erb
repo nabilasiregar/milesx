@@ -97,6 +97,7 @@
       </div>
           <% if @user.requests.any? %>
           <% @user.requests.each do |request| %>
+          <% unless request.nil? %>
           <div class="request-card card" style="width: 40rem; color: black;">
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
@@ -116,6 +117,7 @@
             <% end %>
             </ul>
           </div>
+          <% end %>
           <% end %>
         <% end %>
 
