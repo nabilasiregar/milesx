@@ -16,9 +16,15 @@ initSelect2()
   var image  = `/assets/airline_logos/${flight.airlineIata}.png`;
   console.log(image)
   return `
-  <div class="my-2">
-  <input class="mr-3" type="checkbox" />
-  <img src='${image}' width=30 height=30> ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime}
+  <div class="my-2 d-flex justify-content-between">
+    <div>
+      <input class="mr-3" type="checkbox" />
+      <img src='${image}' width=30 height=30> ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime}
+    </div>
+    <div class="d-flex justify-content-between" style="width: 200px;">
+      <img src='${image}' width=30 height=30> ${flight.airlineIata}${flight.flightNumber} - ${flight.arrivalTime}
+      <input class="mr-3" type="checkbox" />
+    </div>
   </div>`
   }
 
