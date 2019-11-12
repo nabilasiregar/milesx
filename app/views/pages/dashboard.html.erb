@@ -1,5 +1,6 @@
 <h1><%= @user.first_name %>'s Dashboard</h1>
 <br>
+<!-- do not remove lines 4-17, very iportant so bootstrap tabs work -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
@@ -15,7 +16,8 @@
   </li>
 </ul>
 
-<div class="tab-content" id="myTabContent">
+<!-- lines 20, 42, 72, 92 must be kept. If you change ID you must make sure it matches the ID from the above nav-item-tabs^^^^ -->
+<div class="tab-content" id="myTabContent"> <!-- all dashboard content is enclosed within "tab-content" div -->
   <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="profile-container">
       <div class="card-profile">
@@ -34,9 +36,9 @@
       </div>
     </div>
   </div>
+<!-- lines 21-38 correlate to the "profile" tab on dashboard -->
 
-
-
+<!-- lines 41-65 are dealing with the dashboards "booking" tab the. The card used is a bootstrap card-->
   <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
     <div class="dash-booking">
       <h2>Hello <%= @user.first_name %> here are your Bookings:</h2>
@@ -46,7 +48,7 @@
         </div>
       </div>
         <% @user.bookings.each do |booking| %>
-        <div class="booking-card card " style="width: 40rem; color: black;">
+        <div class="booking-card card " style="width: 40rem; color: black;"> <!-- important line must be kept to make cards actually seperated -->
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Departure:</strong> <%= booking.departure %></li>
           <li class="list-group-item"><strong>Arrival:</strong> <%= booking.arrival %></li>
@@ -66,7 +68,7 @@
 
 
 
-
+<!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
   <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
     <div class="miles-container">
       <% if @miles_profile %>
@@ -86,7 +88,7 @@
 
 
 
-
+<!-- lines 91-132 are dealing with the requests tab. (css is in decent shape) -->
   <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
     <div class="buyer-requests">
       <h2><%= @user.first_name %>, here are your pending flight requests from other MilesX users:</h2>
@@ -97,7 +99,7 @@
       </div>
           <% if @user.requests.any? %>
           <% @user.requests.each do |request| %>
-          <div class="request-card card" style="width: 40rem; color: black;">
+          <div class="request-card card" style="width: 40rem; color: black;"> <!-- important line same as the booking comment -->
             <ul class="list-group list-group-flush">
               <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
               <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
@@ -118,7 +120,7 @@
           </div>
           <% end %>
         <% end %>
-
+<!-- Lines 111-116 is a very imoortant iteration and link_to's that are calling methods in the pages controller -->
 
       <div class="disclaimer">
         <h6>Disclaimer:</h6>
@@ -130,9 +132,8 @@
   </div>
 </div>
 
-              <!-- <li class="list-group-item">See request:</li>
-              <li class="list-group-item">Upload ticket:</li> -->
 
+<!-- DO NOT REMOVE BELOW LINES, FOR SOME REASON IT CRASHES THE ENTIRE DASHBOARD WITHOUT THEM -->
         </div>
         <% end %>
     </div>
