@@ -16,8 +16,8 @@ class MilesProfilesController < ApplicationController
       departure = params[:departure][0..2]
       arrival = params[:arrival][0..2]
       digest = OpenSSL::Digest.new('sha256')
-      key = OpenSSL::HMAC.hexdigest(digest, 'lewagon', "f=#{departure}&t=#{arrival}&ffp=8|16|27|28|29|32|75|188|189|193|228&langid=1")
-      url = "https://milez.biz/api/list_rates.php?pid=162&key=#{key}&f=#{departure}&t=#{arrival}&ffp=8|16|27|28|29|32|75|188|189|193|228&langid=1"
+      key = OpenSSL::HMAC.hexdigest(digest, 'lewagon', "f=#{departure}&t=#{arrival}&ffp=47|8|16|27|28|29|32|75|188|189|193|228&langid=1")
+      url = "https://milez.biz/api/list_rates.php?pid=162&key=#{key}&f=#{departure}&t=#{arrival}&ffp=47|8|16|27|28|29|32|75|188|189|193|228&langid=1"
       data_serialized = RestClient::Request.execute(method: :get, url: url, verify_ssl: false)
       json_data = JSON.parse(data_serialized)
       @results = json_data['data']
