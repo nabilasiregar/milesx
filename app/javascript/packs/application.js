@@ -11,21 +11,20 @@ airport()
 initFlatpickr()
 initSelect2()
 
-    console.log(Rails)
+
   const card = (flight) => {
   var image  = `/assets/airline_logos/${flight.airlineIata}.png`;
-  console.log(image)
+
   return `
-  <div class="my-2 d-flex justify-content-between">
+  <div class="my-2 d-flex justify-content-between" id="option-departure">
     <div>
-      <input class="mr-3" type="checkbox" />
-      <img src='${image}' width=30 height=30> ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime}
+      <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
+      <img src='${image}' width=30 height=30>
+      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime}
     </div>
-    <div class="d-flex justify-content-between" style="width: 200px;">
-      <img src='${image}' width=30 height=30> ${flight.airlineIata}${flight.flightNumber} - ${flight.arrivalTime}
-      <input class="mr-3" type="checkbox" />
-    </div>
-  </div>`
+  </div>
+
+  `
   }
 
   const displayCard = (flight) =>{
@@ -34,17 +33,35 @@ initSelect2()
   }
 
 
+  async function processData(array) {
+    let i = 0
+    for (i; i < array.length; i++) {
+      await displayCard(array[i])
+    }
+    return document.querySelectorAll('#option-departure input')
+  }
+
+
   const departure = document.querySelector("#departure-iata").innerText
   const arrival = document.querySelector("#arrival-iata").innerText
   fetch(`http://aviation-edge.com/v2/public/routes?key=abe08f-cf2f23&departureIata=${departure}&arrivalIata=${arrival}`)
   .then(response => response.json())
   .then((data) => {
-    console.log(data)
     if (data.errors == undefined){
-      data.forEach((flight) =>{
-      displayCard(flight)
+      processData(data).then((inputs) =>
+      inputs.forEach((input) =>{
+        input.addEventListener('click', (e) =>{
+          let flightNumber = e.target.dataset.flight
+          inputs.forEach( checkbox => checkbox.checked = false )
+          e.target.checked = true
+          document.querySelector("#booking_flight_number").value = flightNumber
+        })
       })
-
+      )
     }
   });
 
+
+
+  //
+  // console.log(inputs)
