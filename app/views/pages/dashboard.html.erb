@@ -19,23 +19,7 @@
 <!-- lines 20, 42, 72, 92 must be kept. If you change ID you must make sure it matches the ID from the above nav-item-tabs^^^^ -->
 <div class="tab-content" id="myTabContent"> <!-- all dashboard content is enclosed within "tab-content" div -->
   <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <div class="profile-container">
-      <div class="card-profile">
-        <h2>Your profile info:</h2>
-        <% if current_user.photo.blank? %>
-        <img class="card-profile-user" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-        <% else %>
-        <%= cl_image_tag @user.photo, class: "card-profile-user" %>
-        <% end %>
-        <%= @user.email %><br>
-        <%= @user.first_name %>
-        <%= @user.last_name %><br>
-        <%= @user.phone %>
-        <%= @user.birth_date %><br>
-        <%= link_to "Edit profile", edit_user_registration_path, class: 'edit-profile' %>
-      </div>
-    </div>
-  </div>
+
 <!-- lines 21-38 correlate to the "profile" tab on dashboard -->
 
 <!-- lines 41-65 are dealing with the dashboards "booking" tab the. The card used is a bootstrap card-->
@@ -63,7 +47,6 @@
       </div>
 
   </div>
-
 <!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
   <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
     <div class="miles-container">
