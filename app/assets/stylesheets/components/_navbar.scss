@@ -38,3 +38,10 @@ a.nav2-css {
   color: #d7d1c9;
   text-decoration: none;
 }
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0 !important;
+}

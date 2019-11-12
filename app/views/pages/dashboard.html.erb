@@ -32,7 +32,8 @@
         </div>
       </div>
         <% @user.bookings.each do |booking| %>
-        <div class="booking-card card " style="width: 40rem; color: black;"> <!-- important line must be kept to make cards actually seperated -->
+        <div class="booking-card card" style="width: 40rem; color: black;"> <!-- important line must be kept to make cards actually seperated -->
+
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Departure:</strong> <%= booking.departure %></li>
           <li class="list-group-item"><strong>Arrival:</strong> <%= booking.arrival %></li>
@@ -41,6 +42,7 @@
           <li class="list-group-item"><strong>Amount of miles:</strong> <%= booking.amount_of_miles %> miles</li>
           <li class="list-group-item"><strong>Price:</strong> $<%= booking.price %></li>
           <li class="list-group-item"><strong>Status:</strong> <%= booking.status %></li>
+          <li class="list-group-item">Download Ticket</li>
         </ul>
       </div>
       <% end %>
