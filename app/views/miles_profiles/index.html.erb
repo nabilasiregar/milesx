@@ -16,7 +16,7 @@
                 <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
               </div>
 
-              <div class="card-body">
+              <div class="card-profile-body">
       <!--      this is start of radio button 1       -->
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="price" id="booking_price_economy_1" value="1200">
@@ -36,7 +36,7 @@
                 </div>
       <!--           this is the end of radio button 2 -->
                 <% if result['rates'][2] == nil %>
-                <p id="radio-black">First class not available</p>
+                <p id="radio-black-fst">First class not available</p>
                 <% else %>
       <!--      this is start of radio button 3       -->
                 <div class="form-check">
