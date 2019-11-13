@@ -17,6 +17,7 @@
 }
 .container-content {
   color: black;
+  // background-image: image-url(‘sky.jpg’);
   height: 100vh;
 }
 
@@ -147,6 +148,7 @@ h4.card-title {
 .card-body {
    margin-top: 75px;
    color: black;
+   //box-shadow: 5px 5px 5px #111723;
 }
 
 .text-center {
@@ -189,7 +191,7 @@ h4.card-title {
 
 .autocomplete-result {
   color: white;
-  border: 20px solid #27292B;
+  border: 1px solid #27292B;
   font-size: 14px;
   font-family: $body-font !important;
   padding: 0 0 3px 5px;
