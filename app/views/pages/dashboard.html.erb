@@ -100,19 +100,19 @@
               <li class="list-group-item"><strong>Amount of miles:</strong> <%= request.booking.amount_of_miles %></li>
               <li class="list-group-item"><strong>Price:</strong> <%= request.booking.price %></li>
               <li class="list-group-item"><strong>Confirmation/See Request:</strong>
-                <%= request.confirmed %><br>
-                <% if request.confirmed == "pending" %>
+              <%= request.confirmed %><br>
+              <% if request.confirmed == "pending" %>
                   <%= link_to "Accept", accept_booking_path(request), class: "btn-accept", method: :post  %>
                   <%= link_to "Decline", decline_booking_path(request), class: "btn-decline", method: :post %>
                 <% elsif request.confirmed == "confirmed" %>
                   <%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %>
                 </li><br>
-            <% end %>
+              <% end %>
             </ul>
           </div>
           <% end %>
           <% end %>
-        <% end %>
+          <% end %>
 <!-- Lines 111-116 is a very imoortant iteration and link_to's that are calling methods in the pages controller -->
 
       <div class="disclaimer">
