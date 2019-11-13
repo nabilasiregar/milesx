@@ -20,7 +20,7 @@ initSelect2()
     <div>
       <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
       <img src='${image}' width=30 height=30>
-      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime};
+      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime}
     </div>
   </div>
 
@@ -30,9 +30,9 @@ initSelect2()
   const displayCard = (flight) =>{
     const box = document.querySelector("#flight-numbers")
      // the next line && statement is to display only the singapore airline flights
-    if (flight.departureTime !== null && flight.airlineIata == "SQ") {
+    // if (flight.departureTime !== null && flight.airlineIata == "SQ") {
       box.insertAdjacentHTML("afterbegin", card(flight))
-    }
+    // }
   }
 
   async function processData(array) {

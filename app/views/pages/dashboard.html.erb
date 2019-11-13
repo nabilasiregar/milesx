@@ -68,28 +68,23 @@
 
   <!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
     <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
-      <div class="miles-container">
-        <% if @miles_profile %>
-        <div class="miles-profile-card">
-         <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-         <h2> <%=@user.first_name %>'s current miles:</h2>
-         <div class="miles-profile-info">
-          <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
-          <span><strong>Miles remaining:</strong> <%= @miles_profile.amount %> Miles</span>
-          <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
-          <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
-          </div>
+        <div class="user-info">
+          <h5> Your Miles Programme</h5>
+          <span><%= @miles_profile.programme %></span>
+          <h5> Total Amount of miles</h5>
+          <span><%= @miles_profile.amount %> Miles</span>
+          <h5>Price per 1000 miles</h5>
+          <span>$<%= @miles_profile.price %>/1000 miles</span>
         </div>
+         <div class="editmiles-button">
+            <%= link_to "Edit Miles Profile", edit_miles_profile_path(@miles_profile.id) %>
+          </div>
       </div>
-    </div>
-
-
-
 
   <!-- lines 91-132 are dealing with the requests tab. (css is in decent shape) -->
     <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
       <div class="buyer-requests">
-        <h2><%= @user.first_name %>, here are your pending flight requests from other MilesX users:</h2>
+        <h2><%= @user.first_name %>, these are your pending flight requests from other MilesX users:</h2>
         <div class="card" style="width: 40rem; color: black;">
           <div class="card-header"style="color: white;">
             <strong>Requests:</strong>
@@ -124,7 +119,7 @@
 
         <div class="disclaimer">
           <h6>Disclaimer:</h6>
-            <p>MilesX<em> is fully commmited and we rely on your cooperation to ensure sale payments are fulfilled. It is the obligation of the account holder
+            <p>MilesX<em> We are fully commmited and we rely on your cooperation to ensure sale payments are fulfilled. It is the obligation of the account holder
             to ensure the bookings are fulfilled in accordance with the buyer's details. Accepted requests that are not finalised may result in
             the suspension or termination of your account.</em></p>
         </div>
@@ -135,7 +130,6 @@
 
   <!-- DO NOT REMOVE BELOW LINES, FOR SOME REASON IT CRASHES THE ENTIRE DASHBOARD WITHOUT THEM -->
           </div>
-          <% end %>
       </div>
 
   <!-- Jielun new dashboard -->
