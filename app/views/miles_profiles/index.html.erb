@@ -28,6 +28,9 @@
                 </div>
       <!--           this is the end of radio button 1 -->
       <!--      this is start of radio button 2       -->
+                <% if result['rates'][1] == nil %>
+                 <p id="radio-black-fst">Business class not available</p>
+                 <% else %>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_2" value="<%= result['rates'][1]['label'].strip  %>-<%= result['rates'][1]['rate'].strip %>">
                   <label class="form-check-label" for="booking_price_economy_2">
@@ -35,6 +38,7 @@
                     <p id="radio-black"><%= result['rates'][1]['rate'].strip %> Miles | $<%= @miles_profile.price * result['rates'][1]['rate'].strip.to_i / 1000 %></p>
                   </label>
                 </div>
+                <% end %>
       <!--           this is the end of radio button 2 -->
                 <% if result['rates'][2] == nil %>
                 <p id="radio-black-fst">First class not available</p>

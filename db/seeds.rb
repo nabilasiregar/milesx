@@ -44,6 +44,7 @@ pending_booking = Booking.create!(
   user: buyer,
   departure: "Singapore",
   arrival: "Paris",
+  seat_class: "Business",
   ticket_received: false,
   price: 10202,
   amount_of_miles: 34567,
@@ -62,6 +63,7 @@ declined_booking = Booking.create!(
   user: buyer,
   departure: "Denpasar",
   arrival: "Amsterdam",
+  seat_class: "Economy",
   ticket_received: false,
   price: 1022,
   amount_of_miles: 32367,
@@ -80,6 +82,7 @@ confirmed_booking = Booking.create!(
   user: buyer,
   departure: "Shanghai",
   arrival: "London",
+  seat_class: "Business",
   ticket_received: false,
   price: 1202,
   amount_of_miles: 345637,
@@ -103,12 +106,12 @@ confirmed_request = Request.create!(
 end
 
 10.times do
-  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(10001..20000), price: 5)
+  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(10001..300000), price: 5)
 end
 
 10.times do
   booking = Booking.create!(user: User.all.sample, departure: "Shanghai",
-  arrival: "London", ticket_received: false, departure_date: Date.today + rand(10..20), return_date: Date.today + rand(21..30), miles_profile_id: MilesProfile.all.sample.id)
+  arrival: "London", seat_class: "Business", ticket_received: false, departure_date: Date.today + rand(10..20), return_date: Date.today + rand(21..30), miles_profile_id: MilesProfile.all.sample.id)
 end
 
 10.times do
