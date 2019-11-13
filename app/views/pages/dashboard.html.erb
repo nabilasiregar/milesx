@@ -75,9 +75,9 @@
                       <p class="text-sm font-weight-bold">$<%= booking.price %>                                        </p>
                       <h6 class="label-heading">Ticket</h6>
                       <% if booking.ticket_received %>
-                      <%= link_to cl_image_path booking.request.photo, download: 'hehe.png' do %>
-                      <p class="text-sm font-weight-bold mb-0">Download</p>
-                       <% end %>
+                      <a href="<%= cl_image_path booking.request.photo %> "target= "blank">
+                        <p class="text-sm font-weight-bold mb-0">Download</p>
+                      </a>
                        <% else %>
                       <p class="text-sm font-weight-bold mb-0">Unavailable</p>
                       <% end %>
