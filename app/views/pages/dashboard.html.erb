@@ -42,6 +42,25 @@
         <p><%= current_user.email %></p>
       </div>
     </div>
+
+  <!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
+    <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
+        <div class="user-info">
+          <% if @miles_profile %>
+          <h5> Your Miles Programme</h5>
+          <span><%= @miles_profile.programme %></span>
+          <h5> Total Amount of miles</h5>
+          <span><%= @miles_profile.amount %> Miles</span>
+          <h5>Price per 1000 miles</h5>
+          <span>$<%= @miles_profile.price %>/1000 miles</span>
+        </div>
+         <div class="editmiles-button">
+            <%= link_to "Edit Miles Profile", edit_miles_profile_path(@miles_profile.id) %>
+          </div>
+          <% else %>
+            <p>You don't have any Miles Account</p>
+          <% end %>
+      </div>
   </div>
 <!--   this line is the end of profile tab on dashboard -->
 
@@ -113,24 +132,4 @@
   </div>
   <!-- end of bookings table -->
 
-<!--   this is the start of miles profile tab on dashboard -->
-  <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
-    <div class="miles-container">
-      <% if @miles_profile %>
-        <div class="miles-profile-card">
-        <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-        <h2> <%=@user.first_name %>'s current miles:</h2>
-        <div class="miles-profile-info">
-        <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
-        <span><strong>Miles remaining:</strong> <%= @miles_profile.amount %> Miles</span>
-        <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
-        <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
-        </div>
-      </div>
-      <% else %>
-        <p>You don't have any Miles Account</p>
-      <% end %>
-    </div>
-  </div>
-<!--   this is the end of miles profile tab on dashboard -->
 </div>
