@@ -56,6 +56,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @airline = params[:airline]
     @departure = params[:departure]
     @arrival = params[:arrival]
     @places = session[:params]

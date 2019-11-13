@@ -20,7 +20,7 @@ initSelect2()
     <div>
       <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
       <img src='${image}' width=30 height=30>
-      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime}
+      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime};
     </div>
   </div>
 
@@ -29,9 +29,11 @@ initSelect2()
 
   const displayCard = (flight) =>{
     const box = document.querySelector("#flight-numbers")
-    box.insertAdjacentHTML("afterbegin", card(flight))
+     // the next line && statement is to display only the singapore airline flights
+    if (flight.departureTime !== null && flight.airlineIata == "SQ") {
+      box.insertAdjacentHTML("afterbegin", card(flight))
+    }
   }
-
 
   async function processData(array) {
     let i = 0
@@ -41,12 +43,15 @@ initSelect2()
     return document.querySelectorAll('#option-departure input')
   }
 
+  // const airlineName = document.querySelector("#airline-name").dataset.airline
+
 
   const departure = document.querySelector("#departure-iata").innerText
   const arrival = document.querySelector("#arrival-iata").innerText
   fetch(`http://aviation-edge.com/v2/public/routes?key=abe08f-cf2f23&departureIata=${departure}&arrivalIata=${arrival}`)
   .then(response => response.json())
   .then((data) => {
+    console.log(data)
     if (data.errors == undefined){
       processData(data).then((inputs) =>
       inputs.forEach((input) =>{
