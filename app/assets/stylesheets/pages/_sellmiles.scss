@@ -12,8 +12,12 @@
   letter-spacing: 2px;
 }
 
-.listing-title {
+h2#listing-title {
   display: block;
+  font-family: $headers-font !important;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 600;
 }
 
 #new_miles_profile.simple_form.new_miles_profile {
@@ -25,4 +29,5 @@
   letter-spacing: 0.5px;
   font-style: normal;
   font-weight: 400;
+  font-size: 20px;
 }
