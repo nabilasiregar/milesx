@@ -23,9 +23,8 @@
   <div class="card-trip">
   <div class="card-trip-infos">
     <div>
-      <p><%= @user.email %></p>
-      <p><%= @user.first_name %></p>
-      <p><%= @user.last_name %></p>
+      <p><strong>Full Name: <%= @user.first_name %> <%= @user.last_name %></strong></p>
+      <p><strong>Email:<%= @user.email %></strong></p>
       <p><%= cl_image_tag @user.photo %></p>
     </div>
   </div>
