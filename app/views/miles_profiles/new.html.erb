@@ -1,17 +1,14 @@
 <div class="listing-container">
-  <div class="col-md-8 offset-md-2 pb-3">
+  <div class="col-md-6 offset-md-6 pt-3 mb-4">
     <div class="listing-row">
-    <h2 id="listing-title" style="">Start listing your miles today</h2>
+    <h2 id="listing-title" style="">Have an extra or an expiring miles? Sell it with us!</h2>
     <%= simple_form_for(@miles_profile) do |m|%>
     <div class="row-listing-form">
-      <p>FQ Programme</p>
-      <%= m.input :programme, as: :select, collection: @program %>
-      <p>How many miles do you have for sale?</p>
-      <%= m.input :amount, placeholder: "e.g. 100000 miles" %>
-      <p>How much do you want to charge for your miles? </p>
-      <%= m.input :price, placeholder: "List your price in blocks of 1000 miles" %>
+      <%= m.input :programme, as: :select, collection: @program, :label => "FQ Programme" %>
+      <%= m.input :amount, placeholder: "e.g. 100000", :label => "Miles Amount" %>
+      <%= m.input :price, placeholder: "price per 1000 miles" %>
       <div class="listing-submit-row">
-      <%= m.button :submit, class: "btn btn-outline-primary" %>
+      <%= m.button :submit, class: "btn btn-primary" %>
       </div>
    </div>
   <% end %>

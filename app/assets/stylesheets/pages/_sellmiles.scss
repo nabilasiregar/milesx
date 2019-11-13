@@ -1,0 +1,33 @@
+.listing-row {
+  display: flex;
+  flex-direction: column;
+  padding: 1.875rem 2.5rem;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  width: 100%;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+h2#listing-title {
+  display: block;
+  font-family: $headers-font !important;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+#new_miles_profile.simple_form.new_miles_profile {
+  overflow: hidden;
+}
+
+.integer.required, .select.required {
+  font-family: $body-font;
+  letter-spacing: 0.5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}

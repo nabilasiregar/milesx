@@ -57,6 +57,7 @@ class BookingsController < ApplicationController
 
   def new
     @airline = params[:airline]
+    @class = params[:amount_of_miles].split("-").first
     @departure = params[:departure]
     @arrival = params[:arrival]
     @places = session[:params]
