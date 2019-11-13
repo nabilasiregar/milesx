@@ -9,7 +9,7 @@
   color: white;
   padding-top: 80px;
   text-align: center;
-  font-family: 'Cinzel', serif;
+  font-family: $headers-font;
   font-weight: bold;
   font-size: 100px;
   text-shadow: 2px 2px 4px #000000;
@@ -20,7 +20,7 @@
   text-align: center;
   margin: 7px;
   font-size: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $body-font;
   text-shadow: 2px 2px 4px #000000;
 }
 

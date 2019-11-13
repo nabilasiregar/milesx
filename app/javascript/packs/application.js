@@ -44,7 +44,7 @@ initSelect2()
 
   const departure = document.querySelector("#departure-iata").innerText
   const arrival = document.querySelector("#arrival-iata").innerText
-  fetch(`http://aviation-edge.com/v2/public/routes?key=abe08f-cf2f23&departureIata=${departure}&arrivalIata=${arrival}`)
+  fetch(`https://aviation-edge.com/v2/public/routes?key=abe08f-cf2f23&departureIata=${departure}&arrivalIata=${arrival}`)
   .then(response => response.json())
   .then((data) => {
     if (data.errors == undefined){
