@@ -1,11 +1,11 @@
 .black-btn {
   color: white;
-  background-color: #212121;
+  background-color: #494ca2;
   border-style: none;
   font-family: $headers-font;
   font-weight: 600;
     &:hover {
-      background-color: #2b2a2a;
+      background-color: #8186d5;
     }
 }
 
@@ -22,4 +22,20 @@ a.submit-btn {
     &:hover {
       color: $gray;
     }
+}
+
+
+.profile-button {
+  padding: 10px;
+  background-color: #898efd;
+  border-radius: 4px;
+  text-align: center;
+  margin: 13px;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
