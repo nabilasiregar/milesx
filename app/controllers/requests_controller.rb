@@ -7,6 +7,9 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     if @request.update(requests_params)
+      booking = @request.booking
+      booking.ticket_received = true
+      booking.save
       redirect_to booking_path(@request.booking)
     end
   end

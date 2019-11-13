@@ -74,7 +74,13 @@
                       <h6 class="label-heading">Total</h6>
                       <p class="text-sm font-weight-bold">$<%= booking.price %>                                        </p>
                       <h6 class="label-heading">Ticket</h6>
+                      <% if booking.ticket_received %>
+                      <%= link_to cl_image_path booking.request.photo, download: 'hehe.png' do %>
                       <p class="text-sm font-weight-bold mb-0">Download</p>
+                       <% end %>
+                       <% else %>
+                      <p class="text-sm font-weight-bold mb-0">Unavailable</p>
+                      <% end %>
                     </div>
                     <div class="col-12 col-lg-3 align-self-center">
                       <% if booking.status == 'confirmed' %>
@@ -130,3 +136,6 @@
   </div>
 <!--   this is the end of miles profile tab on dashboard -->
 </div>
+
+
+
