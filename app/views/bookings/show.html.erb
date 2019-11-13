@@ -12,7 +12,7 @@
 
   <% if @booking.request.photo.blank? %>
     <%= simple_form_for(@booking.request) do |f| %>
-      <%= f.input :photo, :label => "Upload Ticket" %>
+      <%= f.input :photo, input_html: { class: 'hidden'}, label_html: { class: 'upload-photo booking-btn'}, label: ' Upload ticket'%>
       <%= f.input :photo_cache, as: :hidden %>
       <%= f.button :submit, "Submit", class: 'ticket-submit' %>
     <% end %>
