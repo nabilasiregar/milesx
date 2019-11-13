@@ -1,5 +1,5 @@
 .footer {
-  background-color:#494ca2;
+  background: $blurp !important;
   padding:5vw;
   padding-bottom:5vw;
   display:block;
@@ -39,7 +39,7 @@
 }
 
 .footer a {
-  color:#fff;
+  color: white;
 }
 
 // .footer-reviews {
@@ -124,7 +124,7 @@
   -webkit-justify-content:space-between;
   -ms-flex-pack:justify;
   justify-content:space-between;
-  border-top:solid 1px #304c76;
+  // border-top:solid 1px #304c76;
   -webkit-flex-basis:80%;
   -ms-flex-preferred-size:80%;
   flex-basis:80%;
@@ -144,12 +144,19 @@
   -ms-flex-preferred-size:auto;
   flex-basis:auto;
   font-weight:300;
-  color:white;
+  color: black;
   font-size:14px;
   line-height:22px;
 
 }
 
+a#footer-address {
+    &:hover {
+      text-decoration: none !important;
+      color: $light-gray !important;
+    }
+
+}
   .footer-social {display:-webkit-box;
     display:-webkit-flex;
   display:-ms-flexbox;

@@ -4,10 +4,10 @@
 }
 
 a.nav-css {
-  color: #494ca2 !important;
-  // text-transform: none !important;
+  color: $blurp !important;
+  font-size: 16px !important;
     &:hover {
-      color: #d7d1c9 !important;
+      color: white !important;
     }
 }
 
@@ -24,8 +24,8 @@ a.nav2-css {
 }
 
 .uk-navbar-container2 {
-  background-color: #494ca2;
-  border-bottom: 5px #c9d1d3;
+  background-color: $blurp;
+  border-bottom: 5px $blurp;
   margin-bottom: 2%;
 }
 
