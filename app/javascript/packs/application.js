@@ -66,7 +66,3 @@ initSelect2()
     }
   });
 
-
-
-  //
-  // console.log(inputs)
