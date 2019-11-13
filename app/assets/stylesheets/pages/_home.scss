@@ -18,7 +18,7 @@
 .container-content {
   color: black;
   // background-image: image-url(‘sky.jpg’);
-  height: 100vh;
+  height: 66vh;
 }
 
 .container-content:before {
@@ -118,18 +118,24 @@ label {
   justify-content: space-between;
 }
 
-h4.card-title {
+h5.card-home {
   font-family: $headers-font;
   font-weight: 700;
   font-size: 25px;
   color: black;
 }
 
+h5.card-title {
+  color: black !important;
+  text-decoration: bold !important;
+
+}
+
 .content {
   padding: 0 !important;
 }
 .card-group {
-  margin: 5% 0px;
+  margin: 1% 0px;
   // height: 50vh;
   // margin-top: 110px;
 }
@@ -146,7 +152,7 @@ h4.card-title {
 }
 
 .card-body {
-   margin-top: 75px;
+   margin: 10%;
    color: black;
    //box-shadow: 5px 5px 5px #111723;
 }
@@ -160,6 +166,7 @@ h4.card-title {
 }
 
 
+
 .form-group label {
   color: black;
   font-family: $headers-font;
@@ -168,6 +175,9 @@ h4.card-title {
 
 .home-card {
   background-color: white;
+  border:  2px solid;
+  border-color: black;
+  color: black;
 }
 
 .card.text-center.home-card {
