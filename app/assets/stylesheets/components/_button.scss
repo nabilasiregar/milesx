@@ -39,3 +39,23 @@ a.submit-btn {
     text-decoration: none;
   }
 }
+
+.upload-photo {
+  border: #d3d3d3 solid 1px;
+  padding: 16px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: white;
+  border-radius: 2px;
+  min-height: 56px;
+  background-color: #898efd;
+  border-radius: 6px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.booking-btn {
+  min-height: 65px;
+}
