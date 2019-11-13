@@ -10,16 +10,17 @@
           <form action="/bookings/new">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+                <h5 class="card-title" style="color: #869cbd; margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
                 <input type="hidden" name="departure" id="booking_departure" value="<%= @departure %>">
                 <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
-                <h6 class="card-subtitle mb-2 text-muted" style="margin-top: auto;"><%= result["prog_name"] %></h6>
+                <input type="hidden" name="airline" id="airline" value="<%= result["prog_name"] %>">
+                <h6 class="card-subtitle mb-2" style="color: white; margin-top: auto;"><%= result["prog_name"] %></h6>
               </div>
 
               <div class="card-profile-body">
       <!--      this is start of radio button 1       -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_1" value="<%= result['rates'][0]['rate'].strip %>">
+                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_1" value="<%= result['rates'][0]['label'].strip  %>-<%= result['rates'][0]['rate'].strip %>">
                   <label class="form-check-label" for="booking_price_economy_1">
                     <a id="radio-black"><%= result['rates'][0]['label'].strip %></a>
                     <p id="radio-black"><%= result['rates'][0]['rate'].strip %> Miles | $<%= @miles_profile.price * result['rates'][0]['rate'].strip.to_i / 1000 %></p>
@@ -28,7 +29,7 @@
       <!--           this is the end of radio button 1 -->
       <!--      this is start of radio button 2       -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_2" value="<%= result['rates'][1]['rate'].strip %>">
+                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_2" value="<%= result['rates'][1]['label'].strip  %>-<%= result['rates'][1]['rate'].strip %>">
                   <label class="form-check-label" for="booking_price_economy_2">
                     <a id="radio-black"><%= result['rates'][1]['label'].strip %></a>
                     <p id="radio-black"><%= result['rates'][1]['rate'].strip %> Miles | $<%= @miles_profile.price * result['rates'][1]['rate'].strip.to_i / 1000 %></p>
@@ -40,7 +41,7 @@
                 <% else %>
       <!--      this is start of radio button 3       -->
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_3" value="<%= result['rates'][2]['rate'].strip %>">
+                  <input class="form-check-input" type="radio" name="amount_of_miles" id="booking_price_economy_3" value="<%= result['rates'][2]['label'].strip  %>-<%= result['rates'][2]['rate'].strip %>">
                   <label class="form-check-label" for="booking_price_economy_3">
                     <a id="radio-black"><%= result['rates'][2]['label'].strip %></a>
                     <p id="radio-black"><%= result['rates'][2]['rate'].strip %> Miles | $<%= @miles_profile.price * result['rates'][2]['rate'].strip.to_i / 1000 %></p>
@@ -51,8 +52,8 @@
       <!--           this is the end of if else -->
                 <div class="card text-right">
                   <div class="btn-right">
-                    <%#= f.submit 'Book', class: 'btn btn-light' %>
-                    <input type="submit" class="btn btn-light">
+                    <%#= result.submit 'Book', class: 'btn btn-light' %>
+                    <input type="submit" class="btn btn-light" value="Book">
                     <%#= link_to 'Book', new_booking_path(departure: @departure, arrival: @arrival), class: 'btn btn-light' %>
                   </div>
                 </div>

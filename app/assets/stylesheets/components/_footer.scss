@@ -1,5 +1,5 @@
 .footer {
-  background-color:#182940;
+  background-color:#494ca2;
   padding:5vw;
   padding-bottom:5vw;
   display:block;
@@ -16,7 +16,7 @@
   -webkit-flex-wrap:wrap;
   -ms-flex-wrap:wrap;
   flex-wrap:wrap;
-  min-height:260px;
+  min-height:90px;
   height:auto;
   width:100%;
 }
@@ -137,7 +137,7 @@
 }
 
 .footer-contact__address {
-  margin: 2.3em 0 0;
+  margin: 2em 0 0;
   font-style:normal;
   -webkit-flex-basis:auto;
   -ms-flex-preferred-size:auto;
@@ -169,4 +169,5 @@
 
 h1#milesx-logo {
   color: white;
+  margin-top: 0.2em;
 }

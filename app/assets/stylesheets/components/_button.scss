@@ -1,11 +1,11 @@
 .black-btn {
   color: white;
-  background-color: #212121;
+  background-color: #494ca2;
   border-style: none;
-  font-family: Montserrat;
+  font-family: $headers-font;
   font-weight: 600;
     &:hover {
-      background-color: #2b2a2a;
+      background-color: #8186d5;
     }
 }
 
@@ -14,12 +14,28 @@ a.submit-btn {
 }
 
 .btn-transparent {
-  font-family: Quicksand;
-  font-weight: 700;
+  font-family: $headers-font;
+  font-weight: 600;
   color: white;
   border: none;
   background: transparent;
     &:hover {
       color: $gray;
     }
+}
+
+
+.profile-button {
+  padding: 10px;
+  background-color: #898efd;
+  border-radius: 4px;
+  text-align: center;
+  margin: 13px;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }

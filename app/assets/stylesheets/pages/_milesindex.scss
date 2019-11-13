@@ -7,6 +7,13 @@
 // }
 
 .autocomplete-result {
-  color: black;
-  font-family: "Montserrat"
+  color: white;
+  border: 1px solid #27292B;
+  font-size: 14px;
+  font-family: $body-font !important;
+  padding: 0 0 3px 5px;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #27292B;
 }

@@ -1,135 +1,149 @@
-<h1><%= @user.first_name %>'s Dashboard</h1>
-<br>
-<!-- do not remove lines 4-17, very iportant so bootstrap tabs work -->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="booking-tab" data-toggle="tab" href="#booking" role="tab" aria-controls="booking" aria-selected="false">Booking</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="miles-tab" data-toggle="tab" href="#miles" role="tab" aria-controls="miles" aria-selected="false">Miles</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="request" aria-selected="false">Requests</a>
-  </li>
-</ul>
+<div class="main-dashboard-container">
 
-<!-- lines 20, 42, 72, 92 must be kept. If you change ID you must make sure it matches the ID from the above nav-item-tabs^^^^ -->
-<div class="tab-content" id="myTabContent"> <!-- all dashboard content is enclosed within "tab-content" div -->
-  <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-<!-- lines 21-38 correlate to the "profile" tab on dashboard -->
-  <div class="card-trip">
-  <div class="card-trip-infos">
-    <div>
-      <p><strong>Full Name: <%= @user.first_name %> <%= @user.last_name %></strong></p>
-      <p><strong>Email:<%= @user.email %></strong></p>
-      <p><%= cl_image_tag @user.photo %></p>
-    </div>
-  </div>
-</div>
-</div>
+  <h2 style="text-align: center">Welcome, <strong><%= @user.first_name %></strong> </h2>
+  <br>
+  <!-- do not remove lines 4-17, very iportant so bootstrap tabs work -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="booking-tab" data-toggle="tab" href="#booking" role="tab" aria-controls="booking" aria-selected="false">Booking</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="miles-tab" data-toggle="tab" href="#miles" role="tab" aria-controls="miles" aria-selected="false">Miles</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="request-tab" data-toggle="tab" href="#request" role="tab" aria-controls="request" aria-selected="false">Requests</a>
+    </li>
+  </ul>
 
-<!-- lines 41-65 are dealing with the dashboards "booking" tab the. The card used is a bootstrap card-->
-  <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-    <div class="dash-booking">
-      <h2>Hello <%= @user.first_name %> here are your Bookings:</h2>
-      <div class="card" style="width: 40rem; color: black;">
-        <div class="card-header"style="color: white;">
-          <strong>Your bookings:</strong>
+  <!-- lines 20, 42, 72, 92 must be kept. If you change ID you must make sure it matches the ID from the above nav-item-tabs^^^^ -->
+  <div class="tab-content" id="myTabContent"> <!-- all dashboard content is enclosed within "tab-content" div -->
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="user-profile">
+        <div class="user-photo">
+          <div class="profile-avatar">
+            <%= cl_image_tag current_user.photo %>
+          </div>
+          <div class="profile-button">
+            <%= link_to "Edit Profile", edit_user_registration_path  %>
+          </div>
         </div>
-      </div>
-        <% @user.bookings.each do |booking| %>
-        <div class="booking-card card" style="width: 40rem; color: black;"> <!-- important line must be kept to make cards actually seperated -->
 
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Departure:</strong> <%= booking.departure %></li>
-          <li class="list-group-item"><strong>Arrival:</strong> <%= booking.arrival %></li>
-          <li class="list-group-item"><strong>Departure date:</strong> <%= booking.departure_date %></li>
-          <li class="list-group-item"><strong>Return date:</strong> <%= booking.return_date %></li>
-          <li class="list-group-item"><strong>Amount of miles:</strong> <%= booking.amount_of_miles %> miles</li>
-          <li class="list-group-item"><strong>Price:</strong> $<%= booking.price %></li>
-          <li class="list-group-item"><strong>Status:</strong> <%= booking.status %></li>
-          <li class="list-group-item">Download Ticket</li>
-        </ul>
-      </div>
-      <% end %>
-      </div>
-
-  </div>
-<!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
-  <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
-    <div class="miles-container">
-      <% if @miles_profile %>
-      <div class="miles-profile-card">
-       <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-       <h2> <%=@user.first_name %>'s current miles:</h2>
-       <div class="miles-profile-info">
-        <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
-        <span><strong>Miles remaining:</strong> <%= @miles_profile.amount %> Miles</span>
-        <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
-        <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
+        <div class="user-info">
+          <h5> First name</h5>
+          <p><%= current_user.first_name %></p>
+          <h5> Last name</h5>
+          <p><%= current_user.last_name %></p>
+          <h5>Birth date</h5>
+          <p><%= current_user.birth_date %></p>
+          <h5>Email</h5>
+          <p><%= current_user.email %></p>
         </div>
       </div>
     </div>
-  </div>
 
 
+    <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+      <div class="bookings-container">
+        <% current_user.bookings.each do |booking| %>
 
-
-<!-- lines 91-132 are dealing with the requests tab. (css is in decent shape) -->
-  <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
-    <div class="buyer-requests">
-      <h2><%= @user.first_name %>, here are your pending flight requests from other MilesX users:</h2>
-      <div class="card" style="width: 40rem; color: black;">
-        <div class="card-header"style="color: white;">
-          <strong>Requests:</strong>
-        </div>
-      </div>
-          <% if @user.requests.any? %>
-          <% @user.requests.each do |request| %>
-          <% unless request.nil? %>
+            <h3><%= booking.departure %> - <%= booking.arrival %></h3>
           <div class="request-card card" style="width: 40rem; color: black;"> <!-- important line same as the booking comment -->
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
-              <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
-              <li class="list-group-item"><strong>Departure date:</strong> <%= request.booking.departure_date %></li>
-              <li class="list-group-item"><strong>Return date:</strong> <%= request.booking.return_date %></li>
-              <li class="list-group-item"><strong>Amount of miles:</strong> <%= request.booking.amount_of_miles %></li>
-              <li class="list-group-item"><strong>Price:</strong> <%= request.booking.price %></li>
-              <li class="list-group-item"><strong>Confirmation/See Request:</strong>
-                <%= request.confirmed %><br>
-                <% if request.confirmed == "pending" %>
-                  <%= link_to "Accept", accept_booking_path(request), class: "btn-accept", method: :post  %>
-                  <%= link_to "Decline", decline_booking_path(request), class: "btn-decline", method: :post %>
-                <% elsif request.confirmed == "confirmed" %>
-                  <%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %>
-                </li><br>
-            <% end %>
+              <li class="list-group-item"><strong>Departure date:</strong> <%= booking.departure_date %></li>
+              <li class="list-group-item"><strong>Return date:</strong> <%= booking.return_date %></li>
+              <li class="list-group-item"><strong>Amount of miles:</strong> <%= booking.amount_of_miles %></li>
+              <li class="list-group-item"><strong>Price:</strong> <%= booking.price %></li>
             </ul>
           </div>
-          <% end %>
-          <% end %>
         <% end %>
-<!-- Lines 111-116 is a very imoortant iteration and link_to's that are calling methods in the pages controller -->
+      </div>
+    </div>
 
-      <div class="disclaimer">
-        <h6>Disclaimer:</h6>
-          <p>MilesX<em> relies on total seller cooperation to mke things run smooth. If you wish to be paid out in full, it is your
-          obligation as a seller to be trustworthy should you accept a request. Accepted requests that are not finalized may result in
-          the suspenion or termination of your seller account.</em></p>
+  <!-- lines 21-38 correlate to the "profile" tab on dashboard -->
+
+  <!-- lines 41-65 are dealing with the dashboards "booking" tab the. The card used is a bootstrap card-->
+
+  <!-- lines 71-86 are dealing with miles tab. (needs CSS) -->
+    <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
+      <div class="miles-container">
+        <% if @miles_profile %>
+        <div class="miles-profile-card">
+         <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
+         <h2> <%=@user.first_name %>'s current miles:</h2>
+         <div class="miles-profile-info">
+          <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
+          <span><strong>Miles remaining:</strong> <%= @miles_profile.amount %> Miles</span>
+          <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
+          <%= link_to "Edit", edit_miles_profile_path(@miles_profile.id), class:"edit-miles-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  <!-- lines 91-132 are dealing with the requests tab. (css is in decent shape) -->
+    <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
+      <div class="buyer-requests">
+        <h2><%= @user.first_name %>, here are your pending flight requests from other MilesX users:</h2>
+        <div class="card" style="width: 40rem; color: black;">
+          <div class="card-header"style="color: white;">
+            <strong>Requests:</strong>
+          </div>
+        </div>
+            <% if @user.requests.any? %>
+            <% @user.requests.each do |request| %>
+            <% unless request.nil? %>
+            <div class="request-card card" style="width: 40rem; color: black;"> <!-- important line same as the booking comment -->
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
+                <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
+                <li class="list-group-item"><strong>Departure date:</strong> <%= request.booking.departure_date %></li>
+                <li class="list-group-item"><strong>Return date:</strong> <%= request.booking.return_date %></li>
+                <li class="list-group-item"><strong>Amount of miles:</strong> <%= request.booking.amount_of_miles %></li>
+                <li class="list-group-item"><strong>Price:</strong> <%= request.booking.price %></li>
+                <li class="list-group-item"><strong>Confirmation/See Request:</strong>
+                  <%= request.confirmed %><br>
+                  <% if request.confirmed == "pending" %>
+                    <%= link_to "Accept", accept_booking_path(request), class: "btn-accept", method: :post  %>
+                    <%= link_to "Decline", decline_booking_path(request), class: "btn-decline", method: :post %>
+                  <% elsif request.confirmed == "confirmed" %>
+                  <%= simple_form_for(article) do |f| %>
+
+                  <%= f.input :photo %>
+                  <%=  f.input :photo_cache, as: :hidden %>
+                  <!-- [...] -->
+                  <% end %>
+                    <%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %>
+                  </li><br>
+              <% end %>
+              </ul>
+            </div>
+            <% end %>
+            <% end %>
+          <% end %>
+  <!-- Lines 111-116 is a very imoortant iteration and link_to's that are calling methods in the pages controller -->
+
+        <div class="disclaimer">
+          <h6>Disclaimer:</h6>
+            <p>MilesX<em> is fully commmited and we rely on your cooperation to ensure sale payments are fulfilled. It is the obligation of the account holder
+            to ensure the bookings are fulfilled in accordance with the buyer's details. Accepted requests that are not finalised may result in
+            the suspension or termination of your account.</em></p>
+        </div>
       </div>
     </div>
   </div>
+
+
+
+  <!-- DO NOT REMOVE BELOW LINES, FOR SOME REASON IT CRASHES THE ENTIRE DASHBOARD WITHOUT THEM -->
+          </div>
+          <% end %>
+      </div>
+
+  <!-- Jielun new dashboard -->
 </div>
-
-
-
-<!-- DO NOT REMOVE BELOW LINES, FOR SOME REASON IT CRASHES THE ENTIRE DASHBOARD WITHOUT THEM -->
-        </div>
-        <% end %>
-    </div>
-
-
-

@@ -1,3 +1,55 @@
+// Profile
+.user-profile {
+  display: flex;
+  margin-top: 4vh;
+  margin-left: 4vw;
+}
+
+.user-photo {
+  margin-left: 5vw;
+}
+
+.profile-avatar {
+  margin-bottom: 30px;
+}
+
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  h5 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #222792 ;
+    margin-bottom: 0px;
+    margin-top: 10px;
+
+  }
+  p {
+    margin: 0
+  }
+
+}
+
+// Bookings
+
+.bookings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  h3 {
+    color: #222792;
+  }
+  strong {
+    color: #737373;
+  }
+}
+
+
+
 // RANDOM
 
 h1 {
@@ -133,7 +185,6 @@ h1 {
 }
 
 .btn-accept {
-  border: 1px solid black;
   background-color: green;
   color: black;
   padding: 3px;
