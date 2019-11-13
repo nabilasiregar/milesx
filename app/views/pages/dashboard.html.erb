@@ -135,37 +135,6 @@
     </div>
   </div>
 <!--   this is the end of miles profile tab on dashboard -->
-
-<!-- this is the start of request tab on dashboard -->
-  <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
-    <div class="requests-container">
-      <% if @user.requests.any? %>
-        <% @user.requests.each do |request| %>
-        <% unless request.nil? %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
-          <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
-          <li class="list-group-item"><strong>Departure date:</strong> <%= request.booking.departure_date %></li>
-          <li class="list-group-item"><strong>Return date:</strong> <%= request.booking.return_date %></li>
-          <li class="list-group-item"><strong>Amount of miles:</strong> <%= request.booking.amount_of_miles %></li>
-          <li class="list-group-item"><strong>Price:</strong> <%= request.booking.price %></li>
-          <li class="list-group-item"><strong>Confirmation/See Request:</strong>
-          <%= request.confirmed %><br>
-          <% if request.confirmed == "pending" %>
-              <%= link_to "Accept", accept_booking_path(request), class: "btn-accept", method: :post  %>
-              <%= link_to "Decline", decline_booking_path(request), class: "btn-decline", method: :post %>
-          <% elsif request.confirmed == "confirmed" %>
-              <%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %>
-            </li><br>
-          <% end %>
-        </ul>
-        <% end %>
-        <% end %>
-      <% else %>
-      <% end %>
-    </div>
-  </div>
-<!-- this is the end of request tab on dashboard -->
 </div>
 
 
