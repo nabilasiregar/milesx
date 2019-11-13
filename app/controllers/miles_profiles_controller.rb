@@ -28,6 +28,7 @@ class MilesProfilesController < ApplicationController
         # @departure = params[:departure]
         # @arrival = params[:arrival]
       #end
+      @miles_profile = MilesProfile.all.sample
       session[:params] = [departure, arrival]
     end
   end
