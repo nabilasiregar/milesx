@@ -44,7 +44,7 @@
           </div>
         </div>
         <%= simple_form_for(@booking) do |f|%>
-<!--           <div class="d-flex justify-content-center">
+          <div class="d-flex justify-content-center">
             <div class="form-group w-50 mr-5">
               <label for="departure" style="color: black;">Departure Date</label>
               <input type="text" readonly="readonly" name="departure_date" class="form-control booking-form" id="depart-date">
@@ -54,7 +54,7 @@
               <input type="text" readonly="readonly" name="return_date" class="form-control booking-form" id="return-date">
             </div>
           </div>
- -->
+
           <%= f.input :flight_number, input_html: { placeholder:"Enter your flight number here", readonly: false, class: 'booking-form' } %>
           <%= f.input :amount_of_miles, as: :hidden, input_html: { value: params[:amount_of_miles] } %>
           <%= f.input :booking_class, input_html: { value: "Business", readonly: true, class: 'booking-form' } %>
