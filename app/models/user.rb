@@ -12,11 +12,15 @@ class User < ApplicationRecord
   # mount_uploader :photo, PhotoUploader
 
   def requests
-    bookings_ids = self.miles_profile.bookings.pluck(:id)
-    requests = []
-    bookings_ids.each do |id|
-      requests << Request.where(booking_id: id).first
+    bookings_ids = self.miles_profile
+    if bookings_ids
+        bookings_ids = bookings_ids.bookings.pluck(:id)
+      requests = []
+      bookings_ids.each do |id|
+        requests << Request.where(booking_id: id).first
+      end
+      return requests
     end
-    return requests
+    return []
   end
 end
