@@ -10,11 +10,11 @@
           <form action="/bookings/new">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title" style="color: #869cbd; margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+                <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
                 <input type="hidden" name="departure" id="booking_departure" value="<%= @departure %>">
                 <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
                 <input type="hidden" name="airline" id="airline" value="<%= result["prog_name"] %>">
-                <h6 class="card-subtitle mb-2" style="color: white; margin-top: auto;"><%= result["prog_name"] %></h6>
+                <h6 class="card-subtitle mb-2" style="color: grey; margin-top: auto;"><%= result["prog_name"] %></h6>
               </div>
 
               <div class="card-profile-body">

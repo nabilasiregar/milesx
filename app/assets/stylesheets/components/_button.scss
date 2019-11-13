@@ -1,11 +1,11 @@
 .black-btn {
   color: white;
-  background-color: #494ca2;
+  background-color: $blurp;
   border-style: none;
   font-family: $headers-font;
   font-weight: 600;
     &:hover {
-      background-color: #8186d5;
+      background-color: $dark-blurp;
     }
 }
 
@@ -27,18 +27,29 @@ a.submit-btn {
 
 .profile-button {
   padding: 10px;
-  background-color: #898efd;
+  background-color: transparent;
+  border-color: $blurp !important;
   border-radius: 4px;
   text-align: center;
   margin: 13px;
-  a {
-    color: white;
-  }
-  a:hover {
-    color: white;
-    text-decoration: none;
-  }
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-weight: bold;
 }
+
+.purple-btn {
+  color: $blurp;
+  border-color: $blurp;
+  border: 1px solid $blurp;
+  padding: 1em;
+  border-radius: .4em;
+    &:hover {
+      background-color: $blurp;
+      color: white;
+      text-decoration: none;
+    }
+}
+
 .editmiles-button {
    padding: 10px;
   background-color: #898efd;
