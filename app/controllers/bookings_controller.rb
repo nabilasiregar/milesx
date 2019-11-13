@@ -21,37 +21,43 @@ class BookingsController < ApplicationController
     #get the price per mile * amount of miles for booking.price
     # need to change later
     miles_profile = MilesProfile.where('amount > ?', @booking.amount_of_miles).sample
-    @booking.status = 'pending'
-    @booking.price = (@booking.amount_of_miles * miles_profile.price) / 1000 #calculate price based on user selection
-    @booking.miles_profile = miles_profile
-    if @booking.save!
-      passenger = Passenger.new(passenger_params)
-      passenger.booking_id = @booking.id
-      @requests = Request.new
-      @requests.confirmed = 'pending'
-      @requests.booking = @booking
-      @requests.save!
-      if passenger.save!
-        # redirect_to dashboard_path
-        session = Stripe::Checkout::Session.create(
-            payment_method_types: ['card'],
-            line_items: [{
-              name: "#{@booking.departure} to #{@booking.arrival}",
-              amount: @booking.price * 100,
-              currency: 'usd',
-              quantity: 1
-            }],
-            success_url: dashboard_url,
-            cancel_url: dashboard_url
-          )
-        flash[:notice] = 'Your flight booking has been requested!'
-        @booking.update(checkout_session_id: session.id)
-        redirect_to new_booking_payment_path(@booking)
+    unless miles_profile.nil?
+      @booking.status = 'pending'
+      @booking.price = (@booking.amount_of_miles * miles_profile.price) / 1000 #calculate price based on user selection
+      @booking.miles_profile = miles_profile
+      if @booking.save!
+        passenger = Passenger.new(passenger_params)
+        passenger.booking_id = @booking.id
+        @requests = Request.new
+        @requests.confirmed = 'pending'
+        @requests.booking = @booking
+        @requests.save!
+        if passenger.save!
+          # redirect_to dashboard_path
+          session = Stripe::Checkout::Session.create(
+              payment_method_types: ['card'],
+              line_items: [{
+                name: "#{@booking.departure} to #{@booking.arrival}",
+                amount: @booking.price * 100,
+                currency: 'usd',
+                quantity: 1
+              }],
+              success_url: dashboard_url,
+              cancel_url: dashboard_url
+            )
+          flash[:notice] = 'Your flight booking has been requested!'
+          @booking.update(checkout_session_id: session.id)
+          redirect_to new_booking_payment_path(@booking)
+        else
+          render "bookings/new"
+        end
       else
         render "bookings/new"
       end
     else
-      render "bookings/new"
+      flash[:alert] = "Sorry, no seller available"
+
+      redirect_to miles_profiles_path(departure: params[:booking][:departure], arrival: params[:booking][:arrival])
     end
   end
 
@@ -78,7 +84,7 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:flight_number, :departure, :arrival, :departure_date, :return_date, :price, :amount_of_miles)
+    params.require(:booking).permit(:flight_number, :departure, :arrival, :seat_class, :departure_date, :return_date, :price, :amount_of_miles)
   end
 
   def passenger_params
