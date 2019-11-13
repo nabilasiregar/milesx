@@ -1,23 +1,23 @@
 .nav-css, .nav2-css {
-  font-family: Montserrat;
+  font-family: $headers-font;
   font-weight: 600;
 }
 
 a.nav-css {
   color: white !important;
-  text-transform: none !important;
+  // text-transform: none !important;
     &:hover {
       color: #d7d1c9 !important;
     }
 }
 
 .uk-navbar-dropdown-nav>li>a {
-  font-family: Montserrat !important;
+  font-family: $headers-font !important;
 }
 
 a.nav2-css {
   color: white !important;
-  text-transform: none !important;
+  // text-transform: none !important;
     &:hover {
       color: #d7d1c9 !important;
     }

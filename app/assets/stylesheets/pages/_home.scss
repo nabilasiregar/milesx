@@ -61,7 +61,7 @@ button.black-btn.home-btn {
   background: none;
   border: none;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: $body-font;
   font-weight: 600;
   width: 85px;
   color: white;
@@ -105,8 +105,9 @@ label {
 //   background-color: #E6E4E6;
 // }
 .card-text {
-  font-family: 'Montserrat';
-  font-weight: 600;
+
+  font-family: $body-font;
+  font-weight: 400;
   color: black;
 }
 
@@ -117,7 +118,7 @@ label {
 }
 
 h4.card-title {
-  font-family: 'Montserrat';
+  font-family: $headers-font;
   font-weight: 700;
   font-size: 25px;
   color: black;
@@ -158,8 +159,9 @@ h4.card-title {
 
 
 .form-group label {
+
   color: white;
-  font-family: 'Montserrat';
+  font-family: $headers-font;
   font-weight: 600;
 }
 
@@ -181,6 +183,7 @@ h4.card-title {
   position: relative;
   display: inline-block;
   border-radius: 5px;
+  font-family: $body-font;
 
 }
 
@@ -188,7 +191,7 @@ h4.card-title {
   color: white;
   border: 20px solid #27292B;
   font-size: 14px;
-  font-family: 'Montserrat';
+  font-family: $body-font !important;
   padding: 0 0 3px 5px;
   top: 100%;
   left: 0;
