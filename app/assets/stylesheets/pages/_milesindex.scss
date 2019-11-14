@@ -1,5 +1,4 @@
 
-
 .autocomplete-result {
   color: white;
   border: 1px solid #27292B;
@@ -10,4 +9,10 @@
   left: 0;
   right: 0;
   background-color: #27292B;
+}
+
+
+.card-header {
+    background-color: rgba(78, 102, 248, 0.2) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
