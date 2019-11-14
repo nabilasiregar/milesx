@@ -7,11 +7,11 @@
           <div class="card auto-margined w-100" style="border-style: none;">
           <div class="card">
             <div class="card-header">
-              <h5 class="booking-card-subtitle" style="color: white margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <h5 class="booking-card-subtitle" style="color: white margin-bottom: auto;"><%= @departure %> <!-- <span style="color:black"> -->to</span> <%= @arrival %></h5>
               <h5 class="booking-card-subtitle" style="margin-top: auto;"></h5>
             </div>
             <div class="booking-card-body">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-2">
 
               <div class="location-info">
                 <h3 id="departure-iata" class="mb-0"><%= "#{@departure[0..2].upcase}"%></h3>
@@ -33,6 +33,18 @@
             <div class=""><p><%= %></p></div>
             </div>
 
+
+<!--
+            <div>
+            <div style="width:100%">
+              <p style="margin:0 auto; text-align: center">Flight number</p>
+            </div>
+            <div class="d-flex justify-content-between" style="width: 100%">
+            <div class="p-5 d-flex"><input type="checkbox"><p>arrival</p></div>
+            <div class="p-5">departure</div>
+            </div>
+            </div>
+ -->
             <div class="d-flex justify-content-between">
               <div class=""><span id="departure-date-value"></span></div>
               <div class=""><span id="arrival-date-value"></span></div>
