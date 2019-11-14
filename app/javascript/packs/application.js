@@ -16,11 +16,13 @@ initSelect2()
   var image  = `/assets/airline_logos/${flight.airlineIata}.png`;
 
   return `
-  <div class="my-2 d-flex justify-content-between" id="option-departure">
+  <div class="my-2 d-flex justify-content-between mb-4" id="option-departure">
     <div class="d-flex">
       <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
-      <img src='${image}' width=30 height=30>
-      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime}
+      <img src='${image}' width=30 height=30 class='mr-3'>
+      <div class='pt-1'>
+      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime.slice(0,5)} - ${flight.arrivalTime.slice(0,5)}
+      <div>
     </div>
   </div>
 
@@ -30,9 +32,9 @@ initSelect2()
   const displayCard = (flight) =>{
     const box = document.querySelector("#flight-numbers")
      // the next line && statement is to display only the singapore airline flights
-    // if (flight.departureTime !== null && flight.airlineIata == "SQ") {
+    if (flight.departureTime !== null && flight.airlineIata == "SQ") {
       box.insertAdjacentHTML("afterbegin", card(flight))
-    // }
+    }
   }
 
   async function processData(array) {
