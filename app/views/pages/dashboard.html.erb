@@ -45,7 +45,19 @@
   <!-- this is the start of bookings tab on dashboard -->
   <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
     <div class="bookings-container">
-  <!--   this is the end of booking tab on dashboard -->
+      <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row mb-5">
+          <div class="mr-3">
+            <p class="mb-3 mb-lg-0">You have <strong>12 bookings</strong> in your property</p>
+          </div>
+          <div class="text-center">
+            <label for="form_sort" class="form-label mr-2">Sort by</label>
+            <div class="dropdown bootstrap-select mr-3 mb-3 mb-lg-0"><select name="sort" id="form_sort" data-style="btn-selectpicker" title="" class="selectpicker mr-3 mb-3 mb-lg-0" tabindex="-98">
+              <option value="sortBy_0">Newest   </option>
+              <option value="sortBy_1">Oldest   </option>
+              <option value="sortBy_2">Paid   </option>
+            </select><button type="button" class="btn dropdown-toggle btn-selectpicker" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="form_sort" title="Paid"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Paid</div></div> </div></button><div class="dropdown-menu" x-placement="bottom-start" style="max-height: 215.219px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);"><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-activedescendant="bs-select-1-2" style="max-height: 199.219px; overflow-y: auto; min-height: 0px;"><ul class="dropdown-menu inner show" role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class=""><a role="option" class="dropdown-item" id="bs-select-1-0" tabindex="0" aria-setsize="3" aria-posinset="1"><span class="text">Newest   </span></a></li><li class="selected active"><a role="option" class="dropdown-item active selected" id="bs-select-1-1" tabindex="0" aria-setsize="3" aria-posinset="2" aria-selected="true"><span class="text">Oldest   </span></a></li><li class="selected active"><a role="option" class="dropdown-item active selected" id="bs-select-1-2" tabindex="0" aria-setsize="3" aria-posinset="3" aria-selected="true"><span class="text">Paid   </span></a></li></ul></div></div></div><a href="#" class="btn btn-outline-secondary"><i class="fa fa-download mr-2"></i>Download CSV</a>
+          </div>
+        </div>
       <div class="">
         <% @user.bookings.each do |booking| %>
             <div class="list-group-item list-group-item-action p-4">
