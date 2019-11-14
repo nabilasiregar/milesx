@@ -28,16 +28,16 @@ label.form-check-label {
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: 0.375rem;
 }
 
-.card-header {
+#miles-profile-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background: linear-gradient(50deg, #E0ACD5 0, #F4EBE8 100%);
     &:first-child {
-  border-radius: calc(13px - 1px) calc(13px - 1px) 0 0;
+  border-radius: calc(0.375rem - 0.1px) calc(0.375rem - 0.1rem) 0 0;
   }
 }
 
