@@ -47,7 +47,7 @@
     <div class="bookings-container">
       <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row mb-5">
           <div class="mr-3">
-            <p class="mb-3 mb-lg-0">You have <strong>12 bookings</strong> in your property</p>
+            <p class="mb-3 mb-lg-0">You have <strong><%= @user.bookings.count %> booking requests</strong>, accept or decline within 48 hours.</p>
           </div>
         </div>
       <div class="">
