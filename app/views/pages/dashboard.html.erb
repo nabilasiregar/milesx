@@ -1,5 +1,5 @@
-<div class="welcome-message">
-  <h1>Hello, <%= @user.first_name %>!</h1>
+<div class="d-flex justify-content-left">
+  <h1>Dashboard</h1>
 </div>
 <!-- do not remove lines 5-18, very important so bootstrap tabs work -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -47,12 +47,12 @@
     <div class="bookings-container">
       <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row mb-5">
           <div class="mr-3">
-            <p class="mb-3 mb-lg-0">You have <strong><%= @user.bookings.count %> booking requests</strong>, accept or decline within 48 hours.</p>
+            <p class="mb-3 mb-lg-0"><%= @user.first_name %>, here are your bookings history.</p>
           </div>
         </div>
-      <div class="">
+      <div class="list-group shadow mb-5">
         <% @user.bookings.each do |booking| %>
-            <div class="list-group-item list-group-item-action p-4">
+            <div class="list-group-item list-group-item-action p-4" style="cursor: pointer;">
               <div class="row">
                 <div class="col-lg-4 align-self-center mb-4 mb-lg-0">
                   <div class="d-flex align-items-center mb-3">
@@ -172,9 +172,12 @@
 
 <!-- this is the start of request tab on dashboard -->
   <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
+    <div class="d-flex justify-content-center pt-3">
+      <p>You have <strong><%= @user.requests.count %> order requests</strong>, accept or decline within 48 hours.</p>
+    </div>
     <div class="row justify-content-center">
       <div class="col-lg-8 order-lg-1">
-      <div class="card">
+      <div class="card" id="request-card">
         <!-- Card header -->
         <div class="card-header actions-toolbar border-0">
           <div class="row justify-content-between align-items-center">
@@ -222,7 +225,7 @@
                 <th scope="col">Date</th>
                 <th scope="col">Order ID</th>
                 <th scope="col">Miles Required</th>
-                <th scope="col">Earning</th>
+                <th scope="col">Total Price</th>
                 <th></th>
               </tr>
             </thead>
@@ -238,7 +241,7 @@
                   <i class="far fa-calendar-alt mr-2"></i>
                   <span class="h6 text-sm"><%= request.created_at.to_date %></span>
                 </td>
-                <td>#10015</td>
+                <td>#<%= request.booking_id %></td>
                 <td><i class="far fa-credit-card mr-2"></i><%= request.booking.amount_of_miles %> <%= @miles_profile.programme %></td>
                 <td>$<%= request.booking.price %> USD</td>
                 <td class="text-right">
@@ -247,10 +250,16 @@
                       <a class="action-item" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
                       <div class="dropdown-menu dropdown-menu-right">
                         <% if request.confirmed == "pending" %>
-                        <a class="dropdown-item" href="#"><i class="fas fa-check"></i><%= link_to "Accept", accept_booking_path(request), method: :post  %></a>
-                        <a class="dropdown-item" href="#"><i class="fas fa-times"></i><%= link_to "Decline", decline_booking_path(request), method: :post %></a>
+                          <%= link_to accept_booking_path(request), method: :post, html: { class: "dropdown-item" }   do %>
+                            <i class="fas fa-check d-flex justify-content-center"></i>
+                          <% end %>
+                          <%= link_to decline_booking_path(request), method: :post, html: { class: "dropdown-item" }   do %>
+                            <i class="fas fa-times d-flex justify-content-center"></i>
+                          <% end %>
                         <% elsif request.confirmed == "confirmed" %>
-                        <a class="dropdown-item" href="#"><i class="fas fa-info"></i><%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %></a>
+                          <%= link_to booking_path(request.booking), method: :get, html: { class: "dropdown-item" }   do %>
+                            <i class="fas fa-info d-flex justify-content-center"></i>
+                          <% end %>
                         <% end %>
                       </div>
                     </div>
