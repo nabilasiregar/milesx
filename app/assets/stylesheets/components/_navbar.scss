@@ -24,13 +24,13 @@ a.nav2-css {
 }
 
 .uk-navbar-container2 {
-  background-color: $blurp;
+  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%);
   border-bottom: 5px $blurp;
   margin-bottom: 2%;
 }
 
 .our-logo {
-  color: white;
+  color: $bg-primary;
   font-size: 25px;
 }
 

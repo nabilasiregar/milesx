@@ -63,7 +63,15 @@ h1 {
 }
 
 .nav-link {
-  color: black;
+  color: #8492a6;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: $bg-primary;
+  border-top-left-radius: .4em;
+  border-top-right-radius: .4em;
+  background-color: white !important;
+  border: none !important;
 }
 
 // PROFILE TAB STYLE
