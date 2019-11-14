@@ -35,7 +35,7 @@ label.form-check-label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #494C82;
+  background: linear-gradient(50deg, #E0ACD5 0, #F4EBE8 100%);
     &:first-child {
   border-radius: calc(13px - 1px) calc(13px - 1px) 0 0;
   }
@@ -57,4 +57,5 @@ label.form-check-label {
 h5.card-title {
   color: white;
 }
+
 
