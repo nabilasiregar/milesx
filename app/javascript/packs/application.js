@@ -17,7 +17,7 @@ initSelect2()
 
   return `
   <div class="my-2 d-flex justify-content-between" id="option-departure">
-    <div>
+    <div class="d-flex">
       <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
       <img src='${image}' width=30 height=30>
       ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime} - ${flight.arrivalTime}
