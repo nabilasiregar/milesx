@@ -9,6 +9,7 @@
 require "faker"
 
 Request.destroy_all
+Passenger.destroy_all
 Booking.destroy_all
 MilesProfile.destroy_all
 User.destroy_all
@@ -67,7 +68,7 @@ declined_booking = Booking.create!(
   ticket_received: false,
   price: 1022,
   amount_of_miles: 32367,
-  status: "decline",
+  status: "declined",
   departure_date: Date.today + rand(10..20),
   return_date: Date.today + rand(21..30),
   miles_profile_id: seller_miles_profile.id
@@ -97,7 +98,24 @@ confirmed_request = Request.create!(
   booking: confirmed_booking
 )
 
-
+passenger = Passenger.create!(
+  first_name: "Guido",
+  last_name: "Caldara",
+  birth_date: Date.today - 10000,
+  booking_id: confirmed_booking.id
+)
+passenger = Passenger.create!(
+  first_name: "Guido",
+  last_name: "Caldara",
+  birth_date: Date.today - 10000,
+  booking_id: pending_booking.id
+)
+passenger = Passenger.create!(
+  first_name: "Guido",
+  last_name: "Caldara",
+  birth_date: Date.today - 10000,
+  booking_id: declined_booking.id
+)
 
 
 10.times do
@@ -106,12 +124,17 @@ confirmed_request = Request.create!(
 end
 
 10.times do
-  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(10001..300000), price: 5)
+  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(100000..500000), price: 5)
 end
 
 10.times do
   booking = Booking.create!(user: User.all.sample, departure: "Shanghai",
-  arrival: "London", seat_class: "Business", ticket_received: false, departure_date: Date.today + rand(10..20), return_date: Date.today + rand(21..30), miles_profile_id: MilesProfile.all.sample.id)
+  arrival: "London", seat_class: "Business", ticket_received: false,
+  departure_date: Date.today + rand(10..20), return_date: Date.today + rand(21..30),
+  miles_profile_id: MilesProfile.all.sample.id,
+  status: ["declined", "confirmed", "pending"].sample,
+  price: (120..2700).to_a.sample
+  )
 end
 
 10.times do

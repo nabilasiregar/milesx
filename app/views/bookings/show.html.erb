@@ -23,9 +23,9 @@
                 <div class="col-sm-3 text-sm-right">
                   <% if @booking.request.photo.blank? %>
                   <%= simple_form_for(@booking.request) do |f| %>
-                    <%= f.input :photo, input_html: { class: 'hidden'}, label_html: { class: 'btn btn-sm btn-primary rounded-pill mt-3 mt-sm-0'}, label: ' Upload ticket'%>
+                    <%= f.input :photo, input_html: { class: 'hidden', id: "photo_input" }, label_html: { class: 'btn btn-md btn-primary rounded-pill mt-3 mt-sm-0', style: 'padding-bottom: 28px; color: white;'}, label: ' Upload ticket'%>
                     <%= f.input :photo_cache, as: :hidden %>
-                    <%= f.button :submit, "Submit", class: 'ticket-submit' %>
+                    <%= f.button :submit, "Submit", class: 'btn btn-sm btn-primary rounded-pill mt-3 mt-sm-0' %>
                   <% end %>
                 <% else %>
                   <%= link_to cl_image_path @booking.request.photo, download: 'hehe.png' do %>
@@ -105,6 +105,15 @@
 <!--                     this is where the content of request card ends                          -->
     </div>
   </div>
+<!-- <script>
+  const input = document.querySelector("#photo_input");
+  const form = document.querySelector(".edit_request");
+  input.addEventListener('change', (event) => {
+    console.log(form)
+    Rails.fire(form, 'submit');
+  })
+</script> -->
+
 </div>
 
 
