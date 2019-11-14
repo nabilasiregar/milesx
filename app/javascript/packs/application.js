@@ -11,29 +11,26 @@ airport()
 initFlatpickr()
 initSelect2()
 
-
-  const card = (flight) => {
-  var image  = `/assets/airline_logos/${flight.airlineIata}.png`;
-
-  return `
-  <div class="my-2 d-flex justify-content-between mb-4" id="option-departure">
-    <div class="d-flex">
-      <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
-      <img src='${image}' width=30 height=30 class='mr-3'>
-      <div class='pt-1'>
-      ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime.slice(0,5)} - ${flight.arrivalTime.slice(0,5)}
-      <div>
-    </div>
-  </div>
-
-  `
+  const card = (flight, logo) => {
+    return `
+      <div class="my-2 d-flex justify-content-between mb-4" id="option-departure">
+        <div class="d-flex">
+          <input data-flight="${flight.airlineIata}${flight.flightNumber}" class="form-inputs mr-3" type="checkbox" />
+          <img src='${logo}' width=30 height=30 class='mr-3'>
+          <div class='pt-1'>
+          ${flight.airlineIata}${flight.flightNumber} - ${flight.departureTime.slice(0,5)} - ${flight.arrivalTime.slice(0,5)}
+          <div>
+        </div>
+      </div>
+    `;
   }
 
   const displayCard = (flight) =>{
     const box = document.querySelector("#flight-numbers")
+    const emiratesLogo = box.dataset.ek;
      // the next line && statement is to display only the singapore airline flights
     if (flight.departureTime !== null && flight.airlineIata == "EK") {
-      box.insertAdjacentHTML("afterbegin", card(flight))
+      box.insertAdjacentHTML("afterbegin", card(flight, emiratesLogo))
     }
   }
 
