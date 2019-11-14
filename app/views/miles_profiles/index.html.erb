@@ -1,20 +1,16 @@
 <div class="trip-container">
-<div class="filter-box">
-  <h2 style="width: max-content;">this is for filter bar</h2>
-</div>
 <!-- this is where card trip info start -->
-<div class="uk-flex uk-flex-column"></div>
-  <div class="uk-grid-small" uk-grid>
+  <div class="d-flex flex-column align-items-center w-100">
         <% @results.each do |result| %>
-        <div class="card w-75" style="border-style: none;">
+        <div class="card w-75 mb-3"style="border-style: none;">
           <form action="/bookings/new">
             <div class="card">
-              <div class="card-header">
-                <h5 class="card-title" style="margin-bottom: auto;"><%= @departure %> to <%= @arrival %></h5>
+              <div class="card-header d-flex align-items-center justify-content-between">
+                <h6 class="card-title" style="margin-bottom: 0;"><%= @departure %> to <%= @arrival %></h6>
                 <input type="hidden" name="departure" id="booking_departure" value="<%= @departure %>">
                 <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
                 <input type="hidden" name="airline" id="airline" value="<%= result["prog_name"] %>">
-                <h6 class="card-subtitle mb-2" style="color: grey; margin-top: auto;"><%= result["prog_name"] %></h6>
+                <h5 class="card-subtitle" style="color: white; margin-top: auto;"><%= result["prog_name"] %></h5>
               </div>
 
               <div class="card-profile-body">

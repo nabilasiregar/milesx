@@ -115,51 +115,22 @@
     </div>
   </div>
   <!-- end of bookings table -->
-<!--   this is the start of miles profile tab on dashboard -->
-  <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
-    <div class="miles-container">
-      <% if @miles_profile %>
-        <div class="miles-profile-card">
-        <!--  <#% if @miles_profile.id == @miles_profile.user.id ? %> -->
-        <h2> <%=@user.first_name %>'s current miles:</h2>
-        <div class="miles-profile-info">
-        <span><strong>Your program:</strong> <%= @miles_profile.programme %></span>
-        <span><strong>Miles remaining:</strong> <%= @miles_profile.amount %> Miles</span>
-        <span><strong>Rate:</strong> $<%= @miles_profile.price %>/1000 miles</span><br>
-        <%= link_to "Add / Edit Miles Programmes", edit_miles_profile_path(@miles_profile.id) %>
-        </div>
-      </div>
-      <% else %>
-        <p>You don't have any Miles Account</p>
-      <% end %>
-    </div>
 
 <!-- Miles Profile starts here -->
+  <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
 
-      <div class="row">
-        <div class="col-lg-4 align-self-center mb-4 mb-lg-0">
+      <div class="row justify-content-center">
+      <% if @miles_profile %>
+        <div class="col-lg-6 align-self-center mb-4 mb-lg-0 mt-3">
           <div class="card h-100">
             <div class="card-header">
-              <h3 class="h2 font-weight-semi-bold mb-0"><%=@user.first_name %>'s current miles:</h3>
+              <h5 class="font-weight-semi-bold mb-0"><%=@user.first_name %>'s current miles:</h5>
             </div>
 
             <div class="card-body p-0">
-              <div class="row align-items-center justify-content-between border-top p-3 px-md-4 mx-0">
+              <div class="row align-items-center justify-content-between p-3 px-md-4 mx-0">
                 <div class="col-sm-auto col-md px-0 pr-sm-3">
-                  <img class="avatar-xs rounded-circle mr-2" src="../app/assets/images/airline_logos/SQ.png"> <%= @miles_profile.programme %>
-                </div>
-
-                <div class="col-sm pt-1 pt-sm-0 px-0 pl-sm-3 pr-md-3">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col col-xl-9">
-                      <div class="progress progress-sm progress-light mr-2">
-                        <div class="progress-bar" role="progressbar" style="width: 45%; opacity: 0.45" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                    <div class="col-auto col-xl-3">
-                      <small class="text-muted">45%</small>
-                    </div>
-                  </div>
+                  <%= image_tag "airline_logos/SQ.png", alt: "alttext", class: "rounded-circle mr-2", style: 'width: 20px' %><%= @miles_profile.programme %>
                 </div>
 
                 <div class="col-md text-md-right pt-1 pt-md-0 px-0 pl-md-3">
@@ -170,20 +141,7 @@
 
               <div class="row align-items-center justify-content-between border-top p-3 px-md-4 mx-0">
                 <div class="col-sm-auto col-md px-0 pr-sm-3">
-                  <img class="avatar-xs rounded-circle mr-2" src="../../assets/img/100x100/img7.jpg"> <%= @miles_profile.programme %>
-                </div>
-
-                <div class="col-sm pt-1 pt-sm-0 px-0 pl-sm-3 pr-md-3">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col col-xl-9">
-                      <div class="progress progress-sm progress-light mr-2">
-                        <div class="progress-bar" role="progressbar" style="width: 51%; opacity: 0.51" aria-valuenow="51" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                    <div class="col-auto col-xl-3">
-                      <small class="text-muted">51%</small>
-                    </div>
-                  </div>
+                  <%= image_tag "airline_logos/EK.png", alt: "alttext", class: "rounded-circle mr-2", style: 'width: 20px' %><%= @miles_profile.programme %>
                 </div>
 
                 <div class="col-md text-md-right pt-1 pt-md-0 px-0 pl-md-3">
@@ -191,13 +149,17 @@
                   <small class="text-muted ml-3 ml-md-0">46,877,412,941 NVA</small>
                 </div>
               </div>
-                <div class="profile-button">
-                 <%= link_to "Add / Edit Miles Programmes", edit_miles_profile_path(@miles_profile.id)  %>
-                </div>
 
+              <div class="profile-button">
+               <%= link_to "Add / Edit Miles Programmes", edit_miles_profile_path(@miles_profile.id)  %>
               </div>
             </div>
           </div>
+        </div>
+      <% else %>
+        <p>You don't have any Miles Account</p>
+      <% end %>
+    </div>
           <!-- End Card -->
   </div>
 <!--   this is the end of miles profile tab on dashboard -->
