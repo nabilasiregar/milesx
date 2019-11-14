@@ -1,26 +1,112 @@
-<div class="container-booking-show">
-  <h2>User booking information:</h2>
-  <p><strong>Flight number:</strong> <%= @booking.flight_number %></p>
-  <p><strong>Departure:</strong> <%= @booking.departure %></p>
-  <p><strong>Arrival:</strong> <%= @booking.arrival %></p>
-  <p><strong>Departure Date:</strong> <%= @booking.departure_date %></p>
-  <p><strong>Return Date:</strong> <%= @booking.return_date %></p>
-  <p><strong>Price:</strong> <%= @booking.price %> $</p>
-  <p><strong>Status:</strong> <%= @booking.status %> </p>
-  <p><strong>Ticket Received:</strong> <%= @booking.ticket_received %></p>
-  <p><strong>Amount of miles:</strong> <%= @booking.amount_of_miles %> miles required</p>
-
-  <% if @booking.request.photo.blank? %>
-    <%= simple_form_for(@booking.request) do |f| %>
-      <%= f.input :photo, input_html: { class: 'hidden'}, label_html: { class: 'upload-photo booking-btn'}, label: ' Upload ticket'%>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.button :submit, "Submit", class: 'ticket-submit' %>
-    <% end %>
-  <% else %>
-    <%= link_to cl_image_path @booking.request.photo, download: 'hehe.png' do %>
-      <p>See attachment</p>
-    <% end %>
-  <% end %>
+<div class="container">
+  <div class="row row-grid">
+    <div class="col-lg-9 order-lg-2">
+<!--                     this is where the content of request card start                           -->
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-5 col-lg-8">
+              <span class="h6">Booking Details</span>
+            </div>
+            <div class="col-7 col-lg-4 text-right">
+              <i class="fas fa-user-friends mr-2" width="40"></i>
+            </div>
+          </div>
+        </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="row align-items-center">
+                <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Status</small></div>
+                <div class="col-sm-5">
+                  <strong><%= @booking.status.capitalize %></strong>
+                </div>
+                <div class="col-sm-3 text-sm-right">
+                  <% if @booking.request.photo.blank? %>
+                  <%= simple_form_for(@booking.request) do |f| %>
+                    <%= f.input :photo, input_html: { class: 'hidden'}, label_html: { class: 'btn btn-sm btn-primary rounded-pill mt-3 mt-sm-0'}, label: ' Upload ticket'%>
+                    <%= f.input :photo_cache, as: :hidden %>
+                    <%= f.button :submit, "Submit", class: 'ticket-submit' %>
+                  <% end %>
+                <% else %>
+                  <%= link_to cl_image_path @booking.request.photo, download: 'hehe.png' do %>
+                    <p class="btn btn-sm btn-primary rounded-pill mt-3 mt-sm-0">See attachment</p>
+                  <% end %>
+                <% end %>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Trip Details</small></div>
+                <div class="col-sm-8">
+                  <!-- First card -->
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <p>From: <%= @booking.departure %></p>
+                      <p><%= @booking.flight_number %></p>
+                    </div>
+                    <div class="col-6 actions text-right">
+                      <p>Departure Date: <br><%= @booking.departure_date.strftime("%d %B %Y") %></p>
+                    </div>
+                  </div>
+                  <!-- Second card -->
+                  <div class="row">
+                    <div class="col-6">
+                      <p>To: <%= @booking.arrival %></p>
+                      <p><%= @booking.flight_number %></p>
+                    </div>
+                    <div class="col-6 actions text-right">
+                      <p>Return Date: <br><%= @booking.return_date.strftime("%d %B %Y") %></p>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Passenger Details</small></div>
+                <div class="col-sm-8">
+                  <p class="mb-0">
+                    <div class="uk-inline">
+                      <button class="uk-button uk-button-default" type="button">Passenger 1</button>
+                      <div uk-dropdown="mode: click">First Name: <%= @booking.passengers.first.first_name %>
+                    Last Name: <%= @booking.passengers.first.last_name %>
+                    Date of Birth: <%= @booking.passengers.first.birth_date.strftime("%d %B %Y") %></div>
+                   </div>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Earnings</small></div>
+                <div class="col-sm-8">
+                  <strong>$<%= @booking.price %><small> U.S Dollar</small></strong>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-sm-4"><small class="h6 text-sm mb-3 mb-sm-0">Require</small></div>
+                <div class="col-sm-8">
+                  <p class="mb-0">
+                    <strong><%= @booking.amount_of_miles %></strong> <%= @booking.miles_profile.programme %> Miles
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="order-lg-3 mt-5">
+          <%= link_to "Back to dashboard", dashboard_path(request), class: 'purple-btn'  %>
+        </div>
+      </div>
+<!--                     this is where the content of request card ends                          -->
+    </div>
+  </div>
 </div>
 
-<%= link_to "Back to dashboard", dashboard_path(request), class: 'btn-back-to'  %>
+
+
+
