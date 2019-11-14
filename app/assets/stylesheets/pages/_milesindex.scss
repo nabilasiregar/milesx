@@ -1,5 +1,4 @@
 
-
 .autocomplete-result {
   color: white;
   border: 1px solid #27292B;
@@ -10,4 +9,33 @@
   left: 0;
   right: 0;
   background-color: #27292B;
+}
+
+
+.blue-header {
+    background-color: rgba(78, 102, 248, 0.2) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    margin-bottom: 20px;
+    .card-title {
+      font-weight: 700;
+    }
+    .card-subtitle {
+      font-weight: 700;
+    }
+}
+.slim {
+  padding: 0 15px;
+  margin: 8px;
+  height: 40px;
+  &:hover {
+    background-color: rgba(78, 102, 248, 0.8);
+  }
+}
+
+.slima {
+  padding: 7px 15px;
+}
+
+.form-check {
+  margin-bottom: 10px
 }
