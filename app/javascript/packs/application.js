@@ -32,7 +32,7 @@ initSelect2()
   const displayCard = (flight) =>{
     const box = document.querySelector("#flight-numbers")
      // the next line && statement is to display only the singapore airline flights
-    if (flight.departureTime !== null && flight.airlineIata == "SQ") {
+    if (flight.departureTime !== null && flight.airlineIata == "EK") {
       box.insertAdjacentHTML("afterbegin", card(flight))
     }
   }
