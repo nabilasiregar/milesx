@@ -124,7 +124,7 @@ passenger = Passenger.create!(
 end
 
 10.times do
-  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(100000..500000), price: rand(15..30))
+  MilesProfile.create!(user: User.all.sample, programme: "Skyrewards", amount: rand(10000..50000), price: rand(15..30))
 end
 
 10.times do

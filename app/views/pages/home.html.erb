@@ -1,71 +1,282 @@
-<div class="container-page">
-  <div class="container-home d-flex justify-content-center align-items-center">
-      <!-- <#%= video_tag 'aurora.mp4', class:"home-video", autoplay:true, muted:true, loop:true %> -->
-    <%= image_tag 'amalfi.jpg', class:"home-video" %>
-      <form class="d-flex justify-content-center flex-column w-80 mx-auto"  action="/miles_profiles" style="margin-top: -50px;">
-          <div class="d-flex justify-content-center">
-            <div class="flight-search-form ui-front">
-              <!-- <div class="trip-type-selection">
-                <button type="button" class="trip-type active-trip">Round Trip</button>
-                <button type="button" class="trip-type">One Way</button>
-              </div> -->
+
+<!-- this is for header -->
+<div class="swiper-container home-slider multi-slider swiper-container-horizontal">
+  <img src="https://source.unsplash.com/DDBDkz0p918/1600x900" class="home-video">
+</div>
+<!-- end of header -->
+<!--          this is where miles x introduction start          -->
+<section class="py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 px-5">
+        <p class="advantage-number">1</p>
+        <div class="pl-lg-5">
+          <h6 class="text-uppercase">List your miles</h6>
+          <p class="text-muted text-sm mb-5 mb-lg-0">List any unused or expiring airline miles you have on the world's largest miles marketplace.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 px-5">
+        <p class="advantage-number">2</p>
+        <div class="pl-lg-5">
+          <h6 class="text-uppercase">Wait for a booking request</h6>
+          <p class="text-muted text-sm mb-5 mb-lg-0">Buyers will send you a request for the specific flight that they are looking to purchase, you have 48h to accept or decline the booking request.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 px-5">
+        <p class="advantage-number">3</p>
+        <div class="pl-lg-5">
+          <h6 class="text-uppercase">Purchase plane ticket with miles</h6>
+          <p class="text-muted text-sm mb-5 mb-lg-0">You'll get paid once the ticket holder arrives safely at their destination</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--        this is where miles x introduction ends           -->
+
+<!--          this is for search bar           -->
+<section class="bg-gray-100">
+  <div style="height: 250px; background-image: url(https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/places-divider.jpg);" class="bg-cover"></div>
+  <div class="container pb-lg-3">
+    <div class="search-bar rounded p-3 p-lg-4 position-relative mt-n4 z-index-20">
+      <form action="/miles_profiles">
+          <div class="row">
+            <div class="col-lg-4 d-flex align-items-center form-group ui-front">
+              <label for="departure" class="input-label location-input">
+                <span class="input-label-text"><br></span>
+                <input type="text" name="departure" placeholder="From" autocomplete="off" class="form-control border-0 shadow-0" id="depart">
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
+              <div class="input-label-absolute input-label-absolute-right w-100">
+                <label for="arrival" class="label-absolute">
+                  <span class="input-label-text"><br></span>
+                  <input type="text" name="arrival" placeholder="To" autocomplete="off" class="form-control border-0 shadow-0" id="arrival">
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider">
+              <div class="dropdown bootstrap-select"><select title="Categories" data-style="btn-form-control" class="selectpicker" tabindex="-98"><option class="bs-title-option" value=""></option>
+                  <option value="small">1 Traveller</option>
+                  <option value="medium">2 Travellers</option>
+                  <option value="large">3 Travellers</option>
+                  <option value="x-large">4 Travellers</option>
+                </select><button type="button" class="btn dropdown-toggle btn-form-control bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Travellers"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Travellers</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+              </div>
+            </div>
+            <div class="col-lg-2 form-group mb-0">
               <div class="form-row form-group w-100 home-input">
                 <div class="trip-row">
-                  <label for="departure" class="input-label location-input">
-                    <span class="input-label-text"><br></span>
-                    <input type="text" name="departure" placeholder="From" autocomplete="off" class="form-control" id="depart">
-                  </label>
-                  <label for="arrival" class="input-label location-input">
-                    <span class="input-label-text"><br></span>
-                    <input type="text" name="arrival" placeholder="To" autocomplete="off" class="form-control" id="arrival">
-                  </label>
-                  <label class="input-label travellers-input-label">
-                    <span class="input-label-text"><br></span>
-                    <input type="text" placeholder="Travellers" class="form-control" id="travellers">
-                  </label>
-                  <button type="submit" class="black-btn home-btn">Search Flights</button>
+                  <button type="submit" class="btn btn-primary btn-block h-100">Search</button>
                 </div>
               </div>
             </div>
           </div>
       </form>
     </div>
-
-
-  <div class="container-content">
-    <div class="home-section home-section-2">
-      <h2 class="home-scroll" uk-sticky><a  href="#my-id"uk-scroll><i class="fas fa-angle-double-up" style="color: white; font-size: 40px; opacity: 0.5;"></i></a></h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card text-center home-card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>List your miles</strong></h5>
-              <p class="card-text">List any unused or expiring airline miles you have on the world's largest miles marketplace.</p>
-              <i class="fas fa-list-ol orange"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center home-card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Wait for a flight request</strong></h5>
-              <p class="card-text">Buyers will send you a request for the specific flight that they are looking to purchase</p>
-              <i class="fas fa-clock orange"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card text-center home-card">
-            <div class="card-body">
-              <h5 class="card-title"><strong>Purchase the requested ticket with your miles</strong></h5>
-              <p class="card-text">You'll get paid once the ticket holder arrives safely at their destination</p>
-              <i class="fas fa-dollar-sign orange"></i>
-            </div>
-          </div>
-        </div>
     </div>
   </div>
-</div>
-</div>
+</section>
+<!--          end of search bar           -->
+
+<section class="py-6 bg-gray-100">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-8">
+        <p class="subtitle text-primary">Travel more, pay less</p>
+        <h2>Our featured destinations</h2>
+      </div>
+      <div class="col-md-4 d-lg-flex align-items-center justify-content-end"><a href="category.html" class="text-muted text-sm">
+
+          Explore<i class="fas fa-angle-double-right ml-2"></i></a></div>
+    </div>
+    <div class="swiper-container guides-slider mx-n2 pt-3 swiper-container-horizontal">
+      <!-- Additional required wrapper-->
+      <div class="swiper-wrapper pb-5" style="transform: translate3d(-540px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide h-auto px-2 swiper-slide-duplicate" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="2">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/barcelona.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Barcelona</h6>
+              <p class="card-text text-sm">Dalí, Gaudí, Barrio Gotico</p>
+            </div>
+          </div>
+        </div><div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-prev" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="3">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/prague.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Prague</h6>
+              <p class="card-text text-sm">City of hundred towers</p>
+            </div>
+          </div>
+        </div>
+        <!-- Slides-->
+        <div class="swiper-slide h-auto px-2 swiper-slide-active" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="0">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/new-york.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">New York</h6>
+              <p class="card-text text-sm">The big apple</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-next" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="1">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/paris.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Paris</h6>
+              <p class="card-text text-sm">Artist capital of Europe</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="2">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/barcelona.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Barcelona</h6>
+              <p class="card-text text-sm">Dalí, Gaudí, Barrio Gotico</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide h-auto px-2 swiper-slide-duplicate-prev" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="3">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/prague.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Prague</h6>
+              <p class="card-text text-sm">City of hundred towers</p>
+            </div>
+          </div>
+        </div>
+      <div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="0">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/new-york.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">New York</h6>
+              <p class="card-text text-sm">The big apple</p>
+            </div>
+          </div>
+        </div><div class="swiper-slide h-auto px-2 swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 255px; margin-right: 15px;" data-swiper-slide-index="1">
+          <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0"><a href="category.html" class="tile-link"></a><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/paris.jpg" alt="Card image" class="bg-image">
+            <div class="card-body overlay-content">
+              <h6 class="card-title text-shadow text-uppercase">Paris</h6>
+              <p class="card-text text-sm">Artist capital of Europe</p>
+            </div>
+          </div>
+        </div></div>
+      <div class="swiper-pagination d-md-none swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-bullets-dynamic" style="width: 80px;"><span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main" tabindex="0" role="button" aria-label="Go to slide 1" style="left: 24px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next" tabindex="0" role="button" aria-label="Go to slide 2" style="left: 24px;"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active-next-next" tabindex="0" role="button" aria-label="Go to slide 3" style="left: 24px;"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4" style="left: 24px;"></span></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  </div>
+</section>
+
+<!-- this is the start for popular destinations -->
+<section class="pt-6">
+  <div class="container">
+    <div class="row mb-6" style="margin: 1em 0 1em 0;">
+      <div class="col-lg-8">
+        <h2>Popular destinations in November</h2>
+        <p class="text-muted mb-0">Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/kathmandu.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Kathmandu</h4>
+            <p class="mb-4">Spirituality &amp; mountains</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/medellin.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Medellín</h4>
+            <p class="mb-4">Tropical paradise</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/bangkok.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Bangkok</h4>
+            <p class="mb-4">Temples and street food</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/kyoto.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Kyoto</h4>
+            <p class="mb-4">Imperial capital</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/los-angeles.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Los Angeles</h4>
+            <p class="mb-4">City of angeles</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/london.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">London</h4>
+            <p class="mb-4">Galleries and shopping</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/madrid.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Madrid</h4>
+            <p class="mb-4">Aquí no hay playa</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 undefined">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/havana.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Havana</h4>
+            <p class="mb-4">La Havana</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 col-xl-3 px-0 d-none d-lg-block d-xl-none">
+        <div style="min-height: 400px;" class="d-flex align-items-center dark-overlay hover-scale-bg-image"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/barcelona.jpg" alt="" class="bg-image">
+          <div class="p-3 p-sm-5 text-white z-index-20">
+            <h4 class="h2">Barcelona</h4>
+            <p class="mb-4">Dalí, Gaudí, Barrio Gotico</p><a href="#" class="btn btn-link text-reset pl-0 stretched-link text-decoration-none">Take me there<i class="fa fa-chevron-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- this is the end of popular destinations -->
+
+<!-- Instagram -->
+<section>
+  <div class="container-fluid px-0">
+    <div class="swiper-container instagram-slider swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+        <div class="swiper-slide overflow-hidden swiper-slide-active" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-1.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden swiper-slide-next" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-2.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-3.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-4.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-5.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-6.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-7.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-8.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-9.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-10.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-11.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-12.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-13.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-14.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-10.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-11.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-12.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-13.jpg" alt="" class="img-fluid hover-scale"></a></div>
+        <div class="swiper-slide overflow-hidden" style="width: 139.333px;"><a href="#"><img src="https://d19m59y37dris4.cloudfront.net/directory/1-3/img/instagram/instagram-14.jpg" alt="" class="img-fluid hover-scale"></a></div>
+      </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  </div>
+</section>
+<!--     end of instagram -->
 
 

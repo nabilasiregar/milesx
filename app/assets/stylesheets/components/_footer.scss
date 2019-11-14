@@ -1,5 +1,5 @@
 .footer {
-  background: $blurp !important;
+  background: linear-gradient(50deg, #6e00ff 0, #bb00ff 100%) !important;
   padding:5vw;
   padding-bottom:5vw;
   display:block;
@@ -31,11 +31,6 @@
   color:#fff;
   font-weight:100;
   margin-left:20px;
-}
-
-.footer__bg {
-  background-repeat:none;
-  background-size:cover;
 }
 
 .footer a {

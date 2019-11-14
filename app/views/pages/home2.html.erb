@@ -1,0 +1,70 @@
+<div class="container-page">
+  <div class="container-home d-flex justify-content-center align-items-center">
+      <!-- <#%= video_tag 'aurora.mp4', class:"home-video", autoplay:true, muted:true, loop:true %> -->
+    <%= image_tag 'amalfi.jpg', class:"home-video" %>
+      <form class="d-flex justify-content-center flex-column w-80 mx-auto"  action="/miles_profiles" style="margin-top: -50px;">
+          <div class="d-flex justify-content-center">
+            <div class="flight-search-form ui-front">
+              <!-- <div class="trip-type-selection">
+                <button type="button" class="trip-type active-trip">Round Trip</button>
+                <button type="button" class="trip-type">One Way</button>
+              </div> -->
+              <div class="form-row form-group w-100 home-input">
+                <div class="trip-row">
+                  <label for="departure" class="input-label location-input">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" name="departure" placeholder="From" autocomplete="off" class="form-control" id="depart">
+                  </label>
+                  <label for="arrival" class="input-label location-input">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" name="arrival" placeholder="To" autocomplete="off" class="form-control" id="arrival">
+                  </label>
+                  <label class="input-label travellers-input-label">
+                    <span class="input-label-text"><br></span>
+                    <input type="text" placeholder="Travellers" class="form-control" id="travellers">
+                  </label>
+                  <button type="submit" class="black-btn home-btn">Search Flights</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+
+
+  <div class="container-content">
+    <div class="home-section home-section-2">
+      <h2 class="home-scroll" uk-sticky><a  href="#my-id"uk-scroll><i class="fas fa-angle-double-up" style="color: white; font-size: 40px; opacity: 0.5;"></i></a></h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center home-card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>List your miles</strong></h5>
+              <p class="card-text">List any unused or expiring airline miles you have on the world's largest miles marketplace.</p>
+              <i class="fas fa-list-ol orange"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center home-card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Wait for a flight request</strong></h5>
+              <p class="card-text">Buyers will send you a request for the specific flight that they are looking to purchase</p>
+              <i class="fas fa-clock orange"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center home-card">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Purchase the requested ticket with your miles</strong></h5>
+              <p class="card-text">You'll get paid once the ticket holder arrives safely at their destination</p>
+              <i class="fas fa-dollar-sign orange"></i>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
