@@ -42,20 +42,12 @@
     </div>
   </div>
 <!--   this line is the end of profile tab on dashboard -->
-  <!-- this is the start of bookings tab on dashboard -->
+<!-- this is the start of bookings tab on dashboard -->
   <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
     <div class="bookings-container">
       <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row mb-5">
           <div class="mr-3">
             <p class="mb-3 mb-lg-0">You have <strong>12 bookings</strong> in your property</p>
-          </div>
-          <div class="text-center">
-            <label for="form_sort" class="form-label mr-2">Sort by</label>
-            <div class="dropdown bootstrap-select mr-3 mb-3 mb-lg-0"><select name="sort" id="form_sort" data-style="btn-selectpicker" title="" class="selectpicker mr-3 mb-3 mb-lg-0" tabindex="-98">
-              <option value="sortBy_0">Newest   </option>
-              <option value="sortBy_1">Oldest   </option>
-              <option value="sortBy_2">Paid   </option>
-            </select><button type="button" class="btn dropdown-toggle btn-selectpicker" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="form_sort" title="Paid"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Paid</div></div> </div></button><div class="dropdown-menu" x-placement="bottom-start" style="max-height: 215.219px; overflow: hidden; min-height: 0px; position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);"><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-activedescendant="bs-select-1-2" style="max-height: 199.219px; overflow-y: auto; min-height: 0px;"><ul class="dropdown-menu inner show" role="presentation" style="margin-top: 0px; margin-bottom: 0px;"><li class=""><a role="option" class="dropdown-item" id="bs-select-1-0" tabindex="0" aria-setsize="3" aria-posinset="1"><span class="text">Newest   </span></a></li><li class="selected active"><a role="option" class="dropdown-item active selected" id="bs-select-1-1" tabindex="0" aria-setsize="3" aria-posinset="2" aria-selected="true"><span class="text">Oldest   </span></a></li><li class="selected active"><a role="option" class="dropdown-item active selected" id="bs-select-1-2" tabindex="0" aria-setsize="3" aria-posinset="3" aria-selected="true"><span class="text">Paid   </span></a></li></ul></div></div></div><a href="#" class="btn btn-outline-secondary"><i class="fa fa-download mr-2"></i>Download CSV</a>
           </div>
         </div>
       <div class="">
@@ -98,7 +90,7 @@
                       <% if booking.status == 'confirmed' %>
                       <span class="text-primary text-sm text-uppercase"><i class="fa fa-check fa-fw mr-2"> </i>Confirmed</span>
                       <br class="d-none d-lg-block">
-                        <% if DateTime.now.to_date == booking.departure_date %>
+                        <% if DateTime.now.to_date > booking.departure_date && booking.ticket_received == 'true' %>
                           <span class="text-primary text-sm text-uppercase mr-4 mr-lg-0"><i class="fas fa-dollar-sign fa-fw mr-2"> </i>Paid</span>
                         <% else %>
                           <span class="text-primary text-sm text-uppercase mr-4 mr-lg-0"><i class="fas fa-dollar-sign fa-fw mr-2"> </i>Payment on hold</span>
@@ -110,7 +102,7 @@
                       <% else %>
                       <span class="text-primary text-sm text-uppercase"><i class="fas fa-clock fa-fw mr-2"> </i>Pending</span>
                       <br class="d-none d-lg-block">
-                        <% if DateTime.now.to_date == booking.departure_date %>
+                        <% if DateTime.now.to_date > booking.departure_date && booking.ticket_received == 'true' %>
                           <span class="text-primary text-sm text-uppercase mr-4 mr-lg-0"><i class="fas fa-dollar-sign fa-fw mr-2"> </i>Paid</span>
                         <% else %>
                           <span class="text-primary text-sm text-uppercase mr-4 mr-lg-0"><i class="fas fa-dollar-sign fa-fw mr-2"> </i>Payment on hold</span>
@@ -128,7 +120,9 @@
   </div>
   <!-- end of bookings table -->
 
-<!-- Miles Profile starts here -->
+
+<!--   this is the start of miles profile tab on dashboard -->
+
   <div class="tab-pane fade" id="miles" role="tabpanel" aria-labelledby="miles-tab">
 
       <div class="row justify-content-center">
@@ -175,34 +169,104 @@
           <!-- End Card -->
   </div>
 <!--   this is the end of miles profile tab on dashboard -->
-  <!-- this is the start of request tab on dashboard -->
+
+<!-- this is the start of request tab on dashboard -->
   <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
-    <div class="requests-container">
-      <% if @user.requests.any? %>
-        <% @user.requests.each do |request| %>
-        <% unless request.nil? %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>Departure City:</strong> <%= request.booking.departure %></li>
-          <li class="list-group-item"><strong>Arrival city:</strong> <%= request.booking.arrival %></li>
-          <li class="list-group-item"><strong>Departure date:</strong> <%= request.booking.departure_date %></li>
-          <li class="list-group-item"><strong>Return date:</strong> <%= request.booking.return_date %></li>
-          <li class="list-group-item"><strong>Amount of miles:</strong> <%= request.booking.amount_of_miles %></li>
-          <li class="list-group-item"><strong>Price:</strong> <%= request.booking.price %></li>
-          <li class="list-group-item"><strong>Confirmation/See Request:</strong>
-          <%= request.confirmed %><br>
-          <% if request.confirmed == "pending" %>
-              <%= link_to "Accept", accept_booking_path(request), class: "btn-accept", method: :post  %>
-              <%= link_to "Decline", decline_booking_path(request), class: "btn-decline", method: :post %>
-          <% elsif request.confirmed == "confirmed" %>
-              <%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %>
-            </li><br>
-          <% end %>
-        </ul>
-        <% end %>
-        <% end %>
-      <% else %>
-      <% end %>
+    <div class="row justify-content-center">
+      <div class="col-lg-8 order-lg-1">
+      <div class="card">
+        <!-- Card header -->
+        <div class="card-header actions-toolbar border-0">
+          <div class="row justify-content-between align-items-center">
+            <div class="col">
+              <h3 class="d-inline-block mb-0">Booking Requests</h3>
+            </div>
+            <div class="col text-right d-flex justify-content-end">
+              <div class="actions d-flex"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
+                <div class="dropdown mr-3">
+                  <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-filter"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(22px, 25px, 0px);">
+                    <a class="dropdown-item" href="#">
+                      Newest
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      From A-Z
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      From Z-A
+                    </a>
+                  </div>
+                </div>
+                <div class="dropdown" data-toggle="dropdown">
+                  <a href="#" class="action-item" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; transform: translate3d(-170px, 25px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a href="#" class="dropdown-item">Refresh</a>
+                    <a href="#" class="dropdown-item">Manage Widgets</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="table table-hover align-items-center">
+            <thead>
+              <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Date</th>
+                <th scope="col">Order ID</th>
+                <th scope="col">Miles Required</th>
+                <th scope="col">Earning</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if @user.requests.any? %>
+                <% @user.requests.each do |request| %>
+                <% unless request.nil? %>
+              <tr>
+                <th scope="row">
+                  <span class="badge badge-pill badge-soft-success"><%= request.confirmed.capitalize %></span>
+                </th>
+                <td>
+                  <i class="far fa-calendar-alt mr-2"></i>
+                  <span class="h6 text-sm"><%= request.created_at.to_date %></span>
+                </td>
+                <td>#10015</td>
+                <td><i class="far fa-credit-card mr-2"></i><%= request.booking.amount_of_miles %> <%= @miles_profile.programme %></td>
+                <td>$<%= request.booking.price %> USD</td>
+                <td class="text-right">
+                  <div class="actions">
+                    <div class="dropdown">
+                      <a class="action-item" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></a>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <% if request.confirmed == "pending" %>
+                        <a class="dropdown-item" href="#"><i class="fas fa-check"></i><%= link_to "Accept", accept_booking_path(request), method: :post  %></a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-times"></i><%= link_to "Decline", decline_booking_path(request), method: :post %></a>
+                        <% elsif request.confirmed == "confirmed" %>
+                        <a class="dropdown-item" href="#"><i class="fas fa-info"></i><%= link_to "see full request", booking_path(request.booking), class: 'btn-see-booking' %></a>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <% end %>
+              <% end %>
+            <% else %>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 <!-- this is the end of request tab on dashboard -->
 </div>
