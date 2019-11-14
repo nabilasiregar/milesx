@@ -5,12 +5,12 @@
         <div class="card w-75 mb-3"style="border-style: none;">
           <form action="/bookings/new">
             <div class="card">
-              <div class="card-header d-flex align-items-center justify-content-between">
+              <div class="card-header blue-header d-flex align-items-center justify-content-between">
                 <h6 class="card-title" style="margin-bottom: 0;"><%= @departure %> to <%= @arrival %></h6>
                 <input type="hidden" name="departure" id="booking_departure" value="<%= @departure %>">
                 <input type="hidden" name="arrival" id="booking_arrival" value="<%= @arrival %>">
                 <input type="hidden" name="airline" id="airline" value="<%= result["prog_name"] %>">
-                <h5 class="card-subtitle" style="color: white; margin-top: auto;"><%= result["prog_name"] %></h5>
+                <h5 class="card-subtitle" style="margin-top: auto;"><%= result["prog_name"] %></h5>
               </div>
 
               <div class="card-profile-body">
@@ -53,7 +53,7 @@
                 <div class="card text-right">
                   <div class="btn-right">
                     <%#= result.submit 'Book', class: 'btn btn-light' %>
-                    <input type="submit" class="btn btn-light" value="Book">
+                    <input type="submit" class="purple-btn slim" value="Book">
                     <%#= link_to 'Book', new_booking_path(departure: @departure, arrival: @arrival), class: 'btn btn-light' %>
                   </div>
                 </div>

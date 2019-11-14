@@ -20,10 +20,20 @@
 
 
 #listing-title{
-  color: $blurp;
+  color: rgba(0,0,0,0.7);
 }
 
 .booking-card-subtitle{
-  color: $blue
+    font-weight: bold;
+    margin-top:15px;
+    color: rgba(0,0,0,0.7);
+  }
+
+.card-subtitle {
+  color: rgba(0,0,0,0.8);
+}
+
+.heavy {
+  font-weight: 700;
 }
 
