@@ -23,9 +23,9 @@
                 <div class="col-sm-3 text-sm-right">
                   <% if @booking.request.photo.blank? %>
                   <%= simple_form_for(@booking.request) do |f| %>
-                    <%= f.input :photo, input_html: { class: 'hidden', id: "photo_input" }, label_html: { class: 'btn-blue btn-sm btn-info rounded-pill mt-3 mt-sm-0'}, label: ' Upload ticket'%>
+                    <%= f.input :photo, input_html: { class: 'hidden d-none', id: "photo_input" }, label_html: { class: 'btn-blue btn-sm btn-info rounded-pill py-2 px-4 mt-3 mt-sm-0'}, label: ' Upload ticket'%>
                     <%= f.input :photo_cache, as: :hidden %>
-                    <%= f.button :submit, "Submit", class: 'btn-blue btn-sm btn-info rounded-pill mt-3 mt-sm-0' %>
+                    <%= f.button :submit, "Submit", class: 'btn-blue btn-sm btn-info rounded-pill py-2 px-4 my-3 mt-sm-0' %>
                   <% end %>
                 <% else %>
                   <%= link_to cl_image_path @booking.request.photo, download: 'hehe.png' do %>
@@ -98,7 +98,7 @@
             </li>
           </ul>
         </div>
-        <div class="order-lg-3 mt-5">
+        <div class="order-lg-3 mt-5 mb-5">
           <%= link_to "Back to dashboard", dashboard_path(request), class: 'purple-btn'  %>
         </div>
       </div>
