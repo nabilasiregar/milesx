@@ -182,7 +182,7 @@
         <div class="card-header actions-toolbar border-0">
           <div class="row justify-content-between align-items-center">
             <div class="col">
-              <h3 class="d-inline-block mb-0">Booking Requests</h3>
+              <h3 class="d-inline-block mb-0"><strong>Booking Requests</strong> </h3>
             </div>
             <div class="col text-right d-flex justify-content-end">
               <div class="actions d-flex"><a href="#" class="action-item mr-3" data-action="search-open" data-target="#actions-search"><i class="fas fa-search"></i></a>
@@ -229,7 +229,7 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style="cursor: pointer;">
               <% if @user.requests.any? %>
                 <% @user.requests.each do |request| %>
                 <% unless request.nil? %>
