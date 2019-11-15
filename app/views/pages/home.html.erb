@@ -1,28 +1,28 @@
 
 <!-- this is for header -->
-<div class="swiper-container home-slider multi-slider swiper-container-horizontal">
-  <img src="https://source.unsplash.com/DDBDkz0p918/1600x900" class="home-video">
+<div class="swiper-container home-slider multi-slider swiper-container-horizontal" style="background-image: url('https://source.unsplash.com/DDBDkz0p918/1600x900')">
+    <%= render 'search_form' %>
 </div>
 <!-- end of header -->
 <!--          this is where miles x introduction start          -->
 <section class="py-6">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 px-5">
+      <div class="col-lg-4">
         <p class="advantage-number">1</p>
         <div class="pl-lg-5">
           <h6 class="text-uppercase">List your miles</h6>
           <p class="text-muted text-sm mb-5 mb-lg-0">List any unused or expiring airline miles you have on the world's largest miles marketplace.</p>
         </div>
       </div>
-      <div class="col-lg-4 px-5">
+      <div class="col-lg-4">
         <p class="advantage-number">2</p>
         <div class="pl-lg-5">
           <h6 class="text-uppercase">Wait for a booking request</h6>
           <p class="text-muted text-sm mb-5 mb-lg-0">Buyers will send you a request for the specific flight that they are looking to purchase, you have 48h to accept or decline the booking request.</p>
         </div>
       </div>
-      <div class="col-lg-4 px-5">
+      <div class="col-lg-4">
         <p class="advantage-number">3</p>
         <div class="pl-lg-5">
           <h6 class="text-uppercase">Purchase plane ticket with miles</h6>
@@ -37,49 +37,23 @@
 <!--          this is for search bar           -->
 <section class="bg-gray-100">
   <div style="height: 250px; background-image: url(https://d19m59y37dris4.cloudfront.net/directory/1-3/img/photo/places-divider.jpg);" class="bg-cover"></div>
-  <div class="container pb-lg-3">
-    <div class="search-bar rounded p-3 p-lg-4 position-relative mt-n4 z-index-20">
-      <form action="/miles_profiles">
-          <div class="row">
-            <div class="col-lg-4 d-flex align-items-center form-group ui-front">
-              <label for="departure" class="input-label location-input">
-                <span class="input-label-text"><br></span>
-                <input type="text" name="departure" placeholder="From" autocomplete="off" class="form-control border-0 shadow-0" id="depart">
-              </label>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
-              <div class="input-label-absolute input-label-absolute-right w-100">
-                <label for="arrival" class="label-absolute">
-                  <span class="input-label-text"><br></span>
-                  <input type="text" name="arrival" placeholder="To" autocomplete="off" class="form-control border-0 shadow-0" id="arrival">
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider">
-              <div class="dropdown bootstrap-select"><select title="Categories" data-style="btn-form-control" class="selectpicker" tabindex="-98"><option class="bs-title-option" value=""></option>
-                  <option value="small">1 Traveller</option>
-                  <option value="medium">2 Travellers</option>
-                  <option value="large">3 Travellers</option>
-                  <option value="x-large">4 Travellers</option>
-                </select><button type="button" class="btn dropdown-toggle btn-form-control bs-placeholder" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Travellers"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">Travellers</div></div> </div></button><div class="dropdown-menu "><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
-              </div>
-            </div>
-            <div class="col-lg-2 form-group mb-0">
-              <div class="form-row form-group w-100 home-input">
-                <div class="trip-row">
-                  <button type="submit" class="btn btn-primary btn-block h-100">Search</button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </form>
-    </div>
-    </div>
   </div>
 </section>
+
+<section class="bg-gray-100">
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-12 mx-auto">
+       <%= render 'search_form' %>
+    </div>
+  </div>
+</div>
+</section>
+
+
 <!--          end of search bar           -->
 
-<section class="py-6 bg-gray-100">
+<section class="py-3 bg-gray-100">
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-8">
