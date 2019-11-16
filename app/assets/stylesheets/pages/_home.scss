@@ -9,6 +9,9 @@
   background-size: cover;
 }
 
+.modal-backdrop {
+  position: relative !important;
+}
 // @media (min-width: 768px) {
 // .container {
 //     max-width: 720px;
@@ -142,8 +145,9 @@
 }
 
 img.bg-image {
-    font-family: 'object-fit: cover;';
+    font-family: 'Montserrat';
     object-fit: cover;
+
 }
 
 .bg-image {
